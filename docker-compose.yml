@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress
+    restart: unless-stopped
+    ports:
+       - "80:80"
+    environment:
+      DB_HOST: 45.118.145.59:3388   # thay bằng địa chỉ DB của bạn
+      DB_USER: onecetawin       # user DB
+      DB_PASSWORD: Onelog@@!59!!Onecetawin!!   # mật khẩu DB
+      DB_NAME: wp_vinamek       # tên database
+    volumes:
+      - ./wp-config.php:/var/www/html/wp-config.php
+      - ./wp-content:/var/www/html/wp-content
+    networks:
+      - wp-network
+
+volumes:
+  wordpress_data:
+
+networks:
+  wp-network:
+    driver: bridge
