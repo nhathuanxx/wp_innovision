@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Giới thiệu
+ * Template Name: About Us
  */
 get_header();
 $lang = pll_current_language('slug'); // vi / en

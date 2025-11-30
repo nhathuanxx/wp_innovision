@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Header template for Vinamek Theme
+ * Header template for Innovision Theme
  */
 ?>
 <!DOCTYPE html>
@@ -12,375 +12,288 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap.css" rel="stylesheet">
   <?php wp_head(); ?>
+  <style data-tag="reset-style-sheet">
+    html {
+      line-height: 1.15;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    p,
+    li,
+    ul,
+    pre,
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    figure,
+    blockquote,
+    figcaption {
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      background-color: transparent;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: 100%;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    button,
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
+      -webkit-appearance: button;
+      color: inherit;
+    }
+
+    button::-moz-focus-inner,
+    [type="button"]::-moz-focus-inner,
+    [type="reset"]::-moz-focus-inner,
+    [type="submit"]::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
+
+    button:-moz-focus,
+    [type="button"]:-moz-focus,
+    [type="reset"]:-moz-focus,
+    [type="submit"]:-moz-focus {
+      outline: 1px dotted ButtonText;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    pre {
+      white-space: normal;
+    }
+
+    input {
+      padding: 2px 4px;
+    }
+
+    img {
+      display: block;
+    }
+
+    details {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    [data-thq="accordion"] [data-thq="accordion-content"] {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+      padding: 0;
+    }
+
+    [data-thq="accordion"] details[data-thq="accordion-trigger"][open]+[data-thq="accordion-content"] {
+      max-height: 1000vh;
+    }
+
+    details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {
+      transform: rotate(180deg);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <style data-tag="default-style-sheet">
+    html {
+      font-family: Inter;
+      font-size: 16px;
+    }
+
+    body {
+      font-weight: 400;
+      font-style: normal;
+      text-decoration: none;
+      text-transform: none;
+      letter-spacing: normal;
+      line-height: 1.15;
+      color: var(--dl-color-theme-neutral-dark);
+      background: var(--dl-color-theme-neutral-light);
+
+      fill: var(--dl-color-theme-neutral-dark);
+    }
+  </style>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+    data-tag="font" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
 </head>
 
 <body <?php body_class(); ?>>
 
-  <div class="page-wrapper">
-    <!-- Main Header -->
-    <header class="main-header header-style-one">
-
-      <!-- Header Upper -->
-      <div class="header-upper">
-        <div class="outer-container">
-          <div class="clearfix">
-
-            <!-- Logo -->
-            <div class="pull-left logo-box desktop-logo-container">
-              <div class="logo">
-                <a href="<?php echo esc_url(pll_home_url(pll_current_language())); ?>">
-                  <?php
-                  // Lấy logo từ ACF Options Page
-                  $acf_logo = get_field('logo', 'option'); // 'option' nếu lưu trên Options Page
-
-                  if ($acf_logo) {
-                    // Image Array, chiều cao 60px
-                    echo '<img src="' . esc_url($acf_logo['url']) . '" alt="' . esc_attr($acf_logo['alt']) . '" class="site-logo">';
-                  } else {
-                    // Fallback: logo mặc định trong theme
-                    echo '<img src="' . esc_url(get_template_directory_uri() . '/assets/images/vinamek/vinamek-logo-name1.png') . '" alt="' . esc_attr(get_bloginfo('name')) . '" class="site-logo">';
-                  }
-                  ?>
-                </a>
-              </div>
-              <!-- <?php if (class_exists('WooCommerce')) : ?>
-                  <div class="cart-box-mobile">
-                    <a href="<?php echo esc_url(wc_get_cart_url()); ?>">
-                      <span style="font-size:20px" class="icon flaticon-shopping-cart-of-checkered-design"></span>
-                      <span class="number"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-                    </a>
-                  </div>
-                <?php endif; ?> -->
-            </div>
-
-
-            <!-- Option list -->
-            <div class="outer-box clearfix">
-              <ul class="option-list" style="margin-bottom:0">
-                <li><span class="icon flaticon-phone-symbol-of-an-auricular-inside-a-circle"></span><strong>Tel:</strong> <?php
-                                                                                                                          // Lấy số điện thoại từ ACF Options Page
-                                                                                                                          $so_dien_thoai = get_field('so_dien_thoai', 'option');
-
-                                                                                                                          if ($so_dien_thoai) {
-                                                                                                                            // Loại bỏ khoảng trắng hoặc ký tự không cần thiết để dùng tel:
-                                                                                                                            $tel_number = preg_replace('/\D+/', '', $so_dien_thoai);
-                                                                                                                            echo '<a href="tel:' . esc_attr($tel_number) . '">' . esc_html($so_dien_thoai) . '</a>';
-                                                                                                                          } else {
-                                                                                                                            // Fallback nếu chưa có số
-                                                                                                                            echo '+00 00 0000 00';
-                                                                                                                          }
-                                                                                                                          ?></li>
-                <li><?php
-                    // Lấy số điện thoại từ ACF Options Page
-                    $so_dien_thoai = get_field('so_dien_thoai_2', 'option');
-
-                    if ($so_dien_thoai) {
-                      // Loại bỏ khoảng trắng hoặc ký tự không cần thiết để dùng tel:
-                      $tel_number = preg_replace('/\D+/', '', $so_dien_thoai);
-                      echo '<a href="tel:' . esc_attr($tel_number) . '">' . esc_html($so_dien_thoai) . '</a>';
-                    } else {
-                      // Fallback nếu chưa có số
-                      echo '+00 00 0000 00';
-                    }
-                    ?></li>
-                <li>
-                  <?php
-                  $translations = pll_the_languages(array(
-                    'raw' => 1,
-                    'hide_if_no_translation' => 0, // hiển thị tất cả ngôn ngữ
-                  ));
-
-                  if (!empty($translations)) :
-                    $current_lang = pll_current_language('slug');
-                    $url_flags = get_template_directory_uri() . '/assets/images/vinamek/';
-                  ?>
-                    <div class="header-lang-content">
-
-                      <!-- Hiển thị cờ ngôn ngữ hiện tại -->
-                      <div class="lang-img-container">
-                        <?php
-                        if (isset($translations[$current_lang])) {
-                          echo '<img class="lang-img" src="' . esc_url($url_flags . 'flag-' . $current_lang . '.png') . '" alt="' . esc_attr($current_lang) . '">';
-                        }
-                        ?>
-                      </div>
-
-                      <select class="select-circle" onchange="if(this.value){window.location=this.value;}">
-                        <?php foreach ($translations as $lang => $translation) : ?>
-                          <option
-                            value="<?php echo esc_url($translation['url']); ?>"
-                            <?php selected($translation['current_lang'], true); ?>>
-                            <?php echo esc_html($translation['name']); ?>
-                          </option>
-                        <?php endforeach; ?>
-                      </select>
-
-                    </div>
-                  <?php endif; ?>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Navigation -->
-            <div class="nav-outer clearfix">
-              <nav class="main-menu navbar-expand-md">
-                <div class="navbar-header">
-                  <div class="pull-left logo-box mobile-logo-container">
-                    <div class="logo">
-                      <a href="<?php echo esc_url(pll_home_url(pll_current_language())); ?>">
-                        <?php
-                        // Lấy logo từ ACF Options Page
-                        $acf_logo = get_field('logo', 'option'); // 'option' nếu lưu trên Options Page
-
-                        if ($acf_logo) {
-                          // Image Array, chiều cao 60px
-                          echo '<img src="' . esc_url($acf_logo['url']) . '" alt="' . esc_attr($acf_logo['alt']) . '" class="site-logo">';
-                        } else {
-                          // Fallback: logo mặc định trong theme
-                          echo '<img src="' . esc_url(get_template_directory_uri() . '/assets/images/vinamek/vinamek-logo-name1.png') . '" alt="' . esc_attr(get_bloginfo('name')) . '" class="site-logo">';
-                        }
-                        ?>
-                      </a>
-                    </div>
-                    <div class="menu-mobile-right">
-                      <div> <?php if (class_exists('WooCommerce')) : ?>
-                          <div class="cart-box-mobile">
-                            <a href="<?php echo esc_url(wc_get_cart_url()); ?>">
-                              <span style="font-size:20px" class="icon flaticon-shopping-cart-of-checkered-design"></span>
-                              <span class="number"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-                            </a>
-                          </div>
-                        <?php endif; ?>
-                      </div>
-                      <?php
-                      $translations = pll_the_languages(array(
-                        'raw' => 1,
-                        'hide_if_no_translation' => 0,
-                      ));
-
-                      if (!empty($translations)) :
-                        $current_lang = pll_current_language('slug');
-                        $url_flags = get_template_directory_uri() . '/assets/images/vinamek/';
-                      ?>
-                        <div class="header-lang-content-mobile">
-                          <!-- Hiển thị cờ ngôn ngữ hiện tại -->
-                          <div class="lang-img-container">
-                            <?php
-                            if (isset($translations[$current_lang])) {
-                              echo '<img class="lang-img" src="' . esc_url($url_flags . 'flag-' . $current_lang . '.png') . '" alt="' . esc_attr($current_lang) . '">';
-                            }
-                            ?>
-                          </div>
-
-                          <select class="select-circle" onchange="if(this.value){window.location=this.value;}">
-                            <?php foreach ($translations as $lang => $translation) : ?>
-                              <option
-                                value="<?php echo esc_url($translation['url']); ?>"
-                                <?php selected($translation['current_lang'], true); ?>
-                                style="background-image: url('<?php echo esc_url($url_flags . 'flag-' . $lang . '.png'); ?>'); background-size: 20px; background-repeat: no-repeat; background-position: 5px center; padding-left: 30px;">
-                                <?php echo esc_html(strtoupper($lang)); ?>
-                              </option>
-                            <?php endforeach; ?>
-                          </select>
-
-                        </div>
-                      <?php endif; ?>
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'vinamek'); ?>">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                      </button>
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
-                  <?php
-                  if (has_nav_menu('main-menu')) {
-                    wp_nav_menu(array(
-                      'theme_location' => 'main-menu',
-                      'container'      => false,
-                      'menu_class'     => 'navigation clearfix',
-                      'depth'          => 3,
-                      'fallback_cb'    => false,
-                      'walker'         => new WP_Bootstrap_Navwalker(),
-                    ));
-                  }
-                  ?>
-                </div>
-
-                <!-- Cart Box -->
-                <?php if (class_exists('WooCommerce')) : ?>
-                  <div class="cart-box">
-                    <a href="<?php echo esc_url(wc_get_cart_url()); ?>">
-                      <span class="icon flaticon-shopping-cart-of-checkered-design"></span>
-                      <span class="number"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-                    </a>
-                  </div>
-                <?php endif; ?>
-
-              </nav>
-            </div><!-- /.nav-outer -->
-          </div><!-- /.clearfix -->
-        </div><!-- /.outer-container -->
-      </div>
-      <!-- End Header Upper -->
-
-      <!-- Hidden Nav Toggler -->
-      <div class="nav-toggler">
-        <div class="nav-btn">
-          <button class="hidden-bar-opener"><span class="icon flaticon-menu"></span></button>
+  <div class="header-container">
+    <div class="header-content">
+      <div class="header-detail"><img
+          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/asset14x11240-j6w-200h.png'); ?>"
+          alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+          class="homepage-asset14x11" />
+        <div class="homepage-frame1618871097">
+          <?php
+          if (has_nav_menu('main-menu')) {
+            wp_nav_menu(array(
+              'theme_location' => 'main-menu',
+              'container'      => false,
+              'menu_class'     => 'main-menu',
+              'depth'          => 3,
+              'fallback_cb'    => false,
+            ));
+          }
+          ?>
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- Sticky Header -->
-      <div class="sticky-header">
-        <div class="auto-container clearfix">
+  <style>
+    .header-detail {
+      display: flex;
+      z-index: 1;
+      flex-grow: 1;
+      align-items: center;
+      border-color: rgba(255, 255, 255, 0.07999999821186066);
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 999px;
+      justify-content: space-between;
+      background-color: rgba(255, 255, 255, 0.019999999552965164);
+    }
 
-          <!-- Logo -->
-          <div class="logo pull-left">
-            <a href="<?php echo esc_url(pll_home_url(pll_current_language())); ?>" class="img-responsive">
-              <?php
-              // Lấy logo từ ACF Options Page
-              $acf_logo = get_field('logo', 'option'); // 'option' nếu lưu trên Options Page
+    .main-menu li.menu-item>a {
+      display: flex;
+      align-items: flex-start;
+      color: rgba(0, 0, 0, 0.9);
+      font-size: 14px;
+      font-weight: 600;
+      font-family: Montserrat;
+      line-height: 20px;
+      text-decoration: none;
+    }
 
-              if ($acf_logo) {
-                // Image Array, chiều cao 60px
-                echo '<img src="' . esc_url($acf_logo['url']) . '" alt="' . esc_attr($acf_logo['alt']) . '" class="site-logo">';
-              } else {
-                // Fallback: logo mặc định trong theme
-                echo '<img src="' . esc_url(get_template_directory_uri() . '/assets/images/vinamek/vinamek-logo-name1.png') . '" alt="' . esc_attr(get_bloginfo('name')) . '" class="site-logo">';
-              }
-              ?> </a>
-          </div>
+    /* Active menu */
+    .main-menu li.current-menu-item>a,
+    .main-menu li.current-menu-ancestor>a {
+      font-style: semi-bold;
+      color: #3C90FC;
+    }
 
-          <!-- Right Col -->
-          <div class="right-col pull-right">
-            <nav class="main-menu navbar-expand-md">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'vinamek'); ?>">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+    #menu-main-menu {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
 
-              <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent1">
-                <?php
-                if (has_nav_menu('main-menu')) {
-                  wp_nav_menu(array(
-                    'theme_location' => 'main-menu',
-                    'container'      => false,
-                    'menu_class'     => 'navigation clearfix',
-                    'depth'          => 3,
-                    'fallback_cb'    => false,
-                    'walker'         => new WP_Bootstrap_Navwalker(),
-                  ));
-                }
-                ?>
-              </div>
-            </nav>
-          </div>
+    .header-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
 
-        </div>
-      </div>
-      <!-- End Sticky Header -->
-
-      <!-- Fullscreen Menu -->
-      <div class="fullscreen-menu">
-        <div class="close-menu"><span class="flaticon-cancel-1"></span></div>
-        <div class="menu-outer-container">
-          <div class="menu-box">
-            <nav class="full-menu">
-              <?php
-              if (has_nav_menu('main-menu')) {
-                wp_nav_menu(array(
-                  'theme_location' => 'main-menu',
-                  'container'      => false,
-                  'menu_class'     => 'navigation clearfix',
-                  'depth'          => 3,
-                  'fallback_cb'    => false,
-                  'walker'         => new WP_Fullscreen_Navwalker(),
-                ));
-              }
-              ?>
-            </nav>
-          </div>
-        </div>
-      </div>
-      <!-- End Fullscreen Menu -->
-
-    </header>
-    <!-- End Main Header -->
-
-    <main class="site-content">
-
-      <style>
-        .main-header .header-upper .logo-box {
-          margin-right: 80px;
-          position: relative;
-          top: 25px;
-          display: flex;
-          justify-content: space-between;
-        }
-
-        .logo-box .cart-box-mobile {
-          display: none !important;
-        }
-
-        .cart-box-mobile .number {
-          position: absolute;
-          right: unset;
-          top: -8px;
-          color: #13b5ea;
-          /* padding:4px; */
-          font-size: 14px;
-        }
-
-
-        .nav-toggler {
-          display: none !important;
-        }
-
-        .header-lang-content-mobile {
-          position: unset !important;
-        }
-
-        .menu-mobile-right {
-          display: flex;
-          gap: 8px;
-          align-items: center;
-        }
-
-        .mobile-logo-container {
-          display: none !important;
-        }
-
-        @media only screen and (max-width: 767px) {
-          .logo-box .cart-box-mobile {
-            display: block !important;
-            padding-right: 15px;
-          }
-
-          .cart-box {
-            display: none !important;
-          }
-
-          .header-lang-content-mobile {
-            position: unset !important;
-          }
-
-          .main-menu .navbar-header {
-            padding: 0px;
-          }
-
-          .mobile-logo-container {
-            display: flex !important;
-            padding-bottom: 25px;
-          }
-
-          .desktop-logo-container {
-            display: none !important;
-          }
-        }
-      </style>
+    .header-content {
+      max-width: 1320px;
+      margin: 0px auto;
+      height: 109px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  </style>
