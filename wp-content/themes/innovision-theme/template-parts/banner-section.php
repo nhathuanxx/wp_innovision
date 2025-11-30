@@ -94,7 +94,6 @@ $bg_image = isset($args['bg']) ? $args['bg'] : get_template_directory_uri() . '/
     -webkit-text-fill-color: transparent;
     background-clip: text;
 
-    border: 0.5px solid #FFFFFF96;
     z-index: 1;
 }
 

@@ -6,129 +6,434 @@
 get_header();
 $lang = pll_current_language('slug'); // vi / en
 ?>
-<?php get_template_part('template-parts/page', 'title'); ?>
+<?php get_template_part('template-parts/page', 'title', [
+  'subtitle' => 'Comprehensive AI and technology solutions for modern enterprises.',
+]); ?>
 
-<div class="sidebar-page-container">
-  <div class="auto-container">
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div class="company-intro">
-          <div class="col-inner">
-            <?php if ($lang === 'vi'): ?>
-              <h3 class="section-title">Lịch Sử Hình Thành và Phát Triển</h3>
-              <p>Công ty CP Vinamek được thành lập từ 1/2019, chuyên tư vấn – thiết kế – lắp đặt – bảo trì, bảo dưỡng hệ thống điện, đèn chiếu sáng, vỏ tủ điện, vỏ tủ PCCC và sản xuất tủ điện, thang, máng cáp, cơ khí các loại theo yêu cầu khách hàng. Đây là tâm huyết của nhiều kỹ sư và chuyên viên đã có gần 10 năm kinh nghiệm tại các công ty hàng đầu về lĩnh vực điện tại Đài Loan. Vinamek quyết tâm tối ưu hóa hệ thống điện trong các nhà máy, khu công nghiệp lên tầm cao mới.</p>
 
-              <h3 class="section-title">Giá Trị Cốt Lõi</h3>
-              <ul>
-                <li><strong>Tín:</strong> Uy tín được coi là tiêu chí hàng đầu, đảm bảo sự tin cậy và danh dự của công ty.</li>
-                <li><strong>Tâm:</strong> Lấy khách hàng làm trung tâm, đặt lợi ích khách hàng lên hàng đầu.</li>
-                <li><strong>Tốc:</strong> Đảm bảo tốc độ và hiệu quả trong mọi hoạt động.</li>
-                <li><strong>Nhân:</strong> Xây dựng mối quan hệ bằng thiện chí, coi người lao động là tài sản quý giá.</li>
-              </ul>
+<div class="frame1618871139-container1">
+  <div class="frame1618871139-frame1618871139">
 
-              <h3 class="section-title">Lĩnh Vực Hoạt Động</h3>
-              <p>Vinamek chuyên tư vấn, thiết kế, lắp đặt, bảo trì hệ thống điện, đèn chiếu sáng, vỏ tủ điện, vỏ tủ PCCC, sản xuất tủ điện, thang, máng cáp, cơ khí theo yêu cầu khách hàng.</p>
+    <!-- BLOCK 1 -->
+    <div class="frame1618871139-frame1618871136">
+      <img
+        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22931405-fkt9-400h.png'); ?>"
+        alt="Rectangle22931405"
+        class="frame1618871139-rectangle22931">
 
-              <h3 class="section-title">Cam Kết</h3>
-              <p>Chúng tôi cam kết đem đến sản phẩm và dịch vụ chất lượng, đáp ứng mọi yêu cầu của khách hàng và đối tác.</p>
+      <div class="frame1618871139-frame1618871129">
+        <span class="frame1618871139-text10">AI Products</span>
+        <span class="frame1618871139-text11">
+          A suite of AI products that automates analysis, Q&amp;A, and
+          real-time decision making
+        </span>
 
-              <h3 class="section-title">Quy Mô</h3>
-              <p>Với đội ngũ nhân sự trẻ trung, chuyên nghiệp, Vinamek tự tin cung cấp sản phẩm và dịch vụ tốt nhất.</p>
-
-              <h3 class="section-title">Hệ Thống Công Ty Thành Viên</h3>
-              <p>Vinamek là một phần của hệ thống công ty liên kết:</p>
-              <ol>
-                <li><strong>Vinamek Electric:</strong> Cung cấp sản phẩm và dịch vụ về thiết bị điện.</li>
-                <li><strong>Thang Máy Vinamek:</strong> Giải pháp thang máy an toàn, hiệu quả.</li>
-                <li><strong>TopE Electric:</strong> Điểm đến cho sản phẩm và dịch vụ điện.</li>
-                <li><strong>WynG:</strong> Thiết kế và thi công nội thất.</li>
-              </ol>
-            <?php else: ?>
-              <h3 class="section-title">History and Development</h3>
-              <p>Vinamek JSC was founded in January 2019, specializing in consulting, designing, installing, maintaining electrical systems, lighting, electrical cabinets, fire protection cabinets, and manufacturing electrical panels, ladders, cable trays, and mechanical equipment according to customer requirements. Vinamek is committed to optimizing industrial electrical systems to a new level.</p>
-
-              <h3 class="section-title">Core Values</h3>
-              <ul>
-                <li><strong>Trust:</strong> Reputation is the top priority, ensuring reliability and company honor.</li>
-                <li><strong>Care:</strong> Customer-centric approach, prioritizing customer interests.</li>
-                <li><strong>Speed:</strong> Ensure efficiency and prompt delivery of products and services.</li>
-                <li><strong>Human:</strong> Build relationships with goodwill and value employees as assets.</li>
-              </ul>
-
-              <h3 class="section-title">Fields of Operation</h3>
-              <p>Vinamek specializes in consulting, designing, installing, and maintaining electrical systems, lighting, electrical cabinets, fire protection cabinets, and manufacturing according to customer requirements.</p>
-
-              <h3 class="section-title">Commitment</h3>
-              <p>We are committed to providing quality products and services, meeting all customer and partner requirements.</p>
-
-              <h3 class="section-title">Scale</h3>
-              <p>With a young and professional team, Vinamek confidently delivers the best products and services.</p>
-
-              <h3 class="section-title">Member Companies</h3>
-              <p>Vinamek is part of a larger affiliated company system:</p>
-              <ol>
-                <li><strong>Vinamek Electric:</strong> Electrical products and services.</li>
-                <li><strong>Vinamek Elevator:</strong> Safe and efficient elevator solutions.</li>
-                <li><strong>TopE Electric:</strong> Reliable electrical product and service provider.</li>
-                <li><strong>WynG:</strong> Interior design and construction.</li>
-              </ol>
-            <?php endif; ?>
+        <div class="frame1618871139-frame952331">
+          <div class="frame1618871139-framelemlist-buttonnew1">
+            <span class="frame1618871139-text12">Learn more</span>
+            <img
+              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22921371-qiu-200h.png'); ?>"
+              alt="Rectangle22921371"
+              class="frame1618871139-rectangle22921">
           </div>
         </div>
-    <?php endwhile;
-    endif; ?>
+      </div>
+    </div>
 
-    <?php get_template_part('template-parts/contact-section'); ?>
+    <!-- BLOCK 2 -->
+    <div class="frame1618871139-frame1618871137">
+
+      <div class="frame1618871139-frame1618871130">
+        <span class="frame1618871139-text13">Industrial AI &amp; Automation</span>
+        <span class="frame1618871139-text14">
+          End-to-end industrial AI solutions for inspection, failure prediction,
+          and factory system integration
+        </span>
+
+        <div class="frame1618871139-frame952332">
+          <div class="frame1618871139-framelemlist-buttonnew2">
+            <span class="frame1618871139-text15">Learn more</span>
+            <img
+              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22921371-5g1w-200h.png'); ?>"
+              alt="Rectangle22921371"
+              class="frame1618871139-rectangle22922">
+          </div>
+        </div>
+      </div>
+
+      <img
+        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22931405-z92p-400h.png'); ?>"
+        alt="Rectangle22931405"
+        class="frame1618871139-rectangle22932">
+    </div>
+
+    <!-- BLOCK 3 -->
+    <div class="frame1618871139-frame1618871138">
+
+      <img
+        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22931405-y8rz-400h.png'); ?>"
+        alt="Rectangle22931405"
+        class="frame1618871139-rectangle22933">
+
+      <div class="frame1618871139-frame1618871131">
+        <span class="frame1618871139-text16">Software &amp; Firmware Development</span>
+        <span class="frame1618871139-text17">
+          Software engineering and embedded system development for technology products
+          and enterprise solutions
+        </span>
+
+        <div class="frame1618871139-frame952333">
+          <div class="frame1618871139-framelemlist-buttonnew3">
+            <span class="frame1618871139-text18">Learn more</span>
+            <img
+              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22921371-qru-200h.png'); ?>"
+              alt="Rectangle22921371"
+              class="frame1618871139-rectangle22923">
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
 <?php get_footer(); ?>
 
 <style>
-  .company-intro {
-    color: #333;
-    line-height: 1.8;
+  .frame1618871139-container1 {
+    padding: 56px 0px 112px 0px;
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
   }
 
-  .company-title {
+  .frame1618871139-frame1618871139 {
+    gap: 32px;
+    width: 1320px;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    flex-shrink: 0;
+    flex-direction: column;
+  }
+
+  .frame1618871139-frame1618871136 {
+    gap: 32px;
+    display: flex;
+    padding: 32px;
+    align-self: stretch;
+    box-shadow: 0px 1px 4px 0px rgba(12, 12, 13, 0.10000000149011612);
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  .frame1618871139-rectangle22931 {
+    width: 611px;
+    height: 344px;
+    border-radius: 20px;
+  }
+
+  .frame1618871139-frame1618871129 {
+    gap: 16px;
+    width: 613px;
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-start;
+    flex-shrink: 0;
+    flex-direction: column;
+  }
+
+  .frame1618871139-text10 {
+    color: rgba(71, 67, 99, 1);
+    height: auto;
+    font-size: 36px;
+    align-self: stretch;
+    font-style: Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+
+  .frame1618871139-text11 {
+    color: rgba(71, 67, 99, 1);
+    height: auto;
+    font-size: 16px;
+    align-self: stretch;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 28px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+
+  .frame1618871139-frame952331 {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .frame1618871139-framelemlist-buttonnew1 {
+    gap: 8px;
+    display: flex;
+    padding: 20px 36px;
+    position: relative;
+    box-shadow: 0px 10px 19px 0px rgba(49, 107, 255, 0.2800000011920929);
+    align-items: center;
+    border-color: rgba(13, 81, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: rgba(48, 106, 255, 1);
+  }
+
+  .frame1618871139-text12 {
+    color: white;
+    height: auto;
+    z-index: 1;
+    font-size: 20px;
+    font-style: Semi Bold;
     text-align: center;
-    font-size: 28px;
-    color: #13b5ea;
-    margin-bottom: 30px;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
   }
 
-  .section-title {
-    font-size: 22px;
-    color: #13b5ea;
-    margin-top: 25px;
-    margin-bottom: 10px;
+  .frame1618871139-rectangle22921 {
+    top: 1px;
+    left: 1px;
+    width: 180px;
+    height: 62px;
+    z-index: 3;
+    position: absolute;
+    border-color: rgba(89, 135, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 9px;
   }
 
-  .company-intro p {
-    margin-bottom: 15px;
-    text-align: justify;
+  .frame1618871139-frame1618871137 {
+    gap: 32px;
+    display: flex;
+    padding: 32px;
+    align-self: stretch;
+    box-shadow: 0px 1px 4px 0px rgba(12, 12, 13, 0.10000000149011612);
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 1);
   }
 
-  .company-intro ul,
-  .company-intro ol {
-    margin-left: 20px;
-    margin-bottom: 20px;
+  .frame1618871139-frame1618871130 {
+    gap: 16px;
+    width: 611px;
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+    flex-direction: column;
   }
 
-  .company-intro li {
-    margin-bottom: 10px;
+  .frame1618871139-text13 {
+    color: rgba(71, 67, 99, 1);
+    height: auto;
+    font-size: 36px;
+    align-self: stretch;
+    font-style: Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
   }
 
-  @media(max-width:768px) {
-    .company-intro .col-inner {
-      padding: 15px;
-    }
+  .frame1618871139-text14 {
+    color: rgba(71, 67, 99, 1);
+    height: auto;
+    font-size: 16px;
+    align-self: stretch;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 28px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
 
-    .company-title {
-      font-size: 24px;
-    }
+  .frame1618871139-frame952332 {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 
-    .section-title {
-      font-size: 20px;
-    }
+  .frame1618871139-framelemlist-buttonnew2 {
+    gap: 8px;
+    display: flex;
+    padding: 20px 36px;
+    position: relative;
+    box-shadow: 0px 10px 19px 0px rgba(49, 107, 255, 0.2800000011920929);
+    align-items: center;
+    border-color: rgba(13, 81, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: rgba(48, 106, 255, 1);
+  }
+
+  .frame1618871139-text15 {
+    color: white;
+    height: auto;
+    z-index: 1;
+    font-size: 20px;
+    font-style: Semi Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+
+  .frame1618871139-rectangle22922 {
+    top: 1px;
+    left: 1px;
+    width: 180px;
+    height: 62px;
+    z-index: 3;
+    position: absolute;
+    border-color: rgba(89, 135, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 9px;
+  }
+
+  .frame1618871139-rectangle22932 {
+    width: 611px;
+    height: 344px;
+    border-radius: 20px;
+  }
+
+  .frame1618871139-frame1618871138 {
+    gap: 32px;
+    display: flex;
+    padding: 32px;
+    align-self: stretch;
+    box-shadow: 0px 1px 4px 0px rgba(12, 12, 13, 0.10000000149011612);
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  .frame1618871139-rectangle22933 {
+    width: 611px;
+    height: 344px;
+    border-radius: 20px;
+  }
+
+  .frame1618871139-frame1618871131 {
+    gap: 16px;
+    width: 611px;
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+    flex-direction: column;
+  }
+
+  .frame1618871139-text16 {
+    color: rgba(71, 67, 99, 1);
+    height: auto;
+    font-size: 36px;
+    align-self: stretch;
+    font-style: Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+
+  .frame1618871139-text17 {
+    color: rgba(71, 67, 99, 1);
+    height: auto;
+    font-size: 16px;
+    align-self: stretch;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 28px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+
+  .frame1618871139-frame952333 {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .frame1618871139-framelemlist-buttonnew3 {
+    gap: 8px;
+    display: flex;
+    padding: 20px 36px;
+    position: relative;
+    box-shadow: 0px 10px 19px 0px rgba(49, 107, 255, 0.2800000011920929);
+    align-items: center;
+    border-color: rgba(13, 81, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: rgba(48, 106, 255, 1);
+  }
+
+  .frame1618871139-text18 {
+    color: white;
+    height: auto;
+    z-index: 1;
+    font-size: 20px;
+    font-style: Semi Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+
+  .frame1618871139-rectangle22923 {
+    top: 1px;
+    left: 1px;
+    width: 180px;
+    height: 62px;
+    z-index: 3;
+    position: absolute;
+    border-color: rgba(89, 135, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 9px;
+  }
+
+  .homepage-footer {
+    top: auto !important;
   }
 </style>

@@ -6,129 +6,239 @@
 get_header();
 $lang = pll_current_language('slug'); // vi / en
 ?>
-<?php get_template_part('template-parts/page', 'title'); ?>
+<?php get_template_part('template-parts/page', 'title', [
+  'subtitle' => 'Simply fill in this form and we will get in touch with you to discuss in further details All information will be kept confidential.',
+]); ?>
 
-<div class="sidebar-page-container">
-  <div class="auto-container">
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div class="company-intro">
-          <div class="col-inner">
-            <?php if ($lang === 'vi'): ?>
-              <h3 class="section-title">Lịch Sử Hình Thành và Phát Triển</h3>
-              <p>Công ty CP Vinamek được thành lập từ 1/2019, chuyên tư vấn – thiết kế – lắp đặt – bảo trì, bảo dưỡng hệ thống điện, đèn chiếu sáng, vỏ tủ điện, vỏ tủ PCCC và sản xuất tủ điện, thang, máng cáp, cơ khí các loại theo yêu cầu khách hàng. Đây là tâm huyết của nhiều kỹ sư và chuyên viên đã có gần 10 năm kinh nghiệm tại các công ty hàng đầu về lĩnh vực điện tại Đài Loan. Vinamek quyết tâm tối ưu hóa hệ thống điện trong các nhà máy, khu công nghiệp lên tầm cao mới.</p>
 
-              <h3 class="section-title">Giá Trị Cốt Lõi</h3>
-              <ul>
-                <li><strong>Tín:</strong> Uy tín được coi là tiêu chí hàng đầu, đảm bảo sự tin cậy và danh dự của công ty.</li>
-                <li><strong>Tâm:</strong> Lấy khách hàng làm trung tâm, đặt lợi ích khách hàng lên hàng đầu.</li>
-                <li><strong>Tốc:</strong> Đảm bảo tốc độ và hiệu quả trong mọi hoạt động.</li>
-                <li><strong>Nhân:</strong> Xây dựng mối quan hệ bằng thiện chí, coi người lao động là tài sản quý giá.</li>
-              </ul>
-
-              <h3 class="section-title">Lĩnh Vực Hoạt Động</h3>
-              <p>Vinamek chuyên tư vấn, thiết kế, lắp đặt, bảo trì hệ thống điện, đèn chiếu sáng, vỏ tủ điện, vỏ tủ PCCC, sản xuất tủ điện, thang, máng cáp, cơ khí theo yêu cầu khách hàng.</p>
-
-              <h3 class="section-title">Cam Kết</h3>
-              <p>Chúng tôi cam kết đem đến sản phẩm và dịch vụ chất lượng, đáp ứng mọi yêu cầu của khách hàng và đối tác.</p>
-
-              <h3 class="section-title">Quy Mô</h3>
-              <p>Với đội ngũ nhân sự trẻ trung, chuyên nghiệp, Vinamek tự tin cung cấp sản phẩm và dịch vụ tốt nhất.</p>
-
-              <h3 class="section-title">Hệ Thống Công Ty Thành Viên</h3>
-              <p>Vinamek là một phần của hệ thống công ty liên kết:</p>
-              <ol>
-                <li><strong>Vinamek Electric:</strong> Cung cấp sản phẩm và dịch vụ về thiết bị điện.</li>
-                <li><strong>Thang Máy Vinamek:</strong> Giải pháp thang máy an toàn, hiệu quả.</li>
-                <li><strong>TopE Electric:</strong> Điểm đến cho sản phẩm và dịch vụ điện.</li>
-                <li><strong>WynG:</strong> Thiết kế và thi công nội thất.</li>
-              </ol>
-            <?php else: ?>
-              <h3 class="section-title">History and Development</h3>
-              <p>Vinamek JSC was founded in January 2019, specializing in consulting, designing, installing, maintaining electrical systems, lighting, electrical cabinets, fire protection cabinets, and manufacturing electrical panels, ladders, cable trays, and mechanical equipment according to customer requirements. Vinamek is committed to optimizing industrial electrical systems to a new level.</p>
-
-              <h3 class="section-title">Core Values</h3>
-              <ul>
-                <li><strong>Trust:</strong> Reputation is the top priority, ensuring reliability and company honor.</li>
-                <li><strong>Care:</strong> Customer-centric approach, prioritizing customer interests.</li>
-                <li><strong>Speed:</strong> Ensure efficiency and prompt delivery of products and services.</li>
-                <li><strong>Human:</strong> Build relationships with goodwill and value employees as assets.</li>
-              </ul>
-
-              <h3 class="section-title">Fields of Operation</h3>
-              <p>Vinamek specializes in consulting, designing, installing, and maintaining electrical systems, lighting, electrical cabinets, fire protection cabinets, and manufacturing according to customer requirements.</p>
-
-              <h3 class="section-title">Commitment</h3>
-              <p>We are committed to providing quality products and services, meeting all customer and partner requirements.</p>
-
-              <h3 class="section-title">Scale</h3>
-              <p>With a young and professional team, Vinamek confidently delivers the best products and services.</p>
-
-              <h3 class="section-title">Member Companies</h3>
-              <p>Vinamek is part of a larger affiliated company system:</p>
-              <ol>
-                <li><strong>Vinamek Electric:</strong> Electrical products and services.</li>
-                <li><strong>Vinamek Elevator:</strong> Safe and efficient elevator solutions.</li>
-                <li><strong>TopE Electric:</strong> Reliable electrical product and service provider.</li>
-                <li><strong>WynG:</strong> Interior design and construction.</li>
-              </ol>
-            <?php endif; ?>
-          </div>
-        </div>
-    <?php endwhile;
-    endif; ?>
-
-    <?php get_template_part('template-parts/contact-section'); ?>
-  </div>
+<div class="contact-form-container">
+  <?php echo do_shortcode('[contact-form-7 id="c010ffa" title="Contact"]'); ?>
 </div>
 
 <?php get_footer(); ?>
 
 <style>
-  .company-intro {
-    color: #333;
-    line-height: 1.8;
+  .contact-form-container {
+    padding: 50px 0px 111.5px 0px;
   }
 
-  .company-title {
-    text-align: center;
-    font-size: 28px;
-    color: #13b5ea;
-    margin-bottom: 30px;
+  /* Container chính */
+  .cf7-modern-wrapper {
+    max-width: 1320px;
+    margin: 0 auto;
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   }
 
-  .section-title {
-    font-size: 22px;
-    color: #13b5ea;
-    margin-top: 25px;
-    margin-bottom: 10px;
-  }
-
-  .company-intro p {
-    margin-bottom: 15px;
-    text-align: justify;
-  }
-
-  .company-intro ul,
-  .company-intro ol {
-    margin-left: 20px;
+  /* Row layout */
+  .cf7-row {
+    display: flex;
+    gap: 20px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
   }
 
-  .company-intro li {
+  /* Column layout */
+  .cf7-col-half {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .cf7-col-full {
+    flex: 1 1 100%;
+  }
+
+  /* Input fields styling */
+  .cf7-input,
+  .cf7-select,
+  .cf7-textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #374151;
+    background-color: #f9fafb;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  .cf7-input:focus,
+  .cf7-select:focus,
+  .cf7-textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+
+  .cf7-input::placeholder,
+  .cf7-textarea::placeholder {
+    color: #9ca3af;
+  }
+
+  /* Select dropdown */
+  .cf7-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239ca3af' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+    cursor: pointer;
+  }
+
+  /* Textarea */
+  .cf7-textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.5;
+  }
+
+  /* Upload wrapper */
+  .cf7-upload-wrapper {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: #f9fafb;
+  }
+
+  .cf7-upload-label {
+    display: block;
+    font-size: 13px;
+    color: #6b7280;
     margin-bottom: 10px;
+    line-height: 1.5;
   }
 
-  @media(max-width:768px) {
-    .company-intro .col-inner {
+  .cf7-file {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .cf7-upload-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #3b82f6;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+  }
+
+  .cf7-upload-icon:hover {
+    background-color: #e0e7ff;
+  }
+
+  /* Submit button */
+  .cf7-submit-wrapper {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .cf7-submit {
+    padding: 14px 48px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+  }
+
+  .cf7-submit:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .cf7-submit:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+  }
+
+  /* Validation errors */
+  .wpcf7-not-valid-tip {
+    color: #ef4444;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+  }
+
+  span.wpcf7-not-valid {
+    border-color: #ef4444 !important;
+  }
+
+  /* Success/Error messages */
+  .wpcf7-response-output {
+    margin: 20px 0;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .wpcf7-mail-sent-ok {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+  }
+
+  .wpcf7-validation-errors,
+  .wpcf7-mail-sent-ng {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .cf7-row {
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .cf7-col-half {
+      min-width: 100%;
+    }
+
+    .cf7-modern-wrapper {
       padding: 15px;
     }
 
-    .company-title {
-      font-size: 24px;
+    .cf7-submit {
+      width: 100%;
+      padding: 14px 24px;
     }
+  }
 
-    .section-title {
-      font-size: 20px;
+  /* Loading spinner */
+  .wpcf7 .ajax-loader {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(59, 130, 246, 0.3);
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: cf7-spin 0.8s linear infinite;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  @keyframes cf7-spin {
+    to {
+      transform: rotate(360deg);
     }
+  }
+
+  .homepage-footer {
+    top: auto !important;
   }
 </style>

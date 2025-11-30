@@ -182,7 +182,7 @@
 <style>
   .homepage-footer {
     gap: 60px;
-    top: 4094px;
+    top: 4094px !important;
     left: 0px;
     width: 100%;
     height: 754px;

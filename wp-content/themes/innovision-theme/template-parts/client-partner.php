@@ -299,6 +299,7 @@
 .homepage-ellipse4382 {
   width: 8px;
   height: 8px;
+   border-radius: 50%;
   box-sizing: content-box;
   border-color: rgba(0, 122, 255, 0.15000000596046448);
   border-style: solid;
@@ -328,6 +329,7 @@
 .homepage-ellipse4383 {
   width: 8px;
   height: 8px;
+   border-radius: 50%;
   box-sizing: content-box;
   border-color: rgba(0, 122, 255, 0.15000000596046448);
   border-style: solid;
