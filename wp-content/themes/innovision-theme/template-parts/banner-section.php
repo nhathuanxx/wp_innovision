@@ -9,11 +9,11 @@ $bg_image = isset($args['bg']) ? $args['bg'] : get_template_directory_uri() . '/
 ?>
 <?php $lang = pll_current_language('slug'); ?>
 
-<section class="banner-section">
-    <img
+<section class="banner-section" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/bg.png'); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <!-- <img
         src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/bg.png'); ?>"
         alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-        class="banner-image" />
+        class="banner-image" /> -->
     <div class="banner-content">
         <div class="banner-content-detail">
             <div class="banner-content-title">
@@ -40,13 +40,13 @@ $bg_image = isset($args['bg']) ? $args['bg'] : get_template_directory_uri() . '/
 </section>
 <style>
     .banner-section {
-        top: 0px;
-        left: 0px;
+        /* top: 0px;
+        left: 0px; */
         width: 100%;
         min-height: 800px;
         height: auto;
         display: flex;
-        position: absolute;
+        /* position: absolute; */
         align-items: center;
         justify-content: center;
         flex-shrink: 1;

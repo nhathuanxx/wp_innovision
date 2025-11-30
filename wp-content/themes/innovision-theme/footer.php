@@ -184,7 +184,7 @@
     gap: 60px;
     top: 4094px;
     left: 0px;
-    width: 1920px;
+    width: 100%;
     height: 754px;
     display: flex;
     padding: 80px 114px 0;
@@ -199,7 +199,7 @@
     gap: 32px;
     width: 1320px;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     flex-shrink: 0;
   }
 

@@ -1,10 +1,10 @@
-<div class="homepage-group1321314265">
-    <div class="homepage-mask-background">
+<div class="homepage-group1321314265" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/client-partner-bg.png'); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <!-- <div class="homepage-mask-background">
         <img 
             src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/circle1017-o1r-1000h.png'); ?>" 
             alt="<?php echo esc_attr(get_bloginfo('name')); ?>" 
             class="homepage-circle">
-    </div>
+    </div> -->
 
     <div class="homepage-text100">
         <span class="homepage-text101">
@@ -114,7 +114,7 @@
     .homepage-group1321314265 {
   top: 3309px;
   left: 0px;
-  width: 1920px;
+  width: 100%;
   height: 784px;
   display: flex;
   position: absolute;
@@ -125,7 +125,7 @@
 .homepage-mask-background {
   top: 0px;
   left: 0px;
-  width: 1920px;
+  width: 100%;
   height: 784px;
   display: flex;
   overflow: hidden;
@@ -151,8 +151,7 @@
 .homepage-text100 {
   gap: 12px;
   top: 114px;
-  left: 478px;
-  width: 964.7341918945312px;
+  width: 100%;
   display: flex;
   position: absolute;
   align-items: center;
@@ -194,8 +193,9 @@
 .homepage-frame1618871148 {
   gap: 71px;
   top: 263px;
-  left: 197px;
+  width: 100%;
   display: flex;
+  justify-content: center;
   position: absolute;
   align-items: center;
 }
@@ -268,6 +268,7 @@
 .homepage-ellipse4381 {
   width: 8px;
   height: 8px;
+  border-radius: 50%;
   box-sizing: content-box;
   border-color: rgba(0, 122, 255, 0.15000000596046448);
   border-style: solid;
