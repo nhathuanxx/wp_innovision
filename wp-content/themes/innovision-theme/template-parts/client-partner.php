@@ -1,6 +1,6 @@
 <?php $lang = pll_current_language('slug'); ?>
 <div class="clients-partners-section" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/client-partner-bg.png'); ?>');">
-  
+
   <!-- Header -->
   <div class="section-header">
     <h2 class="section-title">
@@ -13,35 +13,35 @@
 
   <!-- Slider Container -->
   <div class="slider-wrapper">
-    
+
     <!-- Previous Button -->
     <button class="slider-btn btn-prev" id="prevBtn">
       <svg width="33" height="33" viewBox="0 0 33 33">
-        <circle cx="16.5" cy="16.5" r="16.5" fill="white" stroke="#E5E7EB" stroke-width="1"/>
-        <path d="M18.5 11L13.5 16.5L18.5 22" stroke="#474363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="16.5" cy="16.5" r="16.5" fill="white" stroke="#E5E7EB" stroke-width="1" />
+        <path d="M18.5 11L13.5 16.5L18.5 22" stroke="#474363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       </svg>
     </button>
 
     <!-- Slider Content -->
     <div class="slider-container">
       <div class="slider-track" id="sliderTrack">
-        
+
         <!-- Slide 1 -->
         <div class="slide active">
           <div class="slide-content">
             <h3 class="slide-title">Our Clients</h3>
-            
+
             <div class="client-list">
               <div class="client-item">
                 <span class="bullet"></span>
                 <p>Enterprises in manufacturing, real estate, and technology.</p>
               </div>
-              
+
               <div class="client-item">
                 <span class="bullet"></span>
                 <p>Government agencies adopting AI and data-driven solutions to enhance efficiency and public services.</p>
               </div>
-              
+
               <div class="client-item">
                 <span class="bullet"></span>
                 <p>Startups & SMEs outsourcing AI, software, and firmware development.</p>
@@ -63,32 +63,45 @@
         <div class="slide">
           <div class="slide-content">
             <h3 class="slide-title">Our Partners</h3>
-            
+
             <div class="client-list">
               <div class="client-item">
                 <span class="bullet"></span>
-                <p>Technology partners providing cutting-edge AI and cloud solutions.</p>
+                <p>Semiconductor companies – supporting hardware and embedded ecosystems.</p>
               </div>
-              
+
               <div class="client-item">
                 <span class="bullet"></span>
-                <p>Research institutions collaborating on innovation and development projects.</p>
+                <p>AWS/GCP – cloud & AI infrastructure.</p>
               </div>
-              
+
               <div class="client-item">
                 <span class="bullet"></span>
-                <p>Global semiconductor companies enabling edge AI capabilities.</p>
+                <p>Electronics factories – enabling real-world deployment of Edge AI devices.</p>
+              </div>
+              <div class="client-item">
+                <span class="bullet"></span>
+                <p>Universities & Research Institutes – co-developing AI innovation.</p>
               </div>
             </div>
           </div>
 
           <div class="logos-grid">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rotek4x19848-4g7i-200h.png'); ?>" alt="Partner 1" class="logo logo-1">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ais4x19847-b9pf-200h.png'); ?>" alt="Partner 2" class="logo logo-2">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image99850-s96-200h.png'); ?>" alt="Partner 3" class="logo logo-3">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image109853-whwh-200w.png'); ?>" alt="Partner 4" class="logo logo-4">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/itmon4x19855-nv68-200h.png'); ?>" alt="Partner 5" class="logo logo-5">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/tz4x19846-9iws-200h.png'); ?>" alt="Partner 6" class="logo logo-6">
+            <!-- <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/2logo1.png'); ?>" alt="Partner 1" class="logo logo-1">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/2logo2.png'); ?>" alt="Partner 2" class="logo logo-2">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/2logo3.png'); ?>" alt="Partner 3" class="logo logo-3">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/2logo4.png'); ?>" alt="Partner 4" class="logo logo-4">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/2logo5.png'); ?>" alt="Partner 5" class="logo logo-5">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/2logo6.png'); ?>" alt="Partner 6" class="logo logo-6">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/2logo7.png'); ?>" alt="Partner 4" class="logo logo-7">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/2logo8.png'); ?>" alt="Partner 5" class="logo logo-8">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/2logo9.png'); ?>" alt="Partner 6" class="logo logo-9"> -->
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rotek4x19848-4g7i-200h.png'); ?>" alt="Rostek" class="logo logo-1">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ais4x19847-b9pf-200h.png'); ?>" alt="AIS" class="logo logo-2">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image99850-s96-200h.png'); ?>" alt="Vinfast" class="logo logo-3">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image109853-whwh-200w.png'); ?>" alt="Devzone" class="logo logo-4">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/itmon4x19855-nv68-200h.png'); ?>" alt="ITmon" class="logo logo-5">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/tz4x19846-9iws-200h.png'); ?>" alt="TZ Hitec" class="logo logo-6">
           </div>
         </div>
 
@@ -98,8 +111,8 @@
     <!-- Next Button -->
     <button class="slider-btn btn-next" id="nextBtn">
       <svg width="33" height="33" viewBox="0 0 33 33">
-        <circle cx="16.5" cy="16.5" r="16.5" fill="white" stroke="#E5E7EB" stroke-width="1"/>
-        <path d="M14.5 11L19.5 16.5L14.5 22" stroke="#474363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="16.5" cy="16.5" r="16.5" fill="white" stroke="#E5E7EB" stroke-width="1" />
+        <path d="M14.5 11L19.5 16.5L14.5 22" stroke="#474363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       </svg>
     </button>
 
@@ -334,6 +347,7 @@
     display: flex;
     gap: 12px;
     margin-top: 40px;
+    display: none;
   }
 
   .indicator {
@@ -445,19 +459,19 @@
     const nextBtn = document.getElementById('nextBtn');
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
-    
+
     let currentSlide = 0;
     const totalSlides = slides.length;
 
     function updateSlider() {
       // Move slider
       sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-      
+
       // Update active states
       slides.forEach((slide, index) => {
         slide.classList.toggle('active', index === currentSlide);
       });
-      
+
       indicators.forEach((indicator, index) => {
         indicator.classList.toggle('active', index === currentSlide);
       });

@@ -2,7 +2,7 @@
         <div class="competencies-container">
             <div class="competencies-header">
                 <h2 class="competencies-title">
-                    <span class="competencies-highlight">Our</span> Core Competencies
+                    <span class="competencies-highlight">Our</span> <span class="title-highlight">Core Competencies</span>
                 </h2>
                 <p class="competencies-subtitle">
                     We operate across three complementary pillars to deliver innovation and value.

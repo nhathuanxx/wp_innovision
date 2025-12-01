@@ -2,7 +2,7 @@
   <div class="howwework-text-block">
     <span class="howwework-title">
       <span class="howwework-title-highlight">How</span>
-      <span>We Work</span>
+      <span class="title-highlight">We Work</span>
     </span>
     <span class="howwework-description">
       <span>
@@ -16,93 +16,95 @@
       </span>
     </span>
   </div>
+  <div class="howwework-images-group-container" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image61224-afigh-400h.png'); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="howwework-images-group">
 
-  <div class="howwework-images-group" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image61224-afigh-400h.png'); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <img
+        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image31414-wcz-200w.png'); ?>"
+        alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+        class="howwework-image3" />
 
-    <img
-      src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image31414-wcz-200w.png'); ?>"
-      alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-      class="howwework-image3" />
+      <img
+        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image81415-emn8-200w.png'); ?>"
+        alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+        class="howwework-image8" />
 
-    <img
-      src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image81415-emn8-200w.png'); ?>"
-      alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-      class="howwework-image8" />
-
-    <div class="howwework-card">
-      <div class="howwework-card-image">
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4371418-2h9s-200h.png'); ?>"
-          alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-          class="howwework-ellipse1" />
+      <div class="howwework-card">
+        <div class="howwework-card-image">
+          <img
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4371418-2h9s-200h.png'); ?>"
+            alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+            class="howwework-ellipse1" />
+        </div>
+        <div class="howwework-card-text">
+          <span class="howwework-card-title">Lean &amp; Efficient</span>
+          <span class="howwework-card-description">
+            <span>Small teams, high impact, clear</span>
+            <br />
+            <span>priorities.</span>
+          </span>
+        </div>
       </div>
-      <div class="howwework-card-text">
-        <span class="howwework-card-title">Lean &amp; Efficient</span>
-        <span class="howwework-card-description">
-          <span>Small teams, high impact, clear</span>
-          <br />
-          <span>priorities.</span>
-        </span>
+
+      <div class="howwework-card howwework-card-learning">
+        <div class="howwework-card-image">
+          <img
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4371424-mhcm-200h.png'); ?>"
+            alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+            class="howwework-ellipse2" />
+        </div>
+        <div class="howwework-card-text">
+          <span class="howwework-card-title">Continuous Learning</span>
+          <span class="howwework-card-description">
+            <span>Every challenge is an opportunity to</span>
+            <br />
+            <span>grow skills and knowledge.</span>
+          </span>
+        </div>
       </div>
+
+      <div class="howwework-card howwework-card-research">
+        <div class="howwework-card-image">
+          <img
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4371430-p4fc-200h.png'); ?>"
+            alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+            class="howwework-ellipse3" />
+        </div>
+        <div class="howwework-card-text">
+          <span class="howwework-card-title">Research Meets Practice</span>
+          <span class="howwework-card-description">
+            <span>We transform cutting-edge AI into</span>
+            <br />
+            <span>real-world applications.</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="howwework-card howwework-card-partnership">
+        <div class="howwework-card-image">
+          <img
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4371436-vims-200h.png'); ?>"
+            alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+            class="howwework-ellipse4" />
+        </div>
+        <div class="howwework-card-text">
+          <span class="howwework-card-title">Partnership Mindset</span>
+          <span class="howwework-card-description">
+            <span>We treat clients and partners as</span>
+            <br />
+            <span>collaborators, not just customers.</span>
+          </span>
+        </div>
+      </div>
+
+      <img
+        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image71440-vl5g-200w.png'); ?>"
+        alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+        class="howwework-image7" />
+
     </div>
-
-    <div class="howwework-card howwework-card-learning">
-      <div class="howwework-card-image">
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4371424-mhcm-200h.png'); ?>"
-          alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-          class="howwework-ellipse2" />
-      </div>
-      <div class="howwework-card-text">
-        <span class="howwework-card-title">Continuous Learning</span>
-        <span class="howwework-card-description">
-          <span>Every challenge is an opportunity to</span>
-          <br />
-          <span>grow skills and knowledge.</span>
-        </span>
-      </div>
-    </div>
-
-    <div class="howwework-card howwework-card-research">
-      <div class="howwework-card-image">
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4371430-p4fc-200h.png'); ?>"
-          alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-          class="howwework-ellipse3" />
-      </div>
-      <div class="howwework-card-text">
-        <span class="howwework-card-title">Research Meets Practice</span>
-        <span class="howwework-card-description">
-          <span>We transform cutting-edge AI into</span>
-          <br />
-          <span>real-world applications.</span>
-        </span>
-      </div>
-    </div>
-
-    <div class="howwework-card howwework-card-partnership">
-      <div class="howwework-card-image">
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4371436-vims-200h.png'); ?>"
-          alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-          class="howwework-ellipse4" />
-      </div>
-      <div class="howwework-card-text">
-        <span class="howwework-card-title">Partnership Mindset</span>
-        <span class="howwework-card-description">
-          <span>We treat clients and partners as</span>
-          <br />
-          <span>collaborators, not just customers.</span>
-        </span>
-      </div>
-    </div>
-
-    <img
-      src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image71440-vl5g-200w.png'); ?>"
-      alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-      class="howwework-image7" />
-
   </div>
+
 
   <!-- <div class="howwework-bottom-image">
     <img
@@ -161,12 +163,21 @@
     text-decoration: none;
   }
 
+  .howwework-images-group-container {
+    width: 100%;
+    margin-top: 90px;
+  }
+
   .howwework-images-group {
     width: 1320px;
+    margin: 0 auto;
     height: 295px;
     display: flex;
     position: relative;
-    align-items: flex-start;
+    align-items: center;
+    position: relative;
+    top: -90px;
+    /* justify-content: center; */
     flex-shrink: 1;
   }
 
