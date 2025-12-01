@@ -191,7 +191,7 @@
 
   .footer-copyright {
     width: 1320px;
-    padding-top: 33px;
+    padding: 33px;
     border-top: 1px solid rgba(224, 224, 224, 1);
     text-align: center;
   }
