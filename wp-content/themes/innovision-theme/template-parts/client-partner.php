@@ -15,12 +15,12 @@
   <div class="slider-wrapper">
 
     <!-- Previous Button -->
-    <button class="slider-btn btn-prev" id="prevBtn">
+    <div class="slider-btn btn-prev" id="prevBtn">
       <svg width="33" height="33" viewBox="0 0 33 33">
         <circle cx="16.5" cy="16.5" r="16.5" fill="white" stroke="#E5E7EB" stroke-width="1" />
         <path d="M18.5 11L13.5 16.5L18.5 22" stroke="#474363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       </svg>
-    </button>
+    </div>
 
     <!-- Slider Content -->
     <div class="slider-container">
@@ -109,12 +109,12 @@
     </div>
 
     <!-- Next Button -->
-    <button class="slider-btn btn-next" id="nextBtn">
+    <div class="slider-btn btn-next" id="nextBtn">
       <svg width="33" height="33" viewBox="0 0 33 33">
         <circle cx="16.5" cy="16.5" r="16.5" fill="white" stroke="#E5E7EB" stroke-width="1" />
         <path d="M14.5 11L19.5 16.5L14.5 22" stroke="#474363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       </svg>
-    </button>
+    </div>
 
   </div>
 
