@@ -4,93 +4,70 @@
  * Template Name: Solutions
  */
 get_header();
-$lang = pll_current_language('slug'); // vi / en
+$lang = pll_current_language('slug');
 ?>
+
 <?php get_template_part('template-parts/page', 'title', [
   'subtitle' => 'Comprehensive AI and technology solutions for modern enterprises.',
 ]); ?>
 
+<div class="solutions-section">
+  <div class="solutions-container">
 
-<div class="frame1618871139-container1">
-  <div class="frame1618871139-frame1618871139">
-
-    <!-- BLOCK 1 -->
-    <div class="frame1618871139-frame1618871136">
+    <!-- Solution 1: AI Products -->
+    <div class="solution-card">
       <img
         src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22931405-fkt9-400h.png'); ?>"
-        alt="Rectangle22931405"
-        class="frame1618871139-rectangle22931">
+        alt="AI Products"
+        class="solution-image">
 
-      <div class="frame1618871139-frame1618871129">
-        <span class="frame1618871139-text10">AI Products</span>
-        <span class="frame1618871139-text11">
-          A suite of AI products that automates analysis, Q&amp;A, and
-          real-time decision making
-        </span>
+      <div class="solution-content">
+        <h2 class="solution-title">AI Products</h2>
+        <p class="solution-description">
+          A suite of AI products that automates analysis, Q&A, and real-time decision making
+        </p>
 
-        <div class="frame1618871139-frame952331">
-          <div class="frame1618871139-framelemlist-buttonnew1">
-            <span class="frame1618871139-text12">Learn more</span>
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22921371-qiu-200h.png'); ?>"
-              alt="Rectangle22921371"
-              class="frame1618871139-rectangle22921">
-          </div>
-        </div>
+        <a href="<?php echo esc_url(home_url('/ai-products')); ?>" class="solution-btn">
+          <span>Learn more</span>
+        </a>
       </div>
     </div>
 
-    <!-- BLOCK 2 -->
-    <div class="frame1618871139-frame1618871137">
+    <!-- Solution 2: Industrial AI & Automation -->
+    <div class="solution-card solution-reverse">
+      <div class="solution-content">
+        <h2 class="solution-title">Industrial AI & Automation</h2>
+        <p class="solution-description">
+          End-to-end industrial AI solutions for inspection, failure prediction, and factory system integration
+        </p>
 
-      <div class="frame1618871139-frame1618871130">
-        <span class="frame1618871139-text13">Industrial AI &amp; Automation</span>
-        <span class="frame1618871139-text14">
-          End-to-end industrial AI solutions for inspection, failure prediction,
-          and factory system integration
-        </span>
-
-        <div class="frame1618871139-frame952332">
-          <div class="frame1618871139-framelemlist-buttonnew2">
-            <span class="frame1618871139-text15">Learn more</span>
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22921371-5g1w-200h.png'); ?>"
-              alt="Rectangle22921371"
-              class="frame1618871139-rectangle22922">
-          </div>
-        </div>
+        <a href="<?php echo esc_url(home_url('/industrial-ai-automation')); ?>" class="solution-btn">
+          <span>Learn more</span>
+        </a>
       </div>
 
       <img
         src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22931405-z92p-400h.png'); ?>"
-        alt="Rectangle22931405"
-        class="frame1618871139-rectangle22932">
+        alt="Industrial AI & Automation"
+        class="solution-image">
     </div>
 
-    <!-- BLOCK 3 -->
-    <div class="frame1618871139-frame1618871138">
-
+    <!-- Solution 3: Software & Firmware Development -->
+    <div class="solution-card">
       <img
         src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22931405-y8rz-400h.png'); ?>"
-        alt="Rectangle22931405"
-        class="frame1618871139-rectangle22933">
+        alt="Software & Firmware Development"
+        class="solution-image">
 
-      <div class="frame1618871139-frame1618871131">
-        <span class="frame1618871139-text16">Software &amp; Firmware Development</span>
-        <span class="frame1618871139-text17">
-          Software engineering and embedded system development for technology products
-          and enterprise solutions
-        </span>
+      <div class="solution-content">
+        <h2 class="solution-title">Software & Firmware Development</h2>
+        <p class="solution-description">
+          Software engineering and embedded system development for technology products and enterprise solutions
+        </p>
 
-        <div class="frame1618871139-frame952333">
-          <div class="frame1618871139-framelemlist-buttonnew3">
-            <span class="frame1618871139-text18">Learn more</span>
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22921371-qru-200h.png'); ?>"
-              alt="Rectangle22921371"
-              class="frame1618871139-rectangle22923">
-          </div>
-        </div>
+        <a href="<?php echo esc_url(home_url('/software-firmware-development')); ?>" class="solution-btn">
+          <span>Learn more</span>
+        </a>
       </div>
     </div>
 
@@ -100,340 +77,266 @@ $lang = pll_current_language('slug'); // vi / en
 <?php get_footer(); ?>
 
 <style>
-  .frame1618871139-container1 {
-    padding: 56px 0px 112px 0px;
+  .solutions-section {
+    width: 100%;
+    padding: 56px 20px 112px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .solutions-container {
+    max-width: 1320px;
     width: 100%;
     display: flex;
-    overflow: auto;
-    min-height: 100vh;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* Solution Card */
+  .solution-card {
+    display: flex;
     align-items: center;
-    flex-direction: column;
-  }
-
-  .frame1618871139-frame1618871139 {
     gap: 32px;
-    width: 1320px;
-    height: auto;
-    display: flex;
-    align-items: flex-end;
-    flex-shrink: 0;
-    flex-direction: column;
-  }
-
-  .frame1618871139-frame1618871136 {
-    gap: 32px;
-    display: flex;
     padding: 32px;
-    align-self: stretch;
-    box-shadow: 0px 1px 4px 0px rgba(12, 12, 13, 0.10000000149011612);
-    align-items: center;
-    flex-shrink: 0;
+    background: #FFFFFF;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 1px 4px rgba(12, 12, 13, 0.1);
+    transition: all 0.3s ease;
   }
 
-  .frame1618871139-rectangle22931 {
+  .solution-card:hover {
+    box-shadow: 0px 8px 24px rgba(60, 144, 252, 0.15);
+    transform: translateY(-4px);
+  }
+
+  /* Reverse layout for alternating cards - Desktop only */
+  /* @media (min-width: 1025px) {
+    .solution-reverse {
+      flex-direction: row-reverse;
+    }
+  } */
+
+  /* Solution Image */
+  .solution-image {
     width: 611px;
+    max-width: 50%;
     height: 344px;
+    object-fit: cover;
     border-radius: 20px;
+    flex-shrink: 0;
   }
 
-  .frame1618871139-frame1618871129 {
+  /* Solution Content */
+  .solution-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     gap: 16px;
-    width: 613px;
-    display: flex;
-    flex-grow: 1;
-    align-items: flex-start;
-    flex-shrink: 0;
-    flex-direction: column;
+    min-width: 0;
   }
 
-  .frame1618871139-text10 {
-    color: rgba(71, 67, 99, 1);
-    height: auto;
+  .solution-title {
+    font-family: 'Inter', sans-serif;
     font-size: 36px;
-    align-self: stretch;
-    font-style: Bold;
-    text-align: left;
-    font-family: Inter;
     font-weight: 700;
+    color: #474363;
     line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
+    margin: 0;
   }
 
-  .frame1618871139-text11 {
-    color: rgba(71, 67, 99, 1);
-    height: auto;
+  .solution-description {
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
-    align-self: stretch;
-    font-style: Regular;
-    text-align: left;
-    font-family: Inter;
     font-weight: 400;
+    color: #474363;
     line-height: 28px;
-    font-stretch: normal;
-    text-decoration: none;
+    margin: 0;
   }
 
-  .frame1618871139-frame952331 {
-    gap: 10px;
-    display: flex;
+  /* Solution Button */
+  .solution-btn {
+    display: inline-flex;
     align-items: center;
-    flex-direction: column;
-  }
-
-  .frame1618871139-framelemlist-buttonnew1 {
-    gap: 8px;
-    display: flex;
-    padding: 20px 36px;
-    position: relative;
-    box-shadow: 0px 10px 19px 0px rgba(49, 107, 255, 0.2800000011920929);
-    align-items: center;
-    border-color: rgba(13, 81, 255, 1);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
     justify-content: center;
-    background-color: rgba(48, 106, 255, 1);
-  }
-
-  .frame1618871139-text12 {
-    color: white;
-    height: auto;
-    z-index: 1;
-    font-size: 20px;
-    font-style: Semi Bold;
-    text-align: center;
-    font-family: Inter;
-    font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-
-  .frame1618871139-rectangle22921 {
-    top: 1px;
-    left: 1px;
-    width: 180px;
-    height: 62px;
-    z-index: 3;
-    position: absolute;
-    border-color: rgba(89, 135, 255, 1);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 9px;
-  }
-
-  .frame1618871139-frame1618871137 {
-    gap: 32px;
-    display: flex;
-    padding: 32px;
-    align-self: stretch;
-    box-shadow: 0px 1px 4px 0px rgba(12, 12, 13, 0.10000000149011612);
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 1);
-  }
-
-  .frame1618871139-frame1618871130 {
-    gap: 16px;
-    width: 611px;
-    display: flex;
-    align-items: flex-start;
-    flex-shrink: 0;
-    flex-direction: column;
-  }
-
-  .frame1618871139-text13 {
-    color: rgba(71, 67, 99, 1);
-    height: auto;
-    font-size: 36px;
-    align-self: stretch;
-    font-style: Bold;
-    text-align: left;
-    font-family: Inter;
-    font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-
-  .frame1618871139-text14 {
-    color: rgba(71, 67, 99, 1);
-    height: auto;
-    font-size: 16px;
-    align-self: stretch;
-    font-style: Regular;
-    text-align: left;
-    font-family: Inter;
-    font-weight: 400;
-    line-height: 28px;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-
-  .frame1618871139-frame952332 {
-    gap: 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .frame1618871139-framelemlist-buttonnew2 {
-    gap: 8px;
-    display: flex;
     padding: 20px 36px;
-    position: relative;
-    box-shadow: 0px 10px 19px 0px rgba(49, 107, 255, 0.2800000011920929);
-    align-items: center;
-    border-color: rgba(13, 81, 255, 1);
-    border-style: solid;
-    border-width: 1px;
+    background: #306BFF;
+    border: 1px solid #0D51FF;
     border-radius: 10px;
-    justify-content: center;
-    background-color: rgba(48, 106, 255, 1);
-  }
-
-  .frame1618871139-text15 {
-    color: white;
-    height: auto;
-    z-index: 1;
-    font-size: 20px;
-    font-style: Semi Bold;
-    text-align: center;
-    font-family: Inter;
-    font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
+    box-shadow: 0px 10px 19px rgba(49, 107, 255, 0.28);
     text-decoration: none;
-  }
-
-  .frame1618871139-rectangle22922 {
-    top: 1px;
-    left: 1px;
-    width: 180px;
-    height: 62px;
-    z-index: 3;
-    position: absolute;
-    border-color: rgba(89, 135, 255, 1);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 9px;
-  }
-
-  .frame1618871139-rectangle22932 {
-    width: 611px;
-    height: 344px;
-    border-radius: 20px;
-  }
-
-  .frame1618871139-frame1618871138 {
-    gap: 32px;
-    display: flex;
-    padding: 32px;
-    align-self: stretch;
-    box-shadow: 0px 1px 4px 0px rgba(12, 12, 13, 0.10000000149011612);
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 1);
-  }
-
-  .frame1618871139-rectangle22933 {
-    width: 611px;
-    height: 344px;
-    border-radius: 20px;
-  }
-
-  .frame1618871139-frame1618871131 {
-    gap: 16px;
-    width: 611px;
-    display: flex;
-    align-items: flex-start;
-    flex-shrink: 0;
-    flex-direction: column;
-  }
-
-  .frame1618871139-text16 {
-    color: rgba(71, 67, 99, 1);
-    height: auto;
-    font-size: 36px;
-    align-self: stretch;
-    font-style: Bold;
-    text-align: left;
-    font-family: Inter;
-    font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-
-  .frame1618871139-text17 {
-    color: rgba(71, 67, 99, 1);
-    height: auto;
-    font-size: 16px;
-    align-self: stretch;
-    font-style: Regular;
-    text-align: left;
-    font-family: Inter;
-    font-weight: 400;
-    line-height: 28px;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-
-  .frame1618871139-frame952333 {
-    gap: 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .frame1618871139-framelemlist-buttonnew3 {
-    gap: 8px;
-    display: flex;
-    padding: 20px 36px;
+    transition: all 0.3s ease;
+    align-self: flex-start;
     position: relative;
-    box-shadow: 0px 10px 19px 0px rgba(49, 107, 255, 0.2800000011920929);
-    align-items: center;
-    border-color: rgba(13, 81, 255, 1);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    justify-content: center;
-    background-color: rgba(48, 106, 255, 1);
+    overflow: hidden;
   }
 
-  .frame1618871139-text18 {
-    color: white;
-    height: auto;
-    z-index: 1;
-    font-size: 20px;
-    font-style: Semi Bold;
-    text-align: center;
-    font-family: Inter;
-    font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-
-  .frame1618871139-rectangle22923 {
-    top: 1px;
-    left: 1px;
-    width: 180px;
-    height: 62px;
-    z-index: 3;
+  .solution-btn::before {
+    content: '';
     position: absolute;
-    border-color: rgba(89, 135, 255, 1);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 9px;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+  }
+
+  .solution-btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .solution-btn:hover {
+    background: #4178FF;
+    transform: translateY(-2px);
+    box-shadow: 0px 15px 25px rgba(49, 107, 255, 0.35);
+  }
+
+  .solution-btn:active {
+    transform: translateY(0);
+    box-shadow: 0px 8px 15px rgba(49, 107, 255, 0.25);
+  }
+
+  .solution-btn span {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: normal;
+    position: relative;
+    z-index: 1;
   }
 
   .homepage-footer {
     top: auto !important;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1400px) {
+    .solutions-section {
+      padding: 50px 40px 100px;
+    }
+
+    .solution-image {
+      width: 500px;
+      height: 300px;
+    }
+
+    .solution-title {
+      font-size: 32px;
+    }
+
+    .solution-description {
+      font-size: 15px;
+      line-height: 26px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .solutions-section {
+      padding: 40px 30px 80px;
+    }
+
+    .solution-card {
+      flex-direction: column;
+    }
+
+    .solution-reverse {
+      flex-direction: column-reverse
+    }
+
+    .solution-image {
+      width: 100%;
+      max-width: 100%;
+      height: 280px;
+    }
+
+    .solution-title {
+      font-size: 28px;
+    }
+
+    .solution-btn {
+      align-self: center;
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .solutions-section {
+      padding: 40px 24px 70px;
+    }
+
+    .solutions-container {
+      gap: 24px;
+    }
+
+    .solution-card {
+      padding: 24px;
+      gap: 24px;
+    }
+
+    .solution-image {
+      height: 240px;
+    }
+
+    .solution-title {
+      font-size: 24px;
+    }
+
+    .solution-description {
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    .solution-btn span {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .solutions-section {
+      padding: 30px 15px 60px;
+    }
+
+    .solutions-container {
+      gap: 20px;
+    }
+
+    .solution-card {
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .solution-image {
+      height: 200px;
+      border-radius: 16px;
+    }
+
+    .solution-content {
+      gap: 12px;
+    }
+
+    .solution-title {
+      font-size: 22px;
+    }
+
+    .solution-description {
+      font-size: 13px;
+      line-height: 22px;
+    }
+
+    .solution-btn {
+      padding: 16px 28px;
+      max-width: 100%;
+    }
+
+    .solution-btn span {
+      font-size: 16px;
+    }
   }
 </style>

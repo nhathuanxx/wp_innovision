@@ -1,22 +1,18 @@
 <?php
-
 /**
  * Reusable Page Title component
- * Usage: get_template_part('template-parts/page', 'title', array('bg' => $bg_image));
+ * Usage: get_template_part('template-parts/page', 'title', array('bg' => $bg_image, 'subtitle' => 'Your subtitle'));
  */
 
 $bg_image = isset($args['bg']) ? $args['bg'] : get_template_directory_uri() . '/assets/images/background/2.jpg';
+$subtitle = isset($args['subtitle']) ? $args['subtitle'] : '';
+$lang = pll_current_language('slug');
 ?>
-<?php $lang = pll_current_language('slug'); ?>
 
-<section class="page-title-section" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image241395-m00k-3400w.png'); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <!-- <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/bg.png'); ?>"
-        alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-        class="page-title-image" /> -->
+<section class="page-title-section" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image241395-m00k-3400w.png'); ?>');">
     <div class="page-title-content">
         <div class="page-title-content-detail">
-            <div class="page-title-content-title">
+            <h1 class="page-title-content-title">
                 <?php
                 if (is_archive()) {
                     the_archive_title(); // Tên danh mục / tag / archive
@@ -26,161 +22,170 @@ $bg_image = isset($args['bg']) ? $args['bg'] : get_template_directory_uri() . '/
                     bloginfo('name'); // Tiêu đề mặc định site
                 }
                 ?>
-            </div>
-            <div class="page-title-content-sub-title">
-                <?php echo esc_html($args['subtitle']); ?>
-            </div>
+            </h1>
+            
+            <?php if (!empty($subtitle)): ?>
+            <p class="page-title-content-sub-title">
+                <?php echo esc_html($subtitle); ?>
+            </p>
+            <?php endif; ?>
         </div>
     </div>
-    </div>
 </section>
+
 <style>
     .page-title-section {
-        /* top: 0px;
-        left: 0px; */
         width: 100%;
         min-height: 500px;
         height: auto;
         display: flex;
-        /* position: absolute; */
         align-items: center;
         justify-content: center;
-        flex-shrink: 1;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        padding: 120px 20px 80px;
+    }
+
+    .page-title-content {
+        width: 100%;
+        max-width: 1320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .page-title-content-detail {
         display: flex;
         flex-direction: column;
-        gap: 24px;
-    }
-
-    .page-title-image {
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: -1;
-    }
-
-    .page-title-content-actions .banner {
-        gap: 8px;
-        display: flex;
-        padding: 20px 36px;
-        position: relative;
-        box-shadow: 0px 10px 19px 0px rgba(49, 107, 255, 0.2800000011920929);
         align-items: center;
-        border-color: rgba(13, 81, 255, 1);
-        border-style: solid;
-        border-width: 1px;
-        border-radius: 10px;
-        justify-content: center;
-        background-color: rgba(48, 106, 255, 1);
+        gap: 24px;
+        text-align: center;
+        width: 100%;
     }
 
+    /* Title */
     .page-title-content-title {
-        font-family: Montserrat, sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 64px;
         line-height: 100%;
-        letter-spacing: -2%;
+        letter-spacing: -0.02em;
         text-align: center;
-
+        margin: 0;
         background: linear-gradient(142.89deg, #3C90FC 18.17%, rgba(60, 144, 252, 0) 152.61%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-
-        z-index: 1;
+        word-break: break-word;
     }
 
+    /* Subtitle */
     .page-title-content-sub-title {
-        font-family: Inter, sans-serif;
+        font-family: 'Inter', sans-serif;
         font-weight: 500;
         font-size: 16px;
         line-height: 28px;
         letter-spacing: -0.2px;
         text-align: center;
-        width: 1320px;
-        margin: 0 auto;
         color: #3C3C3C;
+        margin: 0;
+        max-width: 1320px;
+        width: 100%;
     }
 
-    .contact-us-button {
-        width: 181px;
-        height: 64px;
-        opacity: 1;
+    /* Responsive Design */
+    @media (max-width: 1400px) {
+        .page-title-section {
+            padding: 100px 40px 70px;
+        }
 
-        border-width: 1px;
-        border-radius: 10px;
+        .page-title-content-title {
+            font-size: 56px;
+        }
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: radial-gradient(163.33% 163.33% at 50% 100%,
-                rgba(255, 255, 255, 0.45) 0%,
-                rgba(0, 0, 0, 0) 100%), #316BFF;
-
-        border: 1px solid #0E51FF;
-        box-shadow: 0px 10px 19px 0px #316BFF47;
+        .page-title-content-sub-title {
+            font-size: 15px;
+            line-height: 26px;
+        }
     }
 
-    .page-title-contact-us-text {
-        font-family: Inter, sans-serif;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 100%;
-        text-align: center;
-        color: #FFFFFF;
-        white-space: nowrap;
+    @media (max-width: 1024px) {
+        .page-title-section {
+            min-height: 400px;
+            padding: 90px 30px 60px;
+        }
+
+        .page-title-content-title {
+            font-size: 48px;
+        }
+
+        .page-title-content-sub-title {
+            font-size: 15px;
+            line-height: 26px;
+            max-width: 800px;
+        }
     }
 
-    .view-solutions-button {
-        width: 222px;
-        height: 64px;
-        opacity: 1;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #FCFCFC;
-        box-shadow:
-            0px 10px 10px -3.75px #00000010,
-            0px 2.29px 2.29px -2.5px #00000029,
-            0px 0.6px 0.6px -1.25px #0000002E,
-            inset 0px -5px 4px -3.5px #4788FF4D,
-            inset 0px -1.14px 0.92px -2.33px #4788FF9B,
-            inset 0px -0.3px 0.24px -1.17px #4788FFAC;
+    @media (max-width: 768px) {
+        .page-title-section {
+            min-height: 350px;
+            padding: 80px 24px 50px;
+        }
+
+        .page-title-content-detail {
+            gap: 20px;
+        }
+
+        .page-title-content-title {
+            font-size: 40px;
+            line-height: 110%;
+        }
+
+        .page-title-content-sub-title {
+            font-size: 14px;
+            line-height: 24px;
+            max-width: 600px;
+        }
     }
 
-    .page-title-solutions-text {
-        font-family: Inter, sans-serif;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 28px;
-        letter-spacing: -0.2px;
-        text-align: center;
-        color: #0A4DBB;
+    @media (max-width: 480px) {
+        .page-title-section {
+            min-height: 300px;
+            padding: 70px 20px 40px;
+        }
+
+        .page-title-content-detail {
+            gap: 16px;
+        }
+
+        .page-title-content-title {
+            font-size: 32px;
+            line-height: 110%;
+        }
+
+        .page-title-content-sub-title {
+            font-size: 13px;
+            line-height: 22px;
+            max-width: 100%;
+        }
     }
 
-    .page-title-content-actions-container {
-        display: flex;
-        justify-content: center;
-    }
+    @media (max-width: 360px) {
+        .page-title-section {
+            min-height: 280px;
+            padding: 60px 15px 35px;
+        }
 
-    .page-title-content-actions {
-        width: 468px;
-        height: 64px;
-        opacity: 1;
+        .page-title-content-title {
+            font-size: 28px;
+        }
 
-        padding: 0 20.5px;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
+        .page-title-content-sub-title {
+            font-size: 12px;
+            line-height: 20px;
+        }
     }
 </style>
 <!--End Page Title-->
-
-<!--Breadcrumb-->

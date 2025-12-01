@@ -1,927 +1,633 @@
 <?php
-
 /**
  * Template Name: About Us
  */
 get_header();
-$lang = pll_current_language('slug'); // vi / en
+$lang = pll_current_language('slug');
 ?>
-<?php get_template_part('template-parts/page', 'title',    [
+
+<?php get_template_part('template-parts/page', 'title', [
     'subtitle' => 'Engineering Intelligence for the Real World',
 ]); ?>
 
-
 <div class="about-us-section">
-    <div class="aboutus-frame1618871125">
-        <div class="about-us-title-container">
-            <span class="aboutus-text17">
-                <span class="aboutus-text18">About</span>
-                <span style="color:#3C90FC">Innovision</span>
-            </span>
+    <!-- About Innovision -->
+    <div class="about-intro-wrapper">
+        <div class="about-title-container">
+            <h2 class="about-title">
+                <span>About </span>
+                <span class="title-highlight">Innovision</span>
+            </h2>
         </div>
 
-        <div style="width:100%;padding-bottom:116px;padding-top:24px;background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/bg-about-us.png'); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-            <div class="about-us-detail">
-                <div class="aboutus-frame1618871127">
-                    <span class="aboutus-text20">Software Technology Solutions</span>
-                    <span class="aboutus-text21">Custom Software Services</span>
+        <div class="about-detail-bg" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/bg-about-us.png'); ?>');">
+            <div class="about-detail-content">
+                <div class="about-subtitle-group">
+                    <span class="about-subtitle">Software Technology Solutions</span>
+                    <span class="about-subtitle">Custom Software Services</span>
                 </div>
 
-                <div class="about-us-line">
+                <div class="about-divider"></div>
 
-                </div>
+                <p class="about-description">
+                    Innovision Corporation is a technology startup specializing in AI, LLMs, and Edge AI. We deliver scalable, real-world solutions by combining AI software and embedded systems expertise. Beyond product development, we also provide automation, software, and firmware services that drive sustainable business growth.
+                </p>
 
-                <span class="aboutus-text22">
-                    Innovision Corporation is a technology startup specializing in AI,
-                    LLMs, and Edge AI. We deliver scalable, real-world solutions by
-                    combining AI software and embedded systems expertise. Beyond
-                    product development, we also provide automation, software, and
-                    firmware services that drive sustainable business growth.
-                </span>
-
-                <div class="aboutus-frame16188711261">
-                    <div class="aboutus-link-get-early-access">
-                        <span class="about-us-link-text">Our Projects</span>
-                    </div>
-                    <div class="aboutus-frame95233">
-                        <div class="aboutus-framelemlist-buttonnew">
-                            <span class="aboutus-text23">Tell us your requirements</span>
-                            <!-- <img
-                        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22921107-dvyz-400w.png'); ?>"
-                        alt="Rectangle22921107"
-                        class="aboutus-rectangle2292" /> -->
-                        </div>
-                    </div>
+                <div class="about-cta-buttons">
+                    <a href="<?php echo esc_url(home_url('/portfolio')); ?>" class="btn-secondary">
+                        <span>Our Projects</span>
+                    </a>
+                    <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="btn-primary">
+                        <span>Tell us your requirements</span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="about-us-frame1618871135">
-        <div class="aboutus-frame16188711262">
-            <span class="aboutus-text24">
-                <span class="aboutus-text25">Our</span>
-                <span style="color:#3C90FC">Vision</span>
-            </span>
-            <div class="aboutus-frame16188711191">
-                <span class="aboutus-text27">
-                    To become a leading AI and Edge Computing technology company
-                    in Southeast Asia, empowering enterprises to unlock the
-                    potential of their data and accelerate digital transformation.
-                </span>
-            </div>
+    <!-- Vision & Mission -->
+    <div class="vision-mission-wrapper">
+        <!-- Vision -->
+        <div class="vision-card">
+            <h3 class="card-title">
+                <span>Our </span>
+                <span class="title-highlight">Vision</span>
+            </h3>
+            <p class="card-text">
+                To become a leading AI and Edge Computing technology company in Southeast Asia, empowering enterprises to unlock the potential of their data and accelerate digital transformation.
+            </p>
         </div>
 
-        <div class="aboutus-frame16188711221-container">
-            <div class="aboutus-frame16188711221">
-                <span class="aboutus-text28">
-                    <span class="aboutus-text29">Our</span>
-                    <span style="color:#3C90FC">Mission</span>
-                </span>
+        <!-- Mission -->
+        <div class="mission-card">
+            <h3 class="card-title">
+                <span>Our </span>
+                <span class="title-highlight">Mission</span>
+            </h3>
 
-                <div class="aboutus-frame16188711192">
-                    <img
-                        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4381158-b51o-200h.png'); ?>"
-                        alt="Ellipse4381158"
-                        class="aboutus-ellipse4381" />
-                    <span class="aboutus-text31">
-                        Bring AI closer to data and operational workflows.
-                    </span>
+            <div class="mission-list">
+                <div class="mission-item">
+                    <span class="bullet"></span>
+                    <p>Bring AI closer to data and operational workflows.</p>
                 </div>
 
-                <div class="aboutus-frame1618871120">
-                    <img
-                        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4381159-6y0r-200h.png'); ?>"
-                        alt="Ellipse4381159"
-                        class="aboutus-ellipse4382" />
-                    <span class="aboutus-text32">
-                        Transform unstructured information into actionable business intelligence.
-                    </span>
+                <div class="mission-item">
+                    <span class="bullet"></span>
+                    <p>Transform unstructured information into actionable business intelligence.</p>
                 </div>
 
-                <div class="aboutus-frame1618871121">
-                    <img
-                        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4381159-na8a-200h.png'); ?>"
-                        alt="Ellipse4381159"
-                        class="aboutus-ellipse4383" />
-                    <span class="aboutus-text33">
-                        Build a reusable and scalable AI ecosystem that bridges research and applications.
-                    </span>
+                <div class="mission-item">
+                    <span class="bullet"></span>
+                    <p>Build a reusable and scalable AI ecosystem that bridges research and applications.</p>
                 </div>
 
-                <div class="aboutus-frame16188711222">
-                    <img
-                        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4381353-4b2l-200h.png'); ?>"
-                        alt="Ellipse4381353"
-                        class="aboutus-ellipse4384" />
-                    <span class="aboutus-text34">
-                        Deliver innovative solutions that drive sustainable business growth.
-                    </span>
+                <div class="mission-item">
+                    <span class="bullet"></span>
+                    <p>Deliver innovative solutions that drive sustainable business growth.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="aboutus-frame1618871128">
-        <div class="aboutus-group1321314263">
-            <div class="aboutus-image-replace-about09">
-                <img
-                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image1324-lvv-900h.png'); ?>"
-                    alt="Image1324"
-                    class="aboutus-image" />
-            </div>
+    <!-- Our Values -->
+    <div class="values-wrapper">
+        <div class="values-image">
+            <img
+                src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image1324-lvv-900h.png'); ?>"
+                alt="Our Values" />
         </div>
 
-        <div class="aboutus-frame1618871102">
-            <div class="aboutus-frame1618871101">
-                <span class="aboutus-text35">
-                    <span class="aboutus-text36">Our</span>
-                    <span style="color:#3C90FC">Values</span>
-                </span>
+        <div class="values-content">
+            <h3 class="values-title">
+                <span>Our </span>
+                <span class="title-highlight">Values</span>
+            </h3>
 
-                <div class="aboutus-frame1618871099">
-
-                    <!-- CARD 1 -->
-                    <div class="aboutus-content-card1">
-                        <div class="aboutus-rocketlaunch">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/background1336-vow7-1700h.png'); ?>" class="aboutus-background" alt="">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icon1337-345c-200h.png'); ?>" class="aboutus-icon" alt="">
-
-                        </div>
-                        <div class="aboutus-text-content1">
-                            <span class="aboutus-text38">Agility &amp; Ownership</span>
-                            <span class="aboutus-text39">We move fast, take initiative, and own our results.</span>
-                        </div>
+            <div class="values-list">
+                <!-- Value 1 -->
+                <div class="value-card">
+                    <div class="value-icon">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/background1336-vow7-1700h.png'); ?>" class="icon-bg" alt="">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icon1337-345c-200h.png'); ?>" class="icon-img" alt="">
                     </div>
-
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/divider1343-7wz9.svg'); ?>" class="aboutus-divider1" alt="">
-
-                    <!-- CARD 2 -->
-                    <div class="aboutus-content-card2">
-                        <div class="aboutus-rocketlaunch">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/backgroundi134-rdca-1700h.png'); ?>" class="aboutus-background" alt="">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/iconi134-y2ij-200h.png'); ?>" class="aboutus-icon" alt="">
-
-                        </div>
-                        <div class="aboutus-text-content2">
-                            <span class="aboutus-text40">Innovation with Purpose</span>
-                            <span class="aboutus-text41">Every project must bring practical value to clients and society.</span>
-                        </div>
+                    <div class="value-text">
+                        <h4>Agility & Ownership</h4>
+                        <p>We move fast, take initiative, and own our results.</p>
                     </div>
+                </div>
 
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/divider1349-nfql.svg'); ?>" class="aboutus-divider2" alt="">
+                <div class="value-divider"></div>
 
-                    <!-- CARD 3 -->
-                    <div class="aboutus-content-card3">
-                        <div class="aboutus-rocketlaunch">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/background1352-143c-1700h.png'); ?>" class="aboutus-background" alt="">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icon1353-b42t-200h.png'); ?>" class="aboutus-icon" alt="">
-
-                        </div>
-                        <div class="aboutus-text-content3">
-                            <span class="aboutus-text42">Openness &amp; Collaboration</span>
-                            <span class="aboutus-text43">We welcome ideas, embrace partnerships, and thrive on teamwork.</span>
-                        </div>
+                <!-- Value 2 -->
+                <div class="value-card">
+                    <div class="value-icon">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/backgroundi134-rdca-1700h.png'); ?>" class="icon-bg" alt="">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/iconi134-y2ij-200h.png'); ?>" class="icon-img" alt="">
                     </div>
-
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/divider1359-xmrq.svg'); ?>" class="aboutus-divider3" alt="">
-
-                    <!-- CARD 4 -->
-                    <div class="aboutus-content-card4">
-                        <div class="aboutus-rocketlaunch">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/background1362-n2wl-1700h.png'); ?>" class="aboutus-background" alt="">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icon1363-5rjr-200h.png'); ?>" class="aboutus-icon" alt="">
-
-                        </div>
-                        <div class="aboutus-text-content4">
-                            <span class="aboutus-text44">Integrity &amp; Trust</span>
-                            <span class="aboutus-text45">
-                                We commit to transparency and long-term relationships.
-                            </span>
-                        </div>
+                    <div class="value-text">
+                        <h4>Innovation with Purpose</h4>
+                        <p>Every project must bring practical value to clients and society.</p>
                     </div>
+                </div>
 
+                <div class="value-divider"></div>
+
+                <!-- Value 3 -->
+                <div class="value-card">
+                    <div class="value-icon">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/background1352-143c-1700h.png'); ?>" class="icon-bg" alt="">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icon1353-b42t-200h.png'); ?>" class="icon-img" alt="">
+                    </div>
+                    <div class="value-text">
+                        <h4>Openness & Collaboration</h4>
+                        <p>We welcome ideas, embrace partnerships, and thrive on teamwork.</p>
+                    </div>
+                </div>
+
+                <div class="value-divider"></div>
+
+                <!-- Value 4 -->
+                <div class="value-card">
+                    <div class="value-icon">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/background1362-n2wl-1700h.png'); ?>" class="icon-bg" alt="">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icon1363-5rjr-200h.png'); ?>" class="icon-img" alt="">
+                    </div>
+                    <div class="value-text">
+                        <h4>Integrity & Trust</h4>
+                        <p>We commit to transparency and long-term relationships.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <?php get_footer(); ?>
 
 <style>
-    .about-us-link-text {
-        font-family: Inter;
-        font-weight: 600;
-        font-style: Semi Bold;
-        font-size: 20px;
-        leading-trim: NONE;
-        line-height: 28px;
-        letter-spacing: -0.2px;
-        text-align: center;
-        vertical-align: middle;
-        background: linear-gradient(161.19deg, #145AFF 0%, #023F78 100%);
-        -webkit-background-clip: text;
-        color: transparent;
+    .about-us-section {
+        width: 100%;
+        padding: 58px 20px 68px;
     }
 
-    .about-us-detail {
+    /* About Intro */
+    .about-intro-wrapper {
+        margin-bottom: 80px;
+    }
+
+    .about-title-container {
+        max-width: 1320px;
+        margin: 0 auto 24px;
+    }
+
+    .about-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: #1E1B39;
+        line-height: normal;
+        margin: 0;
+    }
+
+    .title-highlight {
+        color: #3C90FC;
+    }
+
+    .about-detail-bg {
+        width: 100%;
+        padding: 24px 20px 116px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .about-detail-content {
         max-width: 1320px;
         margin: 0 auto;
     }
 
-    .about-us-section {
-        width: 100%;
-        padding: 58px 0px 68px 0px;
-    }
-
-    .aboutus-frame1618871125 {
-        gap: 16px;
-        width: 100%;
-        margin-bottom: 32px;
+    .about-subtitle-group {
         display: flex;
-        align-items: flex-start;
-        flex-shrink: 0;
         flex-direction: column;
-    }
-
-    .about-us-title-container {
-        width: 1320px;
-        margin: 0 auto;
-    }
-
-    .aboutus-text17 {
-        color: rgba(30, 27, 57, 1);
-        height: auto;
-        font-size: 48px;
-        align-self: stretch;
-        font-style: Bold;
-        text-align: left;
-        font-family: Montserrat;
-        font-weight: 700;
-        line-height: normal;
-        font-stretch: normal;
-        text-decoration: none;
-        text-align: start;
-    }
-
-    .aboutus-text18 {
-        color: var(--dl-color-neutralcolors-color800);
-    }
-
-    .aboutus-frame1618871127 {
         gap: 8px;
-        display: flex;
-        align-self: stretch;
-        align-items: flex-start;
-        flex-direction: column;
+        margin-bottom: 16px;
     }
 
-    .aboutus-text20 {
-        color: rgba(71, 67, 99, 1);
-        height: auto;
+    .about-subtitle {
+        font-family: 'Inter', sans-serif;
         font-size: 16px;
-        align-self: stretch;
-        font-style: Bold;
-        text-align: left;
-        font-family: Inter;
         font-weight: 700;
+        color: #474363;
         line-height: 24px;
-        font-stretch: normal;
-        text-decoration: none;
     }
 
-    .aboutus-text21 {
-        color: rgba(71, 67, 99, 1);
-        height: auto;
-        font-size: 16px;
-        align-self: stretch;
-        font-style: Bold;
-        text-align: left;
-        font-family: Inter;
-        font-weight: 700;
-        line-height: 24px;
-        font-stretch: normal;
-        text-decoration: none;
-    }
-
-    .about-us-line {
+    .about-divider {
         width: 200px;
         height: 1px;
-        margin: 16px 0px;
-        background-color: rgba(71, 67, 99, 1);
+        background-color: #474363;
+        margin: 16px 0;
     }
 
-    .aboutus-text22 {
-        color: rgba(71, 67, 99, 1);
-        height: auto;
+    .about-description {
+        font-family: 'Inter', sans-serif;
         font-size: 16px;
-        align-self: stretch;
-        font-style: Regular;
-        text-align: left;
-        font-family: Inter;
         font-weight: 400;
+        color: #474363;
         line-height: 24px;
-        font-stretch: normal;
-        text-decoration: none;
+        margin: 0 0 32px;
     }
 
-    .aboutus-frame16188711261 {
-        gap: 17px;
+    .about-cta-buttons {
         display: flex;
-        align-items: flex-start;
-        margin-top: 16px;
+        gap: 17px;
+        flex-wrap: wrap;
     }
 
-    .aboutus-link-get-early-access {
+    .btn-secondary {
         width: 222px;
         height: 64px;
         display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 14px 30px;
-        overflow: hidden;
-        box-shadow: 0px 0.6021869778633118px 0.6021869778633118px -1.25px rgba(0, 0, 0, 0.18000000715255737);
-        align-items: center;
-        flex-shrink: 0;
         border-radius: 10px;
-        justify-content: center;
-        background-color: rgba(252, 252, 252, 1);
+        background: #FCFCFC;
+        box-shadow: 0px 0.6px 0.6px -1.25px rgba(0, 0, 0, 0.18);
+        text-decoration: none;
+        transition: all 0.3s ease;
     }
 
-    .aboutus-frame95233 {
-        gap: 10px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .aboutus-framelemlist-buttonnew {
-        gap: 8px;
-        display: flex;
-        padding: 20px 36px;
-        position: relative;
-        box-shadow: 0px 10px 19px 0px rgba(49, 107, 255, 0.2800000011920929);
-        align-items: center;
-        border-color: rgba(13, 81, 255, 1);
-        border-style: solid;
-        border-width: 1px;
-        border-radius: 10px;
-        justify-content: center;
-        background-color: rgba(48, 106, 255, 1);
-    }
-
-    .aboutus-text23 {
-        color: #FFFFFF;
-        height: auto;
-        z-index: 1;
+    .btn-secondary span {
+        font-family: 'Inter', sans-serif;
         font-size: 20px;
-        font-style: Semi Bold;
-        text-align: center;
-        font-family: Inter;
-        font-weight: 700;
-        line-height: normal;
-        font-stretch: normal;
-        text-decoration: none;
+        font-weight: 600;
+        background: linear-gradient(161.19deg, #145AFF 0%, #023F78 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
-    .aboutus-rectangle2292 {
-        top: 1px;
-        left: 1px;
-        width: 315px;
-        height: 62px;
-        z-index: 3;
-        position: absolute;
-        border-color: rgba(89, 135, 255, 1);
-        border-style: solid;
-        border-width: 1px;
-        border-radius: 9px;
+    .btn-secondary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0px 4px 12px rgba(20, 90, 255, 0.2);
     }
 
-    .about-us-frame1618871135 {
-        gap: 32px;
-        width: 1320px;
-        margin: 0 auto;
+    .btn-primary {
+        height: 64px;
         display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-    }
-
-    .aboutus-frame16188711262 {
-        gap: 24px;
-        width: 50%;
-        display: flex;
-        padding: 24px;
-        align-self: stretch;
-        align-items: flex-start;
-        flex-shrink: 0;
-        border-radius: 20px;
-        flex-direction: column;
-        background-size: cover;
-        background-image: url("<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/tq_y9obmf5xdu-futh-1400w.png'); ?>");
-
-    }
-
-    .aboutus-text24 {
-        color: rgba(71, 67, 99, 1);
-        height: auto;
-        font-size: 48px;
-        font-style: Bold;
-        text-align: left;
-        font-family: Montserrat;
-        font-weight: 700;
-        line-height: normal;
-        font-stretch: normal;
-        text-decoration: none;
-    }
-
-    .aboutus-text25 {
-        color: rgba(71, 67, 99, 1);
-    }
-
-    .aboutus-frame16188711191 {
-        gap: 16px;
-        display: flex;
-        align-self: stretch;
         align-items: center;
-        flex-shrink: 0;
-    }
-
-    .aboutus-text27 {
-        color: rgba(71, 67, 99, 1);
-        height: auto;
-        flex-grow: 1;
-        font-size: 16px;
-        font-style: Regular;
-        text-align: left;
-        font-family: Inter;
-        font-weight: 400;
-        line-height: 24px;
-        font-stretch: normal;
+        justify-content: center;
+        padding: 20px 36px;
+        border-radius: 10px;
+        background: #306BFF;
+        border: 1px solid #0D51FF;
+        box-shadow: 0px 10px 19px rgba(49, 107, 255, 0.28);
         text-decoration: none;
+        transition: all 0.3s ease;
     }
 
-    .aboutus-frame16188711221-container {
-        width: 50%;
+    .btn-primary span {
+        font-family: 'Inter', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+        background: #4178FF;
+        transform: translateY(-2px);
+        box-shadow: 0px 15px 25px rgba(49, 107, 255, 0.35);
+    }
+
+    /* Vision & Mission */
+    .vision-mission-wrapper {
+        max-width: 1320px;
+        margin: 0 auto 80px;
+        display: flex;
+        gap: 32px;
+    }
+
+    .vision-card,
+    .mission-card {
+        flex: 1;
+        padding: 24px;
+        border-radius: 20px;
         background-size: cover;
-        background-image: url("<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/tq_qizh-ubuae-0dj4-2900h.png'); ?>");
+        background-position: center;
+    }
+
+    .vision-card {
+        background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/tq_y9obmf5xdu-futh-1400w.png'); ?>');
+    }
+
+    .mission-card {
         background: #F4F7FC;
-        border-radius: 20px;
-        padding: 24px;
     }
 
-    .aboutus-frame16188711221 {
-        gap: 16px;
-        width: 100%;
-        display: flex;
-
-        align-items: flex-start;
-        flex-shrink: 0;
-
-        flex-direction: column;
-
-    }
-
-    .aboutus-text28 {
-        color: rgba(71, 67, 99, 1);
-        height: auto;
+    .card-title {
+        font-family: 'Montserrat', sans-serif;
         font-size: 48px;
-        font-style: Bold;
-        text-align: left;
-        font-family: Montserrat;
         font-weight: 700;
+        color: #474363;
         line-height: normal;
-        font-stretch: normal;
-        text-decoration: none;
+        margin: 0 0 24px;
     }
 
-    .aboutus-text29 {
-        color: rgba(71, 67, 99, 1);
+    .card-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #474363;
+        line-height: 24px;
+        margin: 0;
     }
 
-    .aboutus-frame16188711192 {
-        gap: 16px;
+    .mission-list {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        gap: 16px;
     }
 
-    .aboutus-ellipse4381 {
+    .mission-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .bullet {
         width: 8px;
         height: 8px;
+        min-width: 8px;
+        background: #007AFF;
+        border: 4px solid rgba(0, 122, 255, 0.15);
         border-radius: 50%;
-        box-sizing: content-box;
-        border-color: rgba(0, 122, 255, 0.15000000596046448);
-        border-style: solid;
-        border-width: 4px;
+        margin-top: 6px;
     }
 
-    .aboutus-text31 {
-        color: rgba(71, 67, 99, 1);
-        height: auto;
+    .mission-item p {
+        font-family: 'Inter', sans-serif;
         font-size: 16px;
-        font-style: Regular;
-        text-align: left;
-        font-family: Inter;
         font-weight: 400;
-        line-height: normal;
-        font-stretch: normal;
-        text-decoration: none;
+        color: #474363;
+        line-height: 24px;
+        margin: 0;
     }
 
-    .aboutus-frame1618871120 {
-        gap: 16px;
-        display: flex;
-        align-self: stretch;
-        align-items: center;
-        flex-shrink: 0;
-    }
-
-    .aboutus-ellipse4382 {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        box-sizing: content-box;
-        border-color: rgba(0, 122, 255, 0.15000000596046448);
-        border-style: solid;
-        border-width: 4px;
-    }
-
-    .aboutus-text32 {
-        color: rgba(71, 67, 99, 1);
-        height: auto;
-        flex-grow: 1;
-        font-size: 16px;
-        font-style: Regular;
-        text-align: left;
-        font-family: Inter;
-        font-weight: 400;
-        line-height: normal;
-        font-stretch: normal;
-        text-decoration: none;
-    }
-
-    .aboutus-frame1618871121 {
-        gap: 16px;
-        display: flex;
-        align-self: stretch;
-        align-items: center;
-        flex-shrink: 0;
-    }
-
-    .aboutus-ellipse4383 {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        box-sizing: content-box;
-        border-color: rgba(0, 122, 255, 0.15000000596046448);
-        border-style: solid;
-        border-width: 4px;
-    }
-
-    .aboutus-text33 {
-        color: rgba(71, 67, 99, 1);
-        height: auto;
-        flex-grow: 1;
-        font-size: 16px;
-        font-style: Regular;
-        text-align: left;
-        font-family: Inter;
-        font-weight: 400;
-        line-height: normal;
-        font-stretch: normal;
-        text-decoration: none;
-    }
-
-    .aboutus-frame16188711222 {
-        gap: 16px;
-        display: flex;
-        align-self: stretch;
-        align-items: center;
-        flex-shrink: 0;
-    }
-
-    .aboutus-ellipse4384 {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        box-sizing: content-box;
-        border-color: rgba(0, 122, 255, 0.15000000596046448);
-        border-style: solid;
-        border-width: 4px;
-    }
-
-    .aboutus-text34 {
-        color: rgba(71, 67, 99, 1);
-        height: auto;
-        flex-grow: 1;
-        font-size: 16px;
-        font-style: Regular;
-        text-align: left;
-        font-family: Inter;
-        font-weight: 400;
-        line-height: normal;
-        font-stretch: normal;
-        text-decoration: none;
-    }
-
-    .aboutus-frame1618871128 {
-        padding-top: 38px;
-        gap: 32px;
-        width: 1320px;
+    /* Our Values */
+    .values-wrapper {
+        max-width: 1320px;
         margin: 0 auto;
         display: flex;
-    }
-
-    .aboutus-group1321314263 {
-        width: 50%;
-        height: 100%;
-        display: flex;
-    }
-
-    .aboutus-image-replace-about09 {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        overflow: hidden;
-        align-items: flex-start;
-        flex-shrink: 0;
-        border-radius: 24px;
-    }
-
-    .aboutus-image {
-
-        width: 100%;
-        height: 100%;
-
-    }
-
-    .aboutus-frame1618871102 {
-        padding-top: 35.5px;
-        width: 50%;
         gap: 32px;
-        display: flex;
+        padding-top: 38px;
     }
 
-    .aboutus-frame1618871101 {
-        gap: 24px;
-        width: 644px;
-        display: flex;
-        align-items: flex-start;
-        flex-shrink: 0;
-        flex-direction: column;
-    }
-
-    .aboutus-text35 {
-        color: rgba(30, 27, 57, 1);
-        height: auto;
-        font-size: 48px;
-        align-self: stretch;
-        font-style: Bold;
-        text-align: left;
-        font-family: Montserrat;
-        font-weight: 700;
-        line-height: normal;
-        font-stretch: normal;
-        text-decoration: none;
-    }
-
-    .aboutus-text36 {
-        color: var(--dl-color-neutralcolors-color800);
-    }
-
-    .aboutus-frame1618871099 {
-        display: flex;
-        align-self: stretch;
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .aboutus-content-card1 {
-        gap: 26px;
-        display: flex;
-        padding: 24px 0;
-        align-self: stretch;
-        align-items: center;
-        flex-shrink: 0;
-    }
-
-    .aboutus-rocketlaunch {
-        display: flex;
+    .values-image {
+        flex: 1;
+        border-radius: 24px;
         overflow: hidden;
-        align-items: center;
-        flex-shrink: 0;
-        border-radius: 140px;
     }
 
-    .aboutus-background {
+    .values-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .values-content {
+        flex: 1;
+        padding-top: 35px;
+    }
+
+    .values-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: #1E1B39;
+        line-height: normal;
+        margin: 0 0 24px;
+    }
+
+    .values-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .value-card {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        padding: 24px 0;
+    }
+
+    .value-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        flex-shrink: 0;
+    }
+
+    .icon-bg {
         position: absolute;
         border-radius: 50%;
+        width: 100px;
+        height: 100px;
     }
 
-    .aboutus-icon {
+    .icon-img {
+        position: relative;
         width: 100px;
         height: 67px;
         z-index: 2;
     }
 
-    .aboutus-text-content1 {
-        gap: 8px;
-        width: 518px;
+    .value-text {
+        flex: 1;
         display: flex;
-        flex-grow: 1;
-        align-items: flex-start;
-        flex-shrink: 0;
         flex-direction: column;
+        gap: 8px;
     }
 
-    .aboutus-text38 {
-        color: var(--dl-color-neutralcolors-color800);
-        height: auto;
+    .value-text h4 {
+        font-family: 'Inter', sans-serif;
         font-size: 20px;
-        font-style: Bold;
-        text-align: left;
-        font-family: Inter;
         font-weight: 700;
+        color: #1E1B39;
         line-height: normal;
-        font-stretch: normal;
-        text-decoration: none;
+        margin: 0;
     }
 
-    .aboutus-text39 {
-        color: var(--dl-color-neutralcolors-color600);
-        height: auto;
+    .value-text p {
+        font-family: 'Inter', sans-serif;
         font-size: 16px;
-        align-self: stretch;
-        font-style: Regular;
-        text-align: left;
-        font-family: Inter;
         font-weight: 400;
+        color: #474363;
         line-height: 24px;
-        font-stretch: normal;
-        text-decoration: none;
+        margin: 0;
     }
 
-    .aboutus-divider1 {
-        width: 644px;
+    .value-divider {
+        width: 100%;
         height: 1px;
-        align-self: stretch;
-    }
-
-    .aboutus-content-card2 {
-        gap: 26px;
-        display: flex;
-        padding: 24px 0;
-        align-self: stretch;
-        align-items: center;
-        flex-shrink: 0;
-    }
-
-    .aboutus-text-content2 {
-        gap: 8px;
-        width: 518px;
-        display: flex;
-        flex-grow: 1;
-        align-items: flex-start;
-        flex-shrink: 0;
-        flex-direction: column;
-    }
-
-    .aboutus-text40 {
-        color: var(--dl-color-neutralcolors-color800);
-        height: auto;
-        font-size: 20px;
-        font-style: Bold;
-        text-align: left;
-        font-family: Inter;
-        font-weight: 700;
-        line-height: normal;
-        font-stretch: normal;
-        text-decoration: none;
-    }
-
-    .aboutus-text41 {
-        color: var(--dl-color-neutralcolors-color600);
-        height: auto;
-        font-size: 16px;
-        align-self: stretch;
-        font-style: Regular;
-        text-align: left;
-        font-family: Inter;
-        font-weight: 400;
-        line-height: 24px;
-        font-stretch: normal;
-        text-decoration: none;
-    }
-
-    .aboutus-divider2 {
-        width: 644px;
-        height: 1px;
-        align-self: stretch;
-    }
-
-    .aboutus-content-card3 {
-        gap: 26px;
-        display: flex;
-        padding: 24px 0;
-        align-self: stretch;
-        align-items: center;
-        flex-shrink: 0;
-    }
-
-
-
-
-
-
-
-    .aboutus-text-content3 {
-        gap: 8px;
-        width: 518px;
-        display: flex;
-        flex-grow: 1;
-        align-items: flex-start;
-        flex-shrink: 0;
-        flex-direction: column;
-    }
-
-    .aboutus-text42 {
-        color: var(--dl-color-neutralcolors-color800);
-        height: auto;
-        font-size: 20px;
-        font-style: Bold;
-        text-align: left;
-        font-family: Inter;
-        font-weight: 700;
-        line-height: normal;
-        font-stretch: normal;
-        text-decoration: none;
-    }
-
-    .aboutus-text43 {
-        color: var(--dl-color-neutralcolors-color600);
-        height: auto;
-        font-size: 16px;
-        align-self: stretch;
-        font-style: Regular;
-        text-align: left;
-        font-family: Inter;
-        font-weight: 400;
-        line-height: 24px;
-        font-stretch: normal;
-        text-decoration: none;
-    }
-
-    .aboutus-divider3 {
-        width: 644px;
-        height: 1px;
-        align-self: stretch;
-    }
-
-    .aboutus-content-card4 {
-        gap: 26px;
-        display: flex;
-        padding: 24px 0;
-        align-self: stretch;
-        align-items: center;
-        flex-shrink: 0;
-    }
-
-
-    .aboutus-text-content4 {
-        gap: 8px;
-        width: 518px;
-        display: flex;
-        flex-grow: 1;
-        align-items: flex-start;
-        flex-shrink: 0;
-        flex-direction: column;
-    }
-
-    .aboutus-text44 {
-        color: var(--dl-color-neutralcolors-color800);
-        height: auto;
-        font-size: 20px;
-        font-style: Bold;
-        text-align: left;
-        font-family: Inter;
-        font-weight: 700;
-        line-height: normal;
-        font-stretch: normal;
-        text-decoration: none;
-    }
-
-    .aboutus-text45 {
-        color: var(--dl-color-neutralcolors-color600);
-        height: auto;
-        font-size: 16px;
-        align-self: stretch;
-        font-style: Regular;
-        text-align: left;
-        font-family: Inter;
-        font-weight: 400;
-        line-height: 24px;
-        font-stretch: normal;
-        text-decoration: none;
+        background: #E5E7EB;
     }
 
     .homepage-footer {
         top: auto !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 1400px) {
+        .about-us-section {
+            padding: 50px 40px 60px;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .about-title {
+            font-size: 40px;
+        }
+
+        .card-title,
+        .values-title {
+            font-size: 40px;
+        }
+
+        .vision-mission-wrapper {
+            flex-direction: column;
+            margin-bottom: 60px;
+        }
+
+        .values-wrapper {
+            flex-direction: column;
+        }
+
+        .values-content {
+            padding-top: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .about-us-section {
+            padding: 40px 24px 50px;
+        }
+
+        .about-title {
+            font-size: 32px;
+        }
+
+        .about-detail-bg {
+            padding: 20px 16px 80px;
+        }
+
+        .about-subtitle {
+            font-size: 15px;
+        }
+
+        .about-description {
+            font-size: 15px;
+            line-height: 22px;
+        }
+
+        .about-cta-buttons {
+            flex-direction: column;
+        }
+
+        .btn-secondary,
+        .btn-primary {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .card-title,
+        .values-title {
+            font-size: 32px;
+        }
+
+        .card-text,
+        .mission-item p,
+        .value-text p {
+            font-size: 15px;
+            line-height: 22px;
+        }
+
+        .value-text h4 {
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .about-us-section {
+            padding: 30px 15px 40px;
+        }
+
+        .about-title {
+            font-size: 28px;
+        }
+
+        .about-detail-bg {
+            padding: 16px 12px 60px;
+        }
+
+        .about-subtitle {
+            font-size: 14px;
+        }
+
+        .about-divider {
+            width: 150px;
+        }
+
+        .about-description {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .btn-secondary span,
+        .btn-primary span {
+            font-size: 18px;
+        }
+
+        .card-title,
+        .values-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .vision-card,
+        .mission-card {
+            padding: 20px;
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+        }
+
+        .icon-bg,
+        .icon-img {
+            width: 80px;
+        }
+
+        .icon-img {
+            height: 54px;
+        }
+
+        .value-card {
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .value-text h4 {
+            font-size: 16px;
+        }
+
+        .card-text,
+        .mission-item p,
+        .value-text p {
+            font-size: 14px;
+            line-height: 20px;
+        }
     }
 </style>
