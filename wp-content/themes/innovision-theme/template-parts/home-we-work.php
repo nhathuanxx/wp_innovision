@@ -113,167 +113,175 @@
 </div>
 <style>
   .howwework-frame {
-  gap: 48px;
-  top: 1584px;
-  /* left: 301px; */
-  width: 100%;
-  display: flex;
-  position: absolute;
-  align-items: center;
-  flex-shrink: 0;
-  flex-direction: column;
-}
+    gap: 48px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+  }
 
-.howwework-text-block {
-  gap: 12px;
-  width: 964.7341918945312px;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  flex-direction: column;
-}
+  .howwework-text-block {
+    gap: 12px;
+    width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+  }
 
-.howwework-title {
-  color: rgba(30, 27, 57, 1);
-  height: auto;
-  font-size: 48px;
-  font-style: Bold;
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
+  .howwework-title {
+    color: rgba(30, 27, 57, 1);
+    height: auto;
+    font-size: 48px;
+    font-style: Bold;
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
 
-.howwework-title-highlight {
-  color: var(--dl-color-neutralcolors-color800);
-}
+  .howwework-title-highlight {
+    color: var(--dl-color-neutralcolors-color800);
+  }
 
-.howwework-description {
-  color: var(--dl-color-neutralcolors-neutral700);
-  height: auto;
-  font-size: 14px;
-  font-style: Regular;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
+  .howwework-description {
+    color: var(--dl-color-neutralcolors-neutral700);
+    height: auto;
+    font-size: 14px;
+    font-style: Regular;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
 
-.howwework-images-group {
-  width: 1320px;
-  height: 295px;
-  display: flex;
-  position: relative;
-  align-items: flex-start;
-  flex-shrink: 1;
-}
+  .howwework-images-group {
+    width: 1320px;
+    height: 295px;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
 
-.howwework-image3,
-.howwework-image8,
-.howwework-image7 {
-  position: absolute;
-}
+  .howwework-image3,
+  .howwework-image8,
+  .howwework-image7 {
+    position: absolute;
+  }
 
-.howwework-image3 {
-  top: 27px;
-  left: 271px;
-  width: 101px;
-  height: 103px;
-}
+  .howwework-image3 {
+    top: 27px;
+    left: 271px;
+    width: 101px;
+    height: 103px;
+  }
 
-.howwework-image8 {
-  top: 27px;
-  left: 947px;
-  width: 101px;
-  height: 103px;
-}
+  .howwework-image8 {
+    top: 27px;
+    left: 947px;
+    width: 101px;
+    height: 103px;
+  }
 
-.howwework-image7 {
-  top: 76px;
-  left: 610px;
-  width: 101px;
-  height: 102px;
-}
+  .howwework-image7 {
+    top: 76px;
+    left: 610px;
+    width: 101px;
+    height: 102px;
+  }
 
-.howwework-card {
-  gap: 38px;
-  width: 306px;
-  display: flex;
-  position: absolute;
-  align-items: center;
-  flex-shrink: 0;
-  flex-direction: column;
-}
+  .howwework-card {
+    gap: 38px;
+    width: 306px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+  }
 
-.howwework-card-learning { left: 676px; top: 0px; }
-.howwework-card-research { left: 338px; top: 49px; }
-.howwework-card-partnership { left: 1014px; top: 49px; }
+  .howwework-card-learning {
+    left: 676px;
+    top: 0px;
+  }
 
-.howwework-card-image {
-  width: 130px;
-  height: 130px;
-  display: flex;
-  position: relative;
-  align-items: flex-start;
-  flex-shrink: 0;
-}
+  .howwework-card-research {
+    left: 338px;
+    top: 49px;
+  }
 
-.howwework-ellipse1,
-.howwework-ellipse2,
-.howwework-ellipse3,
-.howwework-ellipse4 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 130px;
-  height: 130px;
-}
+  .howwework-card-partnership {
+    left: 1014px;
+    top: 49px;
+  }
 
-.howwework-card-text {
-  gap: 10px;
-  display: flex;
-  align-self: stretch;
-  align-items: center;
-  flex-direction: column;
-}
+  .howwework-card-image {
+    width: 130px;
+    height: 130px;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
 
-.howwework-card-title {
-  color: rgba(60, 144, 252, 1);
-  height: auto;
-  font-size: 18px;
-  align-self: stretch;
-  font-style: Bold;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 700;
-  line-height: 20px;
-  font-stretch: normal;
-  text-decoration: none;
-}
+  .howwework-ellipse1,
+  .howwework-ellipse2,
+  .howwework-ellipse3,
+  .howwework-ellipse4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 130px;
+    height: 130px;
+  }
 
-.howwework-card-description {
-  color: rgba(71, 67, 99, 1);
-  height: auto;
-  font-size: 16px;
-  align-self: stretch;
-  font-style: Regular;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 24px;
-  font-stretch: normal;
-  text-decoration: none;
-}
+  .howwework-card-text {
+    gap: 10px;
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+    flex-direction: column;
+  }
 
-.howwework-bottom-image {
-  width: auto;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
+  .howwework-card-title {
+    color: rgba(60, 144, 252, 1);
+    height: auto;
+    font-size: 18px;
+    align-self: stretch;
+    font-style: Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 20px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
 
+  .howwework-card-description {
+    color: rgba(71, 67, 99, 1);
+    height: auto;
+    font-size: 16px;
+    align-self: stretch;
+    font-style: Regular;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 24px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+
+  .howwework-bottom-image {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
 </style>
