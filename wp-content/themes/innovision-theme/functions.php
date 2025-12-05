@@ -238,3 +238,215 @@ function innovision_register_menus() {
     ]);
 }
 add_action('init', 'innovision_register_menus');
+
+
+/**
+ * Register Custom Post Type: Solutions
+ * Tương thích với ACF và Polylang
+ */
+
+function create_solutions_post_type() {
+    $labels = array(
+        'name'                  => _x('Solutions', 'Post type general name', 'textdomain'),
+        'singular_name'         => _x('Solution', 'Post type singular name', 'textdomain'),
+        'menu_name'             => _x('Solutions', 'Admin Menu text', 'textdomain'),
+        'name_admin_bar'        => _x('Solution', 'Add New on Toolbar', 'textdomain'),
+        'add_new'               => __('Thêm mới', 'textdomain'),
+        'add_new_item'          => __('Thêm Solution mới', 'textdomain'),
+        'new_item'              => __('Solution mới', 'textdomain'),
+        'edit_item'             => __('Sửa Solution', 'textdomain'),
+        'view_item'             => __('Xem Solution', 'textdomain'),
+        'all_items'             => __('Tất cả Solutions', 'textdomain'),
+        'search_items'          => __('Tìm kiếm Solutions', 'textdomain'),
+        'parent_item_colon'     => __('Solution cha:', 'textdomain'),
+        'not_found'             => __('Không tìm thấy Solutions', 'textdomain'),
+        'not_found_in_trash'    => __('Không có Solutions trong thùng rác', 'textdomain')
+    );
+
+    $args = array(
+        'labels'                => $labels,
+        'public'                => true,
+        'publicly_queryable'    => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'query_var'             => true,
+        'rewrite'               => array('slug' => 'solutions'),
+        'capability_type'       => 'post',
+        'has_archive'           => true,
+        'hierarchical'          => false,
+        'menu_position'         => 5,
+        'menu_icon'             => 'dashicons-lightbulb',
+        'supports'              => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'revisions'),
+        'show_in_rest'          => true,
+        'can_export'            => true,
+    );
+
+    register_post_type('solutions', $args);
+}
+add_action('init', 'create_solutions_post_type');
+
+
+/**
+ * Register Custom Taxonomy: Solution Categories
+ */
+function create_solutions_taxonomy() {
+    $labels = array(
+        'name'              => _x('Solution Categories', 'taxonomy general name', 'textdomain'),
+        'singular_name'     => _x('Solution Category', 'taxonomy singular name', 'textdomain'),
+        'search_items'      => __('Tìm kiếm Categories', 'textdomain'),
+        'all_items'         => __('Tất cả Categories', 'textdomain'),
+        'parent_item'       => __('Category cha', 'textdomain'),
+        'parent_item_colon' => __('Category cha:', 'textdomain'),
+        'edit_item'         => __('Sửa Category', 'textdomain'),
+        'update_item'       => __('Cập nhật Category', 'textdomain'),
+        'add_new_item'      => __('Thêm Category mới', 'textdomain'),
+        'new_item_name'     => __('Tên Category mới', 'textdomain'),
+        'menu_name'         => __('Categories', 'textdomain'),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'solution-category'),
+        'show_in_rest'      => true,
+    );
+
+    register_taxonomy('solution_category', array('solutions'), $args);
+}
+add_action('init', 'create_solutions_taxonomy');
+
+
+/**
+ * Kích hoạt Polylang cho Solutions CPT
+ */
+function solutions_polylang_support() {
+    if (function_exists('pll_register_post_type')) {
+        pll_register_post_type('solutions');
+    }
+    
+    if (function_exists('pll_register_taxonomy')) {
+        pll_register_taxonomy('solution_category');
+    }
+}
+add_action('init', 'solutions_polylang_support', 20);
+
+
+/**
+ * Flush rewrite rules
+ */
+function solutions_rewrite_flush() {
+    create_solutions_post_type();
+    create_solutions_taxonomy();
+    flush_rewrite_rules();
+}
+register_activation_hook(__FILE__, 'solutions_rewrite_flush');
+
+
+
+
+/**
+ * Register Custom Post Type: Portfolio
+ * Tương thích với ACF và Polylang
+ */
+
+function create_portfolio_post_type() {
+    $labels = array(
+        'name'                  => _x('Portfolio', 'Post type general name', 'textdomain'),
+        'singular_name'         => _x('Portfolio', 'Post type singular name', 'textdomain'),
+        'menu_name'             => _x('Portfolio', 'Admin Menu text', 'textdomain'),
+        'name_admin_bar'        => _x('Portfolio', 'Add New on Toolbar', 'textdomain'),
+        'add_new'               => __('Thêm mới', 'textdomain'),
+        'add_new_item'          => __('Thêm Portfolio mới', 'textdomain'),
+        'new_item'              => __('Portfolio mới', 'textdomain'),
+        'edit_item'             => __('Sửa Portfolio', 'textdomain'),
+        'view_item'             => __('Xem Portfolio', 'textdomain'),
+        'all_items'             => __('Tất cả Portfolio', 'textdomain'),
+        'search_items'          => __('Tìm kiếm Portfolio', 'textdomain'),
+        'parent_item_colon'     => __('Portfolio cha:', 'textdomain'),
+        'not_found'             => __('Không tìm thấy Portfolio', 'textdomain'),
+        'not_found_in_trash'    => __('Không có Portfolio trong thùng rác', 'textdomain')
+    );
+
+    $args = array(
+        'labels'                => $labels,
+        'public'                => true,
+        'publicly_queryable'    => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'query_var'             => true,
+        'rewrite'               => array('slug' => 'portfolio'),
+        'capability_type'       => 'post',
+        'has_archive'           => true,
+        'hierarchical'          => false,
+        'menu_position'         => 6,
+        'menu_icon'             => 'dashicons-portfolio',
+        'supports'              => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'revisions'),
+        'show_in_rest'          => true,
+        'can_export'            => true,
+    );
+
+    register_post_type('portfolio', $args);
+}
+add_action('init', 'create_portfolio_post_type');
+
+
+/**
+ * Register Custom Taxonomy: Portfolio Categories
+ */
+function create_portfolio_taxonomy() {
+    $labels = array(
+        'name'              => _x('Portfolio Categories', 'taxonomy general name', 'textdomain'),
+        'singular_name'     => _x('Portfolio Category', 'taxonomy singular name', 'textdomain'),
+        'search_items'      => __('Tìm kiếm Categories', 'textdomain'),
+        'all_items'         => __('Tất cả Categories', 'textdomain'),
+        'parent_item'       => __('Category cha', 'textdomain'),
+        'parent_item_colon' => __('Category cha:', 'textdomain'),
+        'edit_item'         => __('Sửa Category', 'textdomain'),
+        'update_item'       => __('Cập nhật Category', 'textdomain'),
+        'add_new_item'      => __('Thêm Category mới', 'textdomain'),
+        'new_item_name'     => __('Tên Category mới', 'textdomain'),
+        'menu_name'         => __('Categories', 'textdomain'),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'portfolio-category'),
+        'show_in_rest'      => true,
+    );
+
+    register_taxonomy('portfolio_category', array('portfolio'), $args);
+}
+add_action('init', 'create_portfolio_taxonomy');
+
+
+/**
+ * Kích hoạt Polylang cho Portfolio CPT
+ */
+function portfolio_polylang_support() {
+    if (function_exists('pll_register_post_type')) {
+        pll_register_post_type('portfolio');
+    }
+    
+    if (function_exists('pll_register_taxonomy')) {
+        pll_register_taxonomy('portfolio_category');
+    }
+}
+add_action('init', 'portfolio_polylang_support', 20);
+
+
+/**
+ * Flush rewrite rules
+ */
+function portfolio_rewrite_flush() {
+    create_portfolio_post_type();
+    create_portfolio_taxonomy();
+    flush_rewrite_rules();
+}
+register_activation_hook(__FILE__, 'portfolio_rewrite_flush');
