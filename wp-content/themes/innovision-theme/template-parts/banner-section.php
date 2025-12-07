@@ -70,7 +70,7 @@ $lang = pll_current_language('slug');
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 64px;
-        line-height: 100%;
+        /* line-height: 100%; */
         letter-spacing: -0.02em;
         text-align: center;
         margin: 0;
@@ -120,7 +120,7 @@ $lang = pll_current_language('slug');
             rgba(255, 255, 255, 0.45) 0%, 
             rgba(0, 0, 0, 0) 100%
         ), #316BFF;
-        border: 1px solid #0E51FF;
+        /* border: 1px solid #0E51FF; */
         border-radius: 10px;
         box-shadow: 0px 10px 19px 0px rgba(49, 107, 255, 0.28);
         cursor: pointer;
@@ -314,7 +314,7 @@ $lang = pll_current_language('slug');
 
         .banner-content-title {
             font-size: 32px;
-            line-height: 110%;
+            /* line-height: 110%; */
         }
 
         .banner-content-sub-title {

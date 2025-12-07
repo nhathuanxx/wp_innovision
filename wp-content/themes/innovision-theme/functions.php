@@ -239,6 +239,47 @@ function innovision_register_menus() {
 }
 add_action('init', 'innovision_register_menus');
 
+function remove_archive_title_prefix($title) {
+    if (is_post_type_archive()) {
+        $title = post_type_archive_title('', false);
+    } elseif (is_category()) {
+        $title = single_cat_title('', false);
+    } elseif (is_tag()) {
+        $title = single_tag_title('', false);
+    } elseif (is_author()) {
+        $title = get_the_author();
+    } elseif (is_tax()) {
+        $title = single_term_title('', false);
+    }
+    return $title;
+}
+add_filter('get_the_archive_title', 'remove_archive_title_prefix');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Register Custom Post Type: Solutions
@@ -273,6 +314,7 @@ function create_solutions_post_type() {
         'rewrite'               => array('slug' => 'solutions'),
         'capability_type'       => 'post',
         'has_archive'           => true,
+        'show_in_nav_menus'     => true, // ← ĐÃ THÊM DÒNG NÀY
         'hierarchical'          => false,
         'menu_position'         => 5,
         'menu_icon'             => 'dashicons-lightbulb',
@@ -312,6 +354,7 @@ function create_solutions_taxonomy() {
         'query_var'         => true,
         'rewrite'           => array('slug' => 'solution-category'),
         'show_in_rest'      => true,
+        'show_in_nav_menus' => true, // ← ĐÃ THÊM DÒNG NÀY
     );
 
     register_taxonomy('solution_category', array('solutions'), $args);
@@ -380,6 +423,7 @@ function create_portfolio_post_type() {
         'rewrite'               => array('slug' => 'portfolio'),
         'capability_type'       => 'post',
         'has_archive'           => true,
+        'show_in_nav_menus'     => true,
         'hierarchical'          => false,
         'menu_position'         => 6,
         'menu_icon'             => 'dashicons-portfolio',
@@ -419,6 +463,7 @@ function create_portfolio_taxonomy() {
         'query_var'         => true,
         'rewrite'           => array('slug' => 'portfolio-category'),
         'show_in_rest'      => true,
+        'show_in_nav_menus' => true, // ← ĐÃ THÊM DÒNG NÀY
     );
 
     register_taxonomy('portfolio_category', array('portfolio'), $args);

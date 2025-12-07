@@ -33,17 +33,25 @@
 
             <div class="client-list">
               <div class="client-item">
-                <span class="bullet"></span>
+
+                <div class="bullet-container">
+                  <div class="bullet"></div>
+
+                </div>
                 <p>Enterprises in manufacturing, real estate, and technology.</p>
               </div>
 
               <div class="client-item">
-                <span class="bullet"></span>
+                <div class="bullet-container">
+                  <div class="bullet"></div>
+                </div>
                 <p>Government agencies adopting AI and data-driven solutions to enhance efficiency and public services.</p>
               </div>
 
               <div class="client-item">
-                <span class="bullet"></span>
+                <div class="bullet-container">
+                  <div class="bullet"></div>
+                </div>
                 <p>Startups & SMEs outsourcing AI, software, and firmware development.</p>
               </div>
             </div>
@@ -66,21 +74,29 @@
 
             <div class="client-list">
               <div class="client-item">
-                <span class="bullet"></span>
+                <div class="bullet-container">
+                  <div class="bullet"></div>
+                </div>
                 <p>Semiconductor companies – supporting hardware and embedded ecosystems.</p>
               </div>
 
               <div class="client-item">
-                <span class="bullet"></span>
+                <div class="bullet-container">
+                  <div class="bullet"></div>
+                </div>
                 <p>AWS/GCP – cloud & AI infrastructure.</p>
               </div>
 
               <div class="client-item">
-                <span class="bullet"></span>
+                <div class="bullet-container">
+                  <div class="bullet"></div>
+                </div>
                 <p>Electronics factories – enabling real-world deployment of Edge AI devices.</p>
               </div>
               <div class="client-item">
-                <span class="bullet"></span>
+                <div class="bullet-container">
+                  <div class="bullet"></div>
+                </div>
                 <p>Universities & Research Institutes – co-developing AI innovation.</p>
               </div>
             </div>
@@ -261,12 +277,22 @@
     gap: 16px;
   }
 
+  .bullet-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(0, 122, 255, 0.15);
+  }
+
   .bullet {
     width: 8px;
     height: 8px;
     background: #007AFF;
     border-radius: 50%;
-    border: 4px solid rgba(0, 122, 255, 0.15);
+    /* border: 4px solid rgba(0, 122, 255, 0.15); */
     flex-shrink: 0;
   }
 
@@ -289,7 +315,7 @@
 
   .logo {
     position: absolute;
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
     opacity: 0.7;
     transition: all 0.3s ease;
   }

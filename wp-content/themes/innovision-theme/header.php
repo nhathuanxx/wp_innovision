@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Header template for Innovision Theme
  */
@@ -166,7 +167,7 @@
         <!-- Logo with Home Link -->
         <a href="<?php echo esc_url(home_url('/')); ?>" class="logo-link">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/asset14x11240-j6w-200h.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/logo.svg'); ?>"
             alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
             class="header-logo" />
         </a>
@@ -201,13 +202,13 @@
         <div class="mobile-nav-header">
           <a href="<?php echo esc_url(home_url('/')); ?>" class="mobile-logo-link">
             <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/asset14x11240-j6w-200h.png'); ?>"
+              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/logo.svg'); ?>"
               alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
               class="mobile-logo" />
           </a>
           <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close Menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
             </svg>
           </button>
         </div>
@@ -297,7 +298,7 @@
       padding: 0;
     }
 
-    .main-menu li.menu-item > a {
+    .main-menu li.menu-item>a {
       display: flex;
       align-items: center;
       color: rgba(0, 0, 0, 0.9);
@@ -312,12 +313,12 @@
       position: relative;
     }
 
-    .main-menu li.menu-item > a:hover {
+    .main-menu li.menu-item>a:hover {
       color: #3C90FC;
-      background: rgba(60, 144, 252, 0.08);
+      /* background: rgba(60, 144, 252, 0.08); */
     }
 
-    .main-menu li.menu-item > a::after {
+    .main-menu li.menu-item>a::after {
       content: '';
       position: absolute;
       bottom: 0;
@@ -329,19 +330,19 @@
       transition: width 0.3s ease;
     }
 
-    .main-menu li.menu-item > a:hover::after {
+    .main-menu li.menu-item>a:hover::after {
       width: 80%;
     }
 
     /* Active menu */
-    .main-menu li.current-menu-item > a,
-    .main-menu li.current-menu-ancestor > a {
+    .main-menu li.current-menu-item>a,
+    .main-menu li.current-menu-ancestor>a {
       color: #3C90FC;
       /* background: rgba(60, 144, 252, 0.1); */
     }
 
-    .main-menu li.current-menu-item > a::after,
-    .main-menu li.current-menu-ancestor > a::after {
+    .main-menu li.current-menu-item>a::after,
+    .main-menu li.current-menu-ancestor>a::after {
       width: 80%;
     }
 
@@ -475,7 +476,7 @@
       gap: 8px;
     }
 
-    .mobile-menu li.menu-item > a {
+    .mobile-menu li.menu-item>a {
       display: flex;
       align-items: center;
       padding: 16px 20px;
@@ -488,14 +489,14 @@
       transition: all 0.3s ease;
     }
 
-    .mobile-menu li.menu-item > a:hover {
+    .mobile-menu li.menu-item>a:hover {
       background: rgba(60, 144, 252, 0.08);
       color: #3C90FC;
       transform: translateX(8px);
     }
 
-    .mobile-menu li.current-menu-item > a,
-    .mobile-menu li.current-menu-ancestor > a {
+    .mobile-menu li.current-menu-item>a,
+    .mobile-menu li.current-menu-ancestor>a {
       background: rgba(60, 144, 252, 0.1);
       color: #3C90FC;
       font-weight: 700;
@@ -511,7 +512,7 @@
         gap: 16px;
       }
 
-      .main-menu li.menu-item > a {
+      .main-menu li.menu-item>a {
         font-size: 13px;
         padding: 6px 10px;
       }
