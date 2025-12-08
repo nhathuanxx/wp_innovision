@@ -165,7 +165,7 @@
     <div class="header-content">
       <div class="header-detail">
         <!-- Logo with Home Link -->
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="logo-link">
+        <a href="https://innovision.amintek.com.vn/home/" class="logo-link">
           <img
             src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/logo.svg'); ?>"
             alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
@@ -200,7 +200,7 @@
     <div class="mobile-nav-overlay" id="mobileNavOverlay">
       <div class="mobile-nav-container">
         <div class="mobile-nav-header">
-          <a href="<?php echo esc_url(home_url('/')); ?>" class="mobile-logo-link">
+          <a href="https://innovision.amintek.com.vn/home/" class="mobile-logo-link">
             <img
               src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/logo.svg'); ?>"
               alt="<?php echo esc_attr(get_bloginfo('name')); ?>"

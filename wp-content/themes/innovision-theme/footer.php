@@ -3,7 +3,7 @@
   <div class="footer-container">
     <!-- CONTACT INFO -->
     <div class="footer-column">
-      <a href="<?php echo esc_url(home_url('/')); ?>" class="footer-logo">
+      <a href="https://innovision.amintek.com.vn/home/" class="footer-logo">
         <img
           src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/asset14x12033-ysci-200h.png'); ?>"
           alt="<?php echo esc_attr(get_bloginfo('name')); ?>" />
