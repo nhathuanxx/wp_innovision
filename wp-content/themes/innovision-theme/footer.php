@@ -14,7 +14,7 @@
       </div>
       <div class="office-info">
         <div class="section-title-footer-bold">Vietnam • Hanoi Office</div>
-        <div class="text-item">Hoan Kiem District, Hanoi</div>
+        <div class="text-item">Alley 62, Khuc Thua Du, Dich Vong Ward, Cau Giay District</div>
         <a href="tel:+84886392913" class="text-item link-text">(+84) 88.639.2913</a>
       </div>
     </div>

@@ -180,13 +180,13 @@
     z-index: 2;
   }
 
-  .card-large .card-content {
+  /* .card-large .card-content {
     max-width: 580px;
-  }
+  } */
 
-  .card-small .card-content {
+  /* .card-small .card-content {
     max-width: 355px;
-  }
+  } */
 
   .card-title {
     font-family: 'Inter', sans-serif;

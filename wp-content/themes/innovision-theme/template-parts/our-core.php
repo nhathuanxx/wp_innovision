@@ -18,7 +18,7 @@
                     <div class="competency-content">
                         <h3 class="competency-title">AI Products<br><span>LLM & Edge AI</span></h3>
                         <p class="competency-description">
-                            Pulvinar ultricies non varius vel feugiat fusce suspendisse lorem cursus aenean
+                            Enterprise LLM and edge AI for intelligent automation.
                         </p>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                     <div class="competency-content">
                         <h3 class="competency-title">Industrial AI & Automation<br><span>Smart Manufacturing</span></h3>
                         <p class="competency-description">
-                            Pulvinar ultricies non varius vel feugiat fusce suspendisse lorem
+                            Smart vision, predictive maintenance, and seamless factory integration.
                         </p>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                     <div class="competency-content">
                         <h3 class="competency-title">Software & Firmware<br><span>Embedded & Cloud</span></h3>
                         <p class="competency-description">
-                            Pulvinar ultricies non varius vel feugiat fusce suspendisse lorem cursus aenean
+                            End-to-end software from devices to cloud platforms.
                         </p>
                     </div>
                 </div>
