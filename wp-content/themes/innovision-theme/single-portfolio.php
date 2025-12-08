@@ -5,7 +5,7 @@
 <?php get_template_part('template-parts/problem-solutions', null, []); ?>
 <?php get_template_part('template-parts/input-output', null, []); ?>
 <?php get_template_part('template-parts/project-total', null, []); ?>
-<!-- <?php get_template_part('template-parts/project-total-social', null, []); ?> -->
+<?php get_template_part('template-parts/project-total-social', null, []); ?>
 
 
 <?php get_footer(); ?>
