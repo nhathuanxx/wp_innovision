@@ -770,3 +770,152 @@ add_action('acf/init', function () {
         ],
     ]);
 });
+
+
+
+// Stats Section ACF with Social Media Icons (Simplified)
+add_action('acf/init', function () {
+    acf_add_local_field_group([
+        'key' => 'group_stats_section_with_social',
+        'title' => 'Stats Section – With Social Icons',
+        'fields' => [
+
+            // Enable/Disable Section
+            [
+                'key' => 'field_stats_social_enable',
+                'label' => 'Show Stats Section',
+                'name' => 'stats_social_section_enable',
+                'type' => 'true_false',
+                'ui' => 1,
+                'default_value' => 1,
+            ],
+
+            // Social Media Icons (for first card)
+            [
+                'key' => 'field_stats_social_icons',
+                'label' => 'Social Media Icons',
+                'name' => 'stats_social_icons',
+                'type' => 'repeater',
+                'instructions' => 'Add social media icons with links (will appear in first card)',
+                'sub_fields' => [
+                    [
+                        'key' => 'field_social_icon_image',
+                        'label' => 'Icon Image',
+                        'name' => 'icon_image',
+                        'type' => 'image',
+                        'return_format' => 'array',
+                        'preview_size' => 'thumbnail',
+                    ],
+                    [
+                        'key' => 'field_social_icon_alt',
+                        'label' => 'Icon Name',
+                        'name' => 'icon_alt',
+                        'type' => 'text',
+                        'placeholder' => 'Facebook, LinkedIn, Email...',
+                    ],
+                    [
+                        'key' => 'field_social_icon_url',
+                        'label' => 'Link URL',
+                        'name' => 'icon_url',
+                        'type' => 'text',
+                        'placeholder' => 'https://facebook.com/yourpage',
+                    ],
+                ],
+                'layout' => 'row',
+                'button_label' => 'Add Social Icon',
+            ],
+
+            // First Card Title & Description
+            [
+                'key' => 'field_stats_social_card_title',
+                'label' => 'First Card Title',
+                'name' => 'stats_social_card_title',
+                'type' => 'text',
+                'default_value' => 'Supported Channels',
+            ],
+            [
+                'key' => 'field_stats_social_card_desc',
+                'label' => 'First Card Description',
+                'name' => 'stats_social_card_desc',
+                'type' => 'text',
+                'default_value' => 'Tokens per day',
+            ],
+
+            // Regular Stat Cards
+            [
+                'key' => 'field_stats_social_cards',
+                'label' => 'Stat Cards',
+                'name' => 'stats_social_cards',
+                'type' => 'repeater',
+                'sub_fields' => [
+                    [
+                        'key' => 'field_stat_social_number',
+                        'label' => 'Number',
+                        'name' => 'number',
+                        'type' => 'text',
+                    ],
+                    [
+                        'key' => 'field_stat_social_title',
+                        'label' => 'Title',
+                        'name' => 'title',
+                        'type' => 'text',
+                    ],
+                    [
+                        'key' => 'field_stat_social_desc',
+                        'label' => 'Description',
+                        'name' => 'desc',
+                        'type' => 'text',
+                    ],
+                ],
+                'layout' => 'row',
+            ],
+
+            // Feature Cards
+            [
+                'key' => 'field_stats_social_feature_cards',
+                'label' => 'Feature Cards',
+                'name' => 'stats_social_feature_cards',
+                'type' => 'repeater',
+                'sub_fields' => [
+                    [
+                        'key' => 'field_feature_social_icon',
+                        'label' => 'Icon',
+                        'name' => 'icon',
+                        'type' => 'image',
+                        'return_format' => 'array',
+                        'preview_size' => 'thumbnail',
+                    ],
+                    [
+                        'key' => 'field_feature_social_number',
+                        'label' => 'Number',
+                        'name' => 'number',
+                        'type' => 'text',
+                    ],
+                    [
+                        'key' => 'field_feature_social_title',
+                        'label' => 'Title',
+                        'name' => 'title',
+                        'type' => 'text',
+                    ],
+                    [
+                        'key' => 'field_feature_social_desc',
+                        'label' => 'Description',
+                        'name' => 'desc',
+                        'type' => 'text',
+                    ],
+                ],
+                'layout' => 'row',
+            ],
+
+        ],
+        'location' => [
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'portfolio',
+                ],
+            ],
+        ],
+    ]);
+});

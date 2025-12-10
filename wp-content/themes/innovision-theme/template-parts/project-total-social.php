@@ -1,79 +1,103 @@
+
+<?php
+$fields = $args['fields'] ?? [];
+
+if (empty($fields['stats_social_section_enable'])) {
+    return;
+}
+
+$social_icons  = $fields['stats_social_icons'] ?? [];
+$card_title    = $fields['stats_social_card_title'] ?? '';
+$card_desc     = $fields['stats_social_card_desc'] ?? '';
+$stats_cards   = $fields['stats_social_cards'] ?? [];
+$feature_cards = $fields['stats_social_feature_cards'] ?? [];
+?>
+
 <div class="stats2-section">
-  <div class="stats2-container">
-    <div class="stats2-row">
-      <!-- Stat Card 1 - Supported Channels -->
-      <div class="stats2-card">
-        <div class="stats2-icon-group">
-          <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/materialsymbolsmail3986-zjyc.svg'); ?>"
-            alt="Mail"
-            class="stats2-channel-icon"
-          />
-          <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icbaselinefacebook3986-2p2c.svg'); ?>"
-            alt="Facebook"
-            class="stats2-channel-icon"
-          />
-          <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/mdilinkedin3986-7vzp.svg'); ?>"
-            alt="LinkedIn"
-            class="stats2-channel-icon"
-          />
-          <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/solarglobalbold3986-p9p.svg'); ?>"
-            alt="Web"
-            class="stats2-channel-icon"
-          />
+    <div class="stats2-container">
+
+        <!-- Stats Row -->
+        <div class="stats2-row">
+            
+            <!-- First Card: Social Icons -->
+            <?php if (!empty($social_icons) || !empty($card_title) || !empty($card_desc)): ?>
+                <div class="stats2-card">
+                    <?php if (!empty($social_icons)): ?>
+                        <div class="stats2-icon-group">
+                            <?php foreach ($social_icons as $icon): ?>
+                                <?php if (!empty($icon['icon_image']) && !empty($icon['icon_url'])): ?>
+                                    <a href="<?= esc_url($icon['icon_url']); ?>" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="stats2-icon-link">
+                                        <img
+                                            src="<?= esc_url($icon['icon_image']['url']); ?>"
+                                            alt="<?= esc_attr($icon['icon_alt']); ?>"
+                                            class="stats2-channel-icon"
+                                        />
+                                    </a>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                    
+                    <?php if (!empty($card_title)): ?>
+                        <h4 class="stats2-title"><?= esc_html($card_title); ?></h4>
+                    <?php endif; ?>
+                    
+                    <?php if (!empty($card_desc)): ?>
+                        <p class="stats2-desc"><?= esc_html($card_desc); ?></p>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
+
+            <!-- Regular Stat Cards -->
+            <?php if (!empty($stats_cards)): ?>
+                <?php foreach ($stats_cards as $card): ?>
+                    <?php if (!empty($card['number']) || !empty($card['title']) || !empty($card['desc'])): ?>
+                        <div class="stats2-card">
+                            <?php if (!empty($card['number'])): ?>
+                                <h3 class="stats2-number"><?= esc_html($card['number']); ?></h3>
+                            <?php endif; ?>
+                            <?php if (!empty($card['title'])): ?>
+                                <h4 class="stats2-title"><?= esc_html($card['title']); ?></h4>
+                            <?php endif; ?>
+                            <?php if (!empty($card['desc'])): ?>
+                                <p class="stats2-desc"><?= esc_html($card['desc']); ?></p>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
-        <h4 class="stats2-title">Supported Channels</h4>
-        <p class="stats2-desc">Tokens per day</p>
-      </div>
 
-      <!-- Stat Card 2 -->
-      <div class="stats2-card">
-        <h3 class="stats2-number">&lt;2s</h3>
-        <h4 class="stats2-title">Generation Speed</h4>
-        <p class="stats2-desc">For long-form content generation</p>
-      </div>
+        <!-- Feature Row -->
+        <?php if (!empty($feature_cards)): ?>
+            <div class="stats2-row">
+                <?php foreach ($feature_cards as $card): ?>
+                    <?php if (!empty($card['number']) || !empty($card['title']) || !empty($card['desc']) || !empty($card['icon'])): ?>
+                        <div class="stats2-feature-card">
+                            <div class="stats2-feature-number">
+                                <?php if (!empty($card['icon'])): ?>
+                                    <img src="<?= esc_url($card['icon']['url']); ?>" alt="Icon" class="stats2-feature-icon" />
+                                <?php endif; ?>
+                                <?php if (!empty($card['number'])): ?>
+                                    <span class="stats2-number-text"><?= esc_html($card['number']); ?></span>
+                                <?php endif; ?>
+                            </div>
+                            <?php if (!empty($card['title'])): ?>
+                                <h4 class="stats2-feature-title"><?= esc_html($card['title']); ?></h4>
+                            <?php endif; ?>
+                            <?php if (!empty($card['desc'])): ?>
+                                <p class="stats2-feature-desc"><?= esc_html($card['desc']); ?></p>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
 
-      <!-- Stat Card 3 -->
-      <div class="stats2-card">
-        <h3 class="stats2-number">95%+</h3>
-        <h4 class="stats2-title">Brand Consistency</h4>
-        <p class="stats2-desc">Brand style adherence rate</p>
-      </div>
     </div>
-
-    <div class="stats2-row">
-      <!-- Feature Card 1 -->
-      <div class="stats2-feature-card">
-        <div class="stats2-feature-number">
-          <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icon3986-anrn.svg'); ?>"
-            alt="Icon"
-            class="stats2-feature-icon"
-          />
-          <span class="stats2-number-text">3-5x Faster</span>
-        </div>
-        <h4 class="stats2-feature-title">Content Generation Speed</h4>
-        <p class="stats2-feature-desc">Dramatically accelerated content creation process</p>
-      </div>
-
-      <!-- Feature Card 2 -->
-      <div class="stats2-feature-card">
-        <div class="stats2-feature-number">
-          <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icon3986-sija.svg'); ?>"
-            alt="Icon"
-            class="stats2-feature-icon"
-          />
-          <span class="stats2-number-text">50%</span>
-        </div>
-        <h4 class="stats2-feature-title">Cost Reduction</h4>
-        <p class="stats2-feature-desc">Reduced outsourcing and agency costs</p>
-      </div>
-    </div>
-  </div>
 </div>
 
 <style>
@@ -122,8 +146,8 @@
 }
 
 .stats2-channel-icon {
-  width: 40px;
-  height: 40px;
+  max-width: 40px;
+  height: auto;
 }
 
 .stats2-number {
