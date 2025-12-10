@@ -1,6 +1,20 @@
+<?php
+$fields = $args['fields'] ?? [];
+
+if (empty($fields['portfolio_usecase2_enable'])) {
+    return; // section tắt -> không hiển thị
+}
+
+$bg_image     = $fields['portfolio_usecase2_bg_image']['url'] ?? get_template_directory_uri() . '/assets/images/innovision/image443989-cgp1-2000w.png';
+$input_text   = $fields['portfolio_usecase2_input_text'] ?? '';
+$system_steps = $fields['portfolio_usecase2_system'] ?? [];
+$output_text  = $fields['portfolio_usecase2_output_text'] ?? '';
+$preview_img  = $fields['portfolio_usecase2_preview_image']['url'] ?? get_template_directory_uri() . '/assets/images/innovision/pro-solu.png';
+?>
+
 <div class="usecase2-section">
   <img
-    src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image443989-cgp1-2000w.png'); ?>"
+    src="<?= esc_url($bg_image); ?>"
     alt="Background"
     class="usecase2-bg"
   />
@@ -8,67 +22,44 @@
   <div class="usecase2-content">
     <!-- Input/System/Output Content -->
     <div class="usecase2-info">
+
       <!-- Input Section -->
-      <div class="usecase2-block">
-        <h3 class="usecase2-block-title">INPUT</h3>
-        <p class="usecase2-block-text">
-          Citizen submits a scanned tax form or contract PDF
-        </p>
-      </div>
+      <?php if (!empty($input_text)): ?>
+        <div class="usecase2-block">
+          <h3 class="usecase2-block-title">INPUT</h3>
+          <p class="usecase2-block-text"><?= esc_html($input_text); ?></p>
+        </div>
+      <?php endif; ?>
 
       <!-- System Section -->
-      <div class="usecase2-block">
-        <h3 class="usecase2-block-title">SYSTEM</h3>
-        
-        <div class="usecase2-bullet-item">
-          <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4383989-ztqq-200h.png'); ?>"
-            alt=""
-            class="usecase2-bullet-icon"
-          />
-          <p class="usecase2-bullet-text">
-            OCR extracts text from the scanned document with 99.5%
-            accuracy
-          </p>
+      <?php if (!empty($system_steps)): ?>
+        <div class="usecase2-block">
+          <h3 class="usecase2-block-title">SYSTEM</h3>
+          <?php foreach ($system_steps as $step): ?>
+            <?php if (!empty($step['step_text'])): ?>
+              <div class="usecase2-bullet-item">
+                <div class="bullet-container"><div class="bullet"></div></div>
+                <p class="usecase2-bullet-text"><?= esc_html($step['step_text']); ?></p>
+              </div>
+            <?php endif; ?>
+          <?php endforeach; ?>
         </div>
-
-        <div class="usecase2-bullet-item">
-          <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4383989-0omr-200h.png'); ?>"
-            alt=""
-            class="usecase2-bullet-icon"
-          />
-          <p class="usecase2-bullet-text">
-            RAG pipeline indexes data and creates semantic embeddings
-          </p>
-        </div>
-
-        <div class="usecase2-bullet-item">
-          <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4383989-jd8-200h.png'); ?>"
-            alt=""
-            class="usecase2-bullet-icon"
-          />
-          <p class="usecase2-bullet-text">
-            LLM interprets request using natural language understanding
-          </p>
-        </div>
-      </div>
+      <?php endif; ?>
 
       <!-- Output Section -->
-      <div class="usecase2-block">
-        <h3 class="usecase2-block-title">OUTPUT</h3>
-        <p class="usecase2-block-text">
-          "Tax record located, Ref: Archive #2021-0342, related
-          decrees linked."
-        </p>
-      </div>
+      <?php if (!empty($output_text)): ?>
+        <div class="usecase2-block">
+          <h3 class="usecase2-block-title">OUTPUT</h3>
+          <p class="usecase2-block-text"><?= esc_html($output_text); ?></p>
+        </div>
+      <?php endif; ?>
+
     </div>
 
     <!-- Image Preview -->
     <div class="usecase2-image">
       <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/pro-solu.png'); ?>"
+        src="<?= esc_url($preview_img); ?>"
         alt="Solution Preview"
         class="usecase2-img"
       />

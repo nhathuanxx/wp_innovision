@@ -1,60 +1,65 @@
+<?php
+$fields = $args['fields'] ?? [];
+
+if (empty($fields['portfolio_stats_enable'])) {
+    return;
+}
+
+$stats_cards   = $fields['stats_cards'] ?? [];
+$feature_cards = $fields['feature_cards'] ?? [];
+?>
+
 <div class="stats-section">
-  <div class="stats-container">
-    <div class="stats-row">
-      <!-- Stat Card 1 -->
-      <div class="stat-card">
-        <h3 class="stat-number">1B+</h3>
-        <h4 class="stat-title">Processing Capacity</h4>
-        <p class="stat-desc">Tokens per day</p>
-      </div>
+    <div class="stats-container">
 
-      <!-- Stat Card 2 -->
-      <div class="stat-card">
-        <h3 class="stat-number">99.5%</h3>
-        <h4 class="stat-title">OCR Accuracy</h4>
-        <p class="stat-desc">Tokens per day</p>
-      </div>
+        <!-- Stats Row -->
+        <?php if (!empty($stats_cards)): ?>
+            <div class="stats-row">
+                <?php foreach ($stats_cards as $card): ?>
+                    <?php if (!empty($card['number']) || !empty($card['title']) || !empty($card['desc'])): ?>
+                        <div class="stat-card">
+                            <?php if (!empty($card['number'])): ?>
+                                <h3 class="stat-number"><?= esc_html($card['number']); ?></h3>
+                            <?php endif; ?>
+                            <?php if (!empty($card['title'])): ?>
+                                <h4 class="stat-title"><?= esc_html($card['title']); ?></h4>
+                            <?php endif; ?>
+                            <?php if (!empty($card['desc'])): ?>
+                                <p class="stat-desc"><?= esc_html($card['desc']); ?></p>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
 
-      <!-- Stat Card 3 -->
-      <div class="stat-card">
-        <h3 class="stat-number">&lt;500ms</h3>
-        <h4 class="stat-title">Query Latency</h4>
-        <p class="stat-desc">Per docs</p>
-      </div>
+        <!-- Feature Row -->
+        <?php if (!empty($feature_cards)): ?>
+            <div class="stats-row">
+                <?php foreach ($feature_cards as $card): ?>
+                    <?php if (!empty($card['number']) || !empty($card['title']) || !empty($card['desc']) || !empty($card['icon'])): ?>
+                        <div class="feature-card">
+                            <div class="feature-number">
+                                <?php if (!empty($card['icon'])): ?>
+                                    <img src="<?= esc_url($card['icon']['url']); ?>" alt="Icon" class="feature-icon" />
+                                <?php endif; ?>
+                                <?php if (!empty($card['number'])): ?>
+                                    <span class="number-text"><?= esc_html($card['number']); ?></span>
+                                <?php endif; ?>
+                            </div>
+                            <?php if (!empty($card['title'])): ?>
+                                <h4 class="feature-title"><?= esc_html($card['title']); ?></h4>
+                            <?php endif; ?>
+                            <?php if (!empty($card['desc'])): ?>
+                                <p class="feature-desc"><?= esc_html($card['desc']); ?></p>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
 
-      <!-- Stat Card 4 -->
-      <div class="stat-card">
-        <h3 class="stat-number">10M+</h3>
-        <h4 class="stat-title">Documents Indexed</h4>
-        <p class="stat-desc">Per docs</p>
-      </div>
     </div>
-
-    <div class="stats-row">
-      <!-- Feature Card 1 -->
-      <div class="feature-card">
-        <div class="feature-number">
-          <span class="number-text">Days → Seconds</span>
-        </div>
-        <h4 class="feature-title">Search Time Reduction</h4>
-        <p class="feature-desc">Reduction in manual workload for accounting teams</p>
-      </div>
-
-      <!-- Feature Card 2 -->
-      <div class="feature-card">
-        <div class="feature-number">
-          <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icon3952-t5q.svg'); ?>"
-            alt="Icon"
-            class="feature-icon"
-          />
-          <span class="number-text">70%</span>
-        </div>
-        <h4 class="feature-title">Cost Reduction</h4>
-        <p class="feature-desc">Significant reduction in manual processing costs</p>
-      </div>
-    </div>
-  </div>
 </div>
 
 <style>

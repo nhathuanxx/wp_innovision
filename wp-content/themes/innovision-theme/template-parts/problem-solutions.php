@@ -1,77 +1,63 @@
+<?php
+$fields = $args['fields'] ?? [];
+
+// Nếu tắt section thì ẩn hoàn toàn
+if (empty($fields['portfolio_problem_enable'])) {
+    return;
+}
+
+// Lấy dữ liệu ACF
+$title       = $fields['portfolio_problem_title'] ?? '';
+$desc        = $fields['portfolio_problem_description'] ?? '';
+$preview_img = $fields['portfolio_problem_preview_image']['url'] ?? get_template_directory_uri() . '/assets/images/innovision/pro-solu.png';
+$solutions   = $fields['portfolio_problem_solutions'] ?? [];
+?>
+
 <div class="usecase-section">
-    <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image443987-rd3c-2000w.png'); ?>"
-        alt="Background"
-        class="usecase-bg" />
+        <img
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image443987-rd3c-2000w.png'); ?>"
+            alt="Background"
+            class="usecase-bg" />
 
     <div class="usecase-content">
-        <div class="usecase-image">
-            <img
-                src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/pro-solu.png'); ?>"
-                alt="Solution Preview"
-                class="usecase-img" />
-        </div>
+        
+        <!-- Preview Image -->
+     <div class="usecase-image">
+    <img
+        src="<?php echo esc_url($preview_img); ?>"
+        alt="Solution Preview"
+        class="usecase-img" />
+</div>
 
         <!-- Problem & Solution Content -->
         <div class="usecase-info">
+
+            <!-- PROBLEM -->
             <div class="usecase-block">
                 <h3 class="usecase-block-title">PROBLEM</h3>
+
                 <p class="usecase-block-text">
-                    In payment gateway and fintech companies, accounting teams
-                    are overwhelmed by manually verifying thousands of daily
-                    transactions. These transactions often include text data
-                    (receipts, transaction logs, notes) and images (screenshots
-                    of transfers, scanned invoices, payment slips). Manual
-                    checking is time-consuming, error-prone, and costly.
+                    <?php echo esc_html($desc); ?>
                 </p>
             </div>
 
+            <!-- SOLUTION -->
             <div class="usecase-block">
                 <h3 class="usecase-block-title">SOLUTION</h3>
 
-                <div class="usecase-bullet-item">
-                    <img
-                        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4383987-tdp6-200h.png'); ?>"
-                        alt=""
-                        class="usecase-bullet-icon" />
-                    <p class="usecase-bullet-text">
-                        LLM + RAG combined with Document AI (OCR + NLP) to analyze
-                        both text and image-based transaction evidenc
-                    </p>
-                </div>
+                <?php if (!empty($solutions)): ?>
+                    <?php foreach ($solutions as $item): ?>
+                        <div class="usecase-bullet-item">
+                            <div class="bullet-container">
+                                <div class="bullet"></div>
+                            </div>
+                            <p class="usecase-bullet-text">
+                                <?php echo esc_html($item['solution_text']); ?>
+                            </p>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
 
-                <div class="usecase-bullet-item">
-                    <img
-                        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4383987-1e8a-200h.png'); ?>"
-                        alt=""
-                        class="usecase-bullet-icon" />
-                    <p class="usecase-bullet-text">
-                        Automatically classify whether a transaction is legitimate,
-                        duplicate, or suspicious.
-                    </p>
-                </div>
-
-                <div class="usecase-bullet-item">
-                    <img
-                        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4383987-ar28-200h.png'); ?>"
-                        alt=""
-                        class="usecase-bullet-icon" />
-                    <p class="usecase-bullet-text">
-                        Provides accountants with a confidence score and cited
-                        references (from transaction logs or attached images).
-                    </p>
-                </div>
-
-                <div class="usecase-bullet-item">
-                    <img
-                        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4383987-zhdr-200h.png'); ?>"
-                        alt=""
-                        class="usecase-bullet-icon" />
-                    <p class="usecase-bullet-text">
-                        Flags anomalies for human review, reducing workload
-                        significantly
-                    </p>
-                </div>
             </div>
         </div>
     </div>

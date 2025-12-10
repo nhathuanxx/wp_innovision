@@ -495,3 +495,278 @@ function portfolio_rewrite_flush() {
     flush_rewrite_rules();
 }
 register_activation_hook(__FILE__, 'portfolio_rewrite_flush');
+
+
+
+// problem-solutions ACF
+add_action('acf/init', function () {
+    acf_add_local_field_group([
+        'key' => 'group_portfolio_problem_solutions',
+        'title' => 'Portfolio – Problem & Solutions',
+        'fields' => [
+
+            // Enable/Disable Section
+            [
+                'key' => 'field_portfolio_problem_enable',
+                'label' => 'Show Problem & Solutions Section',
+                'name' => 'portfolio_problem_enable',
+                'type' => 'true_false',
+                'ui' => 1,
+                'default_value' => 1, // mặc định: bật
+                'message' => 'Enable this section',
+            ],
+              // Preview Image
+            [
+                'key' => 'field_portfolio_problem_preview_image',
+                'label' => 'Preview Image',
+                'name' => 'portfolio_problem_preview_image',
+                'type' => 'image',
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'library' => 'all',
+            ],
+
+            // Problem Title
+            // [
+            //     'key' => 'field_portfolio_problem_title',
+            //     'label' => 'Problem Title',
+            //     'name' => 'portfolio_problem_title',
+            //     'type' => 'text',
+            // ],
+
+            // Problem Description
+            [
+                'key' => 'field_portfolio_problem_description',
+                'label' => 'Problem Description',
+                'name' => 'portfolio_problem_description',
+                'type' => 'textarea',
+            ],
+
+            // Background Image
+            // [
+            //     'key' => 'field_portfolio_problem_bg_image',
+            //     'label' => 'Background Image',
+            //     'name' => 'portfolio_problem_bg_image',
+            //     'type' => 'image',
+            //     'return_format' => 'array',
+            //     'preview_size' => 'medium',
+            //     'library' => 'all',
+            // ],
+            // Solutions repeater
+            [
+                'key' => 'field_portfolio_problem_solutions',
+                'label' => 'Solutions',
+                'name' => 'portfolio_problem_solutions',
+                'type' => 'repeater',
+                'sub_fields' => [
+                    [
+                        'key' => 'field_portfolio_problem_solution_text',
+                        'label' => 'Solution Text',
+                        'name' => 'solution_text',
+                        'type' => 'textarea',
+                    ]
+                ],
+                'layout' => 'row',
+            ],
+        ],
+
+        'location' => [
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'portfolio',
+                ],
+            ],
+        ],
+    ]);
+});
+
+// input-output ACF
+add_action('acf/init', function () {
+
+    acf_add_local_field_group([
+        'key' => 'group_portfolio_input_output',
+        'title' => 'Portfolio – Input / System / Output',
+        'fields' => [
+
+            // Enable/Disable Section
+            [
+                'key' => 'field_portfolio_usecase2_enable',
+                'label' => 'Show Input/System/Output Section',
+                'name' => 'portfolio_usecase2_enable',
+                'type' => 'true_false',
+                'ui' => 1,
+                'default_value' => 1,
+                'message' => 'Enable this section',
+            ],
+
+            // Background Image
+            // [
+            //     'key' => 'field_portfolio_usecase2_bg_image',
+            //     'label' => 'Background Image',
+            //     'name' => 'portfolio_usecase2_bg_image',
+            //     'type' => 'image',
+            //     'return_format' => 'array',
+            //     'preview_size' => 'medium',
+            //     'library' => 'all',
+            // ],
+
+            // Input Section
+            [
+                'key' => 'field_portfolio_usecase2_input_text',
+                'label' => 'Input Text',
+                'name' => 'portfolio_usecase2_input_text',
+                'type' => 'textarea',
+            ],
+
+            // System Section (Repeater)
+            [
+                'key' => 'field_portfolio_usecase2_system',
+                'label' => 'System Steps',
+                'name' => 'portfolio_usecase2_system',
+                'type' => 'repeater',
+                'sub_fields' => [
+                    [
+                        'key' => 'field_portfolio_usecase2_system_step',
+                        'label' => 'Step Text',
+                        'name' => 'step_text',
+                        'type' => 'textarea',
+                    ]
+                ],
+                'layout' => 'row',
+            ],
+
+            // Output Section
+            [
+                'key' => 'field_portfolio_usecase2_output_text',
+                'label' => 'Output Text',
+                'name' => 'portfolio_usecase2_output_text',
+                'type' => 'textarea',
+            ],
+
+            // Preview Image
+            [
+                'key' => 'field_portfolio_usecase2_preview_image',
+                'label' => 'Preview Image',
+                'name' => 'portfolio_usecase2_preview_image',
+                'type' => 'image',
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'library' => 'all',
+            ],
+
+        ],
+
+        'location' => [
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'portfolio',
+                ],
+            ],
+        ],
+
+    ]);
+
+});
+
+
+// project total ACF 
+add_action('acf/init', function () {
+    acf_add_local_field_group([
+        'key' => 'group_portfolio_stats_section',
+        'title' => 'Portfolio – Stats Section',
+        'fields' => [
+
+            // Enable/Disable Section
+            [
+                'key' => 'field_portfolio_stats_enable',
+                'label' => 'Show Stats Section',
+                'name' => 'portfolio_stats_enable',
+                'type' => 'true_false',
+                'ui' => 1,
+                'default_value' => 1,
+                'message' => 'Enable this section',
+            ],
+
+            // Stat Cards (Repeater)
+            [
+                'key' => 'field_portfolio_stats_cards',
+                'label' => 'Stat Cards',
+                'name' => 'stats_cards',
+                'type' => 'repeater',
+                'sub_fields' => [
+                    [
+                        'key' => 'field_stat_number',
+                        'label' => 'Number',
+                        'name' => 'number',
+                        'type' => 'text',
+                    ],
+                    [
+                        'key' => 'field_stat_title',
+                        'label' => 'Title',
+                        'name' => 'title',
+                        'type' => 'text',
+                    ],
+                    [
+                        'key' => 'field_stat_desc',
+                        'label' => 'Description',
+                        'name' => 'desc',
+                        'type' => 'text',
+                    ],
+                ],
+                'layout' => 'row',
+            ],
+
+            // Feature Cards (Repeater)
+            [
+                'key' => 'field_portfolio_feature_cards',
+                'label' => 'Feature Cards',
+                'name' => 'feature_cards',
+                'type' => 'repeater',
+                'sub_fields' => [
+                    [
+                        'key' => 'field_feature_number',
+                        'label' => 'Number / Icon',
+                        'name' => 'number',
+                        'type' => 'text',
+                    ],
+                    [
+                        'key' => 'field_feature_icon',
+                        'label' => 'Icon',
+                        'name' => 'icon',
+                        'type' => 'image',
+                        'return_format' => 'array',
+                        'preview_size' => 'thumbnail',
+                        'library' => 'all',
+                    ],
+                    [
+                        'key' => 'field_feature_title',
+                        'label' => 'Title',
+                        'name' => 'title',
+                        'type' => 'text',
+                    ],
+                    [
+                        'key' => 'field_feature_desc',
+                        'label' => 'Description',
+                        'name' => 'desc',
+                        'type' => 'text',
+                    ],
+                ],
+                'layout' => 'row',
+            ],
+
+        ],
+        'location' => [
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'portfolio',
+                ],
+            ],
+        ],
+    ]);
+});

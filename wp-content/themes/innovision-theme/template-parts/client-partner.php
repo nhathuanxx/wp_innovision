@@ -33,23 +33,26 @@
 
             <div class="cp-client-list">
               <div class="cp-client-item">
-                <div class="cp-bullet-container">
-                  <div class="cp-bullet"></div>
-                </div>
+                <div class="bullet-container">
+                        <div class="bullet">
+                        </div>
+                    </div>
                 <p>Enterprises in manufacturing, real estate, and technology.</p>
               </div>
 
               <div class="cp-client-item">
-                <div class="cp-bullet-container">
-                  <div class="cp-bullet"></div>
-                </div>
+                <div class="bullet-container">
+                        <div class="bullet">
+                        </div>
+                    </div>
                 <p>Government agencies adopting AI and data-driven solutions to enhance efficiency and public services.</p>
               </div>
 
               <div class="cp-client-item">
-                <div class="cp-bullet-container">
-                  <div class="cp-bullet"></div>
-                </div>
+              <div class="bullet-container">
+                        <div class="bullet">
+                        </div>
+                    </div>
                 <p>Startups & SMEs outsourcing AI, software, and firmware development.</p>
               </div>
             </div>
@@ -72,30 +75,34 @@
 
             <div class="cp-client-list">
               <div class="cp-client-item">
-                <div class="cp-bullet-container">
-                  <div class="cp-bullet"></div>
-                </div>
+             <div class="bullet-container">
+                        <div class="bullet">
+                        </div>
+                    </div>
                 <p>Semiconductor companies – supporting hardware and embedded ecosystems.</p>
               </div>
 
               <div class="cp-client-item">
-                <div class="cp-bullet-container">
-                  <div class="cp-bullet"></div>
-                </div>
+              <div class="bullet-container">
+                        <div class="bullet">
+                        </div>
+                    </div>
                 <p>AWS/GCP – cloud &amp; AI infrastructure.</p>
               </div>
 
               <div class="cp-client-item">
-                <div class="cp-bullet-container">
-                  <div class="cp-bullet"></div>
-                </div>
+                  <div class="bullet-container">
+                        <div class="bullet">
+                        </div>
+                    </div>
                 <p>Electronics factories – enabling real-world deployment of Edge AI devices.</p>
               </div>
 
               <div class="cp-client-item">
-                <div class="cp-bullet-container">
-                  <div class="cp-bullet"></div>
-                </div>
+             <div class="bullet-container">
+                        <div class="bullet">
+                        </div>
+                    </div>
                 <p>Universities &amp; Research Institutes – co-developing AI innovation.</p>
               </div>
             </div>
@@ -134,21 +141,24 @@
       <h3 class="cp-mobile-title">Our Clients</h3>
       <div class="cp-mobile-text-list">
         <div class="cp-mobile-item">
-          <div class="cp-bullet-container">
-            <div class="cp-bullet"></div>
-          </div>
+      <div class="bullet-container">
+                        <div class="bullet">
+                        </div>
+                    </div>
           <p>Enterprises in manufacturing, real estate, and technology.</p>
         </div>
         <div class="cp-mobile-item">
-          <div class="cp-bullet-container">
-            <div class="cp-bullet"></div>
-          </div>
+       <div class="bullet-container">
+                        <div class="bullet">
+                        </div>
+                    </div>
           <p>Government agencies adopting AI and data-driven solutions.</p>
         </div>
         <div class="cp-mobile-item">
-          <div class="cp-bullet-container">
-            <div class="cp-bullet"></div>
-          </div>
+       <div class="bullet-container">
+                        <div class="bullet">
+                        </div>
+                    </div>
           <p>Startups & SMEs outsourcing AI, software, and firmware development.</p>
         </div>
       </div>
@@ -167,27 +177,31 @@
       <h3 class="cp-mobile-title">Our Partners</h3>
       <div class="cp-mobile-text-list">
         <div class="cp-mobile-item">
-          <div class="cp-bullet-container">
-            <div class="cp-bullet"></div>
-          </div>
+        <div class="bullet-container">
+                        <div class="bullet">
+                        </div>
+                    </div>
           <p>Semiconductor companies – supporting hardware and embedded ecosystems.</p>
         </div>
         <div class="cp-mobile-item">
-          <div class="cp-bullet-container">
-            <div class="cp-bullet"></div>
-          </div>
+          <div class="bullet-container">
+                        <div class="bullet">
+                        </div>
+                    </div>
           <p>AWS/GCP – cloud & AI infrastructure.</p>
         </div>
         <div class="cp-mobile-item">
-          <div class="cp-bullet-container">
-            <div class="cp-bullet"></div>
-          </div>
+          <div class="bullet-container">
+                        <div class="bullet">
+                        </div>
+                    </div>
           <p>Electronics factories – enabling real-world deployment of Edge AI devices.</p>
         </div>
         <div class="cp-mobile-item">
-          <div class="cp-bullet-container">
-            <div class="cp-bullet"></div>
-          </div>
+           <div class="bullet-container">
+                        <div class="bullet">
+                        </div>
+                    </div>
           <p>Universities & Research Institutes – co-developing AI innovation.</p>
         </div>
       </div>
@@ -319,7 +333,7 @@
 
   .cp-client-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 16px;
   }
 
