@@ -85,8 +85,12 @@
 .stat-card {
   flex: 1;
   padding: 32px;
-  background: linear-gradient(180deg, #F2F8FE 0%, #FFFFFF 100%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* background: linear-gradient(180deg, #F2F8FE 0%, #FFFFFF 100%); */
+  background: linear-gradient(180deg, rgba(242, 248, 254, 0.33) 0%, rgba(255, 255, 255, 0) 100%);
+  border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+
+
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -123,8 +127,8 @@
 .feature-card {
   flex: 1;
   padding: 32px;
-  background: linear-gradient(180deg, #32E6B0 0%, #32E6B0 100%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(180deg, rgba(50, 230, 176, 0.7) 0%, rgba(50, 230, 176, 0) 100%);
+  border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
   border-radius: 16px;
   display: flex;
   flex-direction: column;
