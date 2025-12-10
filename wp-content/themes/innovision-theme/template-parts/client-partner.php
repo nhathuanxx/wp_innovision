@@ -11,7 +11,7 @@
     </p>
   </div>
 
-  <!-- Slider Container -->
+  <!-- Slider Container - Desktop Only -->
   <div class="cp-slider-wrapper">
 
     <!-- Previous Button -->
@@ -127,10 +127,82 @@
 
   </div>
 
-  <!-- Slide Indicators -->
-  <div class="cp-slide-indicators">
-    <span class="cp-indicator active" data-slide="0"></span>
-    <span class="cp-indicator" data-slide="1"></span>
+  <!-- Mobile/Tablet Static Content -->
+  <div class="cp-mobile-content">
+    <!-- Clients Section -->
+    <div class="cp-mobile-section">
+      <h3 class="cp-mobile-title">Our Clients</h3>
+      <div class="cp-mobile-text-list">
+        <div class="cp-mobile-item">
+          <div class="cp-bullet-container">
+            <div class="cp-bullet"></div>
+          </div>
+          <p>Enterprises in manufacturing, real estate, and technology.</p>
+        </div>
+        <div class="cp-mobile-item">
+          <div class="cp-bullet-container">
+            <div class="cp-bullet"></div>
+          </div>
+          <p>Government agencies adopting AI and data-driven solutions.</p>
+        </div>
+        <div class="cp-mobile-item">
+          <div class="cp-bullet-container">
+            <div class="cp-bullet"></div>
+          </div>
+          <p>Startups & SMEs outsourcing AI, software, and firmware development.</p>
+        </div>
+      </div>
+      <div class="cp-mobile-logos">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rotek4x19848-4g7i-200h.png'); ?>" alt="Rostek">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ais4x19847-b9pf-200h.png'); ?>" alt="AIS">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image99850-s96-200h.png'); ?>" alt="Vinfast">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image109853-whwh-200w.png'); ?>" alt="Devzone">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/itmon4x19855-nv68-200h.png'); ?>" alt="ITmon">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/tz4x19846-9iws-200h.png'); ?>" alt="TZ Hitec">
+      </div>
+    </div>
+
+    <!-- Partners Section -->
+    <div class="cp-mobile-section">
+      <h3 class="cp-mobile-title">Our Partners</h3>
+      <div class="cp-mobile-text-list">
+        <div class="cp-mobile-item">
+          <div class="cp-bullet-container">
+            <div class="cp-bullet"></div>
+          </div>
+          <p>Semiconductor companies – supporting hardware and embedded ecosystems.</p>
+        </div>
+        <div class="cp-mobile-item">
+          <div class="cp-bullet-container">
+            <div class="cp-bullet"></div>
+          </div>
+          <p>AWS/GCP – cloud & AI infrastructure.</p>
+        </div>
+        <div class="cp-mobile-item">
+          <div class="cp-bullet-container">
+            <div class="cp-bullet"></div>
+          </div>
+          <p>Electronics factories – enabling real-world deployment of Edge AI devices.</p>
+        </div>
+        <div class="cp-mobile-item">
+          <div class="cp-bullet-container">
+            <div class="cp-bullet"></div>
+          </div>
+          <p>Universities & Research Institutes – co-developing AI innovation.</p>
+        </div>
+      </div>
+      <div class="cp-mobile-logos">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image201061-fhvi-200h.png'); ?>" alt="Partner 1">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image191061-gitn-200h.png'); ?>" alt="Partner 2">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image181061-s4u8-200h.png'); ?>" alt="Partner 3">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image141061-1a09-200h.png'); ?>" alt="Partner 4">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image171061-wavk-200h.png'); ?>" alt="Partner 5">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image151061-pszb-200h.png'); ?>" alt="Partner 6">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image121061-px5m-200h.png'); ?>" alt="Partner 7">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image131061-n76d-200h.png'); ?>" alt="Partner 8">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image161061-eju4-200h.png'); ?>" alt="Partner 9">
+      </div>
+    </div>
   </div>
 
 </div>
@@ -138,12 +210,11 @@
 <style>
   .clients-partners-section {
     width: 100%;
-    height: 784px;
+    min-height: 784px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding-top: 114px;
+    padding: 114px 20px 80px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -156,7 +227,7 @@
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    margin-bottom: 149px;
+    margin-bottom: 80px;
     text-align: center;
   }
 
@@ -166,7 +237,6 @@
     font-weight: 700;
     color: #000000;
     margin: 0;
-    line-height: normal;
   }
 
   .cp-title-highlight {
@@ -176,23 +246,19 @@
   .cp-section-description {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
-    font-weight: 400;
     color: #474363;
     margin: 0;
   }
 
-  /* Slider Wrapper */
+  /* Desktop Slider */
   .cp-slider-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 71px;
+    gap: 40px;
+    max-width: 1320px;
     width: 100%;
-    max-width: 1400px;
-    position: relative;
   }
 
-  /* Slider Buttons */
   .cp-slider-btn {
     width: 40px;
     height: 40px;
@@ -201,23 +267,15 @@
     cursor: pointer;
     transition: transform 0.2s ease;
     flex-shrink: 0;
-    padding: 0;
   }
 
   .cp-slider-btn:hover {
     transform: scale(1.1);
   }
 
-  .cp-slider-btn:active {
-    transform: scale(0.95);
-  }
-
-  /* Slider Container */
   .cp-slider-container {
-    width: 1260px;
-    max-width: 100%;
+    flex: 1;
     overflow: hidden;
-    position: relative;
   }
 
   .cp-slider-track {
@@ -225,13 +283,11 @@
     transition: transform 0.5s ease-in-out;
   }
 
-  /* Slide */
   .cp-slide {
     min-width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 71px;
+    gap: 40px;
     opacity: 0;
     transition: opacity 0.5s ease;
   }
@@ -240,9 +296,8 @@
     opacity: 1;
   }
 
-  /* Slide Content */
   .cp-slide-content {
-    width: 643px;
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -254,19 +309,17 @@
     font-weight: 700;
     color: #474363;
     margin: 0;
-    line-height: normal;
   }
 
-  /* Client List */
   .cp-client-list {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
   }
 
   .cp-client-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 16px;
   }
 
@@ -274,11 +327,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background-color: rgba(0, 122, 255, 0.15);
     flex-shrink: 0;
+    margin-top: 2px;
   }
 
   .cp-bullet {
@@ -286,210 +340,80 @@
     height: 8px;
     background: #007AFF;
     border-radius: 50%;
-    flex-shrink: 0;
   }
 
   .cp-client-item p {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
-    font-weight: 400;
     color: #474363;
     margin: 0;
-    line-height: normal;
+    line-height: 1.6;
     flex: 1;
   }
 
-  /* Clients Logos Grid (Slide 1) */
+  /* Logos Grids */
   .cp-clients-logos-grid {
-    width: 590px;
-    height: 364px;
+    width: 500px;
+    height: 300px;
     position: relative;
     flex-shrink: 0;
   }
 
   .cp-client-logo {
     position: absolute;
-    /* opacity: 0.7; */
     transition: all 0.3s ease;
+    max-width: 100%;
+    height: auto;
   }
 
   .cp-client-logo:hover {
-    opacity: 1;
     transform: scale(1.05);
   }
 
-  .cp-client-logo-1 {
-    top: 0;
-    left: 0;
-    width: 320px;
-    height: 97px;
-  }
+  .cp-client-logo-1 { top: 0; left: 0; width: 200px; }
+  .cp-client-logo-2 { top: 5px; right: 40px; width: 120px; }
+  .cp-client-logo-3 { top: 110px; left: 10px; width: 220px; }
+  .cp-client-logo-4 { top: 100px; right: 55px; width: 55px; }
+  .cp-client-logo-5 { bottom: 0; left: 10px; width: 115px; }
+  .cp-client-logo-6 { bottom: 5px; left: 180px; width: 240px; }
 
-  .cp-client-logo-2 {
-    top: 7px;
-    right: 53px;
-    width: 168px;
-    height: 94px;
-  }
-
-  .cp-client-logo-3 {
-    top: 154px;
-    left: 15px;
-    width: 312px;
-    height: 70px;
-  }
-
-  .cp-client-logo-4 {
-    top: 141px;
-    right: 75px;
-    width: 79px;
-    height: 96px;
-  }
-
-  .cp-client-logo-5 {
-    bottom: 0;
-    left: 15px;
-    width: 165px;
-    height: 130px;
-  }
-
-  .cp-client-logo-6 {
-    bottom: 6px;
-    left: 254px;
-    width: 336px;
-    height: 85px;
-  }
-
-  /* Partners Logos Grid (Slide 2) */
   .cp-partners-logos-grid {
-    width: 644px;
-    height: 240px;
+    width: 500px;
+    height: 180px;
     position: relative;
     flex-shrink: 0;
   }
 
   .cp-partner-logo {
     position: absolute;
-    /* opacity: 0.7; */
     transition: all 0.3s ease;
+    max-width: 100%;
+    height: auto;
   }
 
   .cp-partner-logo:hover {
-    opacity: 1;
     transform: scale(1.05);
   }
 
-  .cp-partner-logo-1 {
-    top: 0;
-    left: 0;
-    width: 168px;
-    height: 58px;
-  }
+  .cp-partner-logo-1 { top: 0; left: 0; width: 125px; }
+  .cp-partner-logo-2 { bottom: 0; left: 0; width: 235px; }
+  .cp-partner-logo-3 { top: 75px; left: 0; width: 270px; }
+  .cp-partner-logo-4 { bottom: 0; right: 0; width: 115px; }
+  .cp-partner-logo-5 { top: 68px; right: 5px; width: 98px; }
+  .cp-partner-logo-6 { top: 0; left: 175px; width: 120px; }
+  .cp-partner-logo-7 { top: 0; right: 0; width: 150px; }
+  .cp-partner-logo-8 { bottom: 0; left: 263px; width: 72px; }
+  .cp-partner-logo-9 { top: 69px; left: 303px; width: 43px; }
 
-  .cp-partner-logo-2 {
-    top: 182px;
-    left: 0;
-    width: 316px;
-    height: 58px;
-  }
-
-  .cp-partner-logo-3 {
-    top: 99px;
-    left: 0;
-    width: 366px;
-    height: 45px;
-  }
-
-  .cp-partner-logo-4 {
-    top: 182px;
-    right: 0;
-    width: 156px;
-    height: 58px;
-  }
-
-  .cp-partner-logo-5 {
-    top: 91px;
-    right: 6px;
-    width: 132px;
-    height: 58px;
-  }
-
-  .cp-partner-logo-6 {
-    top: 0;
-    left: 236px;
-    width: 161px;
-    height: 58px;
-  }
-
-  .cp-partner-logo-7 {
-    top: 0;
-    right: 0;
-    width: 201px;
-    height: 58px;
-  }
-
-  .cp-partner-logo-8 {
-    top: 182px;
-    left: 354px;
-    width: 97px;
-    height: 58px;
-  }
-
-  .cp-partner-logo-9 {
-    top: 92px;
-    left: 408px;
-    width: 58px;
-    height: 58px;
-  }
-
-  /* Slide Indicators */
-  .cp-slide-indicators {
+  /* Mobile Content - Hidden on Desktop */
+  .cp-mobile-content {
     display: none;
-    gap: 12px;
-    margin-top: 40px;
-  }
-
-  .cp-indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #D1D5DB;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .cp-indicator.active {
-    background: #4A90E2;
-    width: 30px;
-    border-radius: 5px;
   }
 
   /* Responsive */
-  @media (max-width: 1400px) {
-    .cp-slider-wrapper {
-      gap: 40px;
-      padding: 0 20px;
-    }
-
-    .cp-slide {
-      gap: 40px;
-    }
-
-    .cp-slide-content {
-      width: 500px;
-    }
-
-    .cp-clients-logos-grid,
-    .cp-partners-logos-grid {
-      transform: scale(0.85);
-      transform-origin: left center;
-    }
-  }
-
   @media (max-width: 1024px) {
     .clients-partners-section {
-      height: auto;
-      padding: 60px 20px 80px;
+      padding: 60px 20px;
     }
 
     .cp-section-header {
@@ -500,31 +424,70 @@
       font-size: 36px;
     }
 
+    /* Hide Desktop Slider */
     .cp-slider-wrapper {
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    .cp-slider-btn {
       display: none;
     }
 
-    .cp-slide {
+    /* Show Mobile Content */
+    .cp-mobile-content {
+      display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 60px;
+      max-width: 800px;
+      width: 100%;
     }
 
-    .cp-slide-content {
-      width: 100%;
-      max-width: 600px;
+    .cp-mobile-section {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
 
-    .cp-clients-logos-grid,
-    .cp-partners-logos-grid {
-      width: 100%;
-      max-width: 500px;
-      transform: scale(0.8);
-      transform-origin: center;
+    .cp-mobile-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #474363;
+      margin: 0;
+      text-align: center;
+    }
+
+    .cp-mobile-text-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cp-mobile-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .cp-mobile-item p {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #474363;
+      margin: 0;
+    }
+
+    /* Mobile Logos Grid */
+    .cp-mobile-logos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px 20px;
+      align-items: center;
+      justify-items: center;
+      padding: 20px 0;
+    }
+
+    .cp-mobile-logos img {
+      max-width: 100%;
+      height: auto;
+      max-height: 60px;
+      object-fit: contain;
     }
   }
 
@@ -537,18 +500,28 @@
       font-size: 14px;
     }
 
-    .cp-slide-title {
+    .cp-mobile-title {
       font-size: 24px;
     }
 
-    .cp-client-item p {
+    .cp-mobile-item p {
       font-size: 14px;
     }
 
-    .cp-clients-logos-grid,
-    .cp-partners-logos-grid {
-      transform: scale(0.6);
-      height: 250px;
+    .cp-mobile-logos {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cp-mobile-logos {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 10px;
+    }
+
+    .cp-mobile-logos img {
+      max-height: 50px;
     }
   }
 </style>
@@ -559,20 +532,16 @@
     const prevBtn = document.getElementById('cpPrevBtn');
     const nextBtn = document.getElementById('cpNextBtn');
     const slides = document.querySelectorAll('.cp-slide');
-    const indicators = document.querySelectorAll('.cp-indicator');
+
+    if (!sliderTrack || !prevBtn || !nextBtn) return;
 
     let currentSlide = 0;
     const totalSlides = slides.length;
 
     function updateSlider() {
       sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-
       slides.forEach((slide, index) => {
         slide.classList.toggle('active', index === currentSlide);
-      });
-
-      indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === currentSlide);
       });
     }
 
@@ -588,13 +557,6 @@
 
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
-
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        currentSlide = index;
-        updateSlider();
-      });
-    });
 
     let autoSlideInterval = setInterval(nextSlide, 5000);
 

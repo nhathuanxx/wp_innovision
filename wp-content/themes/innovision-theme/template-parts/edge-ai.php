@@ -70,29 +70,9 @@
     <!-- Right Device Mockup -->
     <div class="som-device-mockup">
       <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse33624-9nsw-300h.png'); ?>"
+        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/some-pipe-img.png'); ?>"
         alt=""
-        class="som-mockup-ellipse-1"
-      />
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse43624-7stk-200h.png'); ?>"
-        alt=""
-        class="som-mockup-ellipse-2"
-      />
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle13624-t11b-500h.png'); ?>"
-        alt=""
-        class="som-mockup-rect-1"
-      />
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle23624-lgc-500h.png'); ?>"
-        alt=""
-        class="som-mockup-rect-2"
-      />
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/screenshot20251128at12271713624-xyv-400h.png'); ?>"
-        alt="SOM Pipeline"
-        class="som-mockup-screen"
+        class="som-mockup-ellipse"
       />
     </div>
   </div>
@@ -192,12 +172,9 @@
   flex-shrink: 0;
 }
 
-.som-mockup-ellipse-1 {
-  position: absolute;
-  top: 113px;
-  left: 14px;
-  width: 257px;
-  height: 257px;
+.som-mockup-ellipse {
+width: 100%;
+height: auto;
 }
 
 .som-mockup-ellipse-2 {

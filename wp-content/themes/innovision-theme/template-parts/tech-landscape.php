@@ -88,88 +88,10 @@
     <!-- Logo Grid -->
     <div class="logo-grid">
       <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image351979-0i0j-400w.png'); ?>"
+        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/tech-landscape-img.png'); ?>"
         alt="Main Logo"
         class="logo-main"
       />
-      
-      <div class="logo-item logo-1">
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image361979-iwl-200h.png'); ?>"
-          alt=""
-          class="logo-bg"
-        />
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image371979-333d-200h.png'); ?>"
-          alt=""
-          class="logo-icon"
-        />
-      </div>
-
-      <div class="logo-item logo-2">
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image361979-ix1e-200h.png'); ?>"
-          alt=""
-          class="logo-bg"
-        />
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image381979-roq-200h.png'); ?>"
-          alt=""
-          class="logo-icon"
-        />
-      </div>
-
-      <div class="logo-item logo-3">
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image361979-6f2v-200h.png'); ?>"
-          alt=""
-          class="logo-bg"
-        />
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22941979-2rv-200h.png'); ?>"
-          alt=""
-          class="logo-icon"
-        />
-      </div>
-
-      <div class="logo-item logo-4">
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image361979-jroj-200h.png'); ?>"
-          alt=""
-          class="logo-bg"
-        />
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22941979-9yw-200h.png'); ?>"
-          alt=""
-          class="logo-icon"
-        />
-      </div>
-
-      <div class="logo-item logo-5">
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image361979-i8nr-200h.png'); ?>"
-          alt=""
-          class="logo-bg"
-        />
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22941979-mdz-200h.png'); ?>"
-          alt=""
-          class="logo-icon"
-        />
-      </div>
-
-      <div class="logo-item logo-6">
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image361979-4tn9-200h.png'); ?>"
-          alt=""
-          class="logo-bg"
-        />
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rectangle22941979-38t6-200h.png'); ?>"
-          alt=""
-          class="logo-icon"
-        />
-      </div>
     </div>
   </div>
 </div>
@@ -278,11 +200,8 @@
 }
 
 .logo-main {
-  position: absolute;
-  top: 33px;
-  left: 50px;
-  width: 380px;
-  height: 386px;
+ width: 100%;
+ height: auto;
 }
 
 .logo-item {
