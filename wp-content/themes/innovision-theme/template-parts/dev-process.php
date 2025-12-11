@@ -1,120 +1,64 @@
+<?php
+$fields = get_fields();
+
+if (empty($fields['dev_process_enable'])) return;
+
+// $title       = $fields['dev_process_title'] ?? '';
+$desc        = $fields['dev_process_desc'] ?? '';
+$key_points  = $fields['dev_process_key_points'] ?? [];
+$scrum_roles = $fields['dev_process_scrum_roles'] ?? [];
+$screenshot  = $fields['dev_process_screenshot']['url'] ?? '';
+?>
 <div class="dev-process-section">
+
   <img
     src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image444011-xl4a-1200h.png'); ?>"
     alt="Background"
     class="dev-process-bg"
   />
-  
   <div class="dev-process-content">
+
     <!-- Header -->
     <div class="dev-process-header">
       <h2 class="section-title">
         <span class="highlight">Development</span>
-        <span>Process</span>
+        <span class="title-highlight">Process</span>
       </h2>
-      <p class="section-desc">
-        We follow the Agile/Scrum methodology to ensure flexibility,
-        transparency, and rapid delivery of business value.
-      </p>
+      <p class="section-desc"><?php echo esc_html($desc); ?></p>
     </div>
 
     <div class="content-wrapper">
-      <!-- Cards Row -->
+
       <div class="cards-row">
+        
         <!-- Key Points Card -->
         <div class="info-card key-points-card">
           <h3 class="card-title">KEY POINTS (BULLET FORM)</h3>
-          
-          <div class="bullet-item">
-              <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-            <p class="bullet-text">
-              Iterative Development: Work in sprints (2–3 weeks) with
-              clear deliverables
-            </p>
-          </div>
 
-          <div class="bullet-item">
-             <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-            <p class="bullet-text">
-              Cross-functional Teams: Firmware engineers,
-              backend/frontend developers, and QA work together
-            </p>
-          </div>
-
-          <div class="bullet-item">
-            <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-            <p class="bullet-text">
-              Continuous Feedback: Client reviews after each sprint,
-              ensuring alignment
-            </p>
-          </div>
-
-          <div class="bullet-item">
-         <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-            <p class="bullet-text">
-              Transparency: Sprint backlog, burn-down charts, and
-              progress tracking
-            </p>
-          </div>
-
-          <div class="bullet-item">
-            <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-            <p class="bullet-text">
-              Adaptability: Scope adjustments based on real-time
-              business needs
-            </p>
-          </div>
+          <?php foreach ($key_points as $item): ?>
+            <div class="bullet-item">
+              <div class="bullet-container"><div class="bullet"></div></div>
+              <p class="bullet-text"><?php echo esc_html($item['text']); ?></p>
+            </div>
+          <?php endforeach; ?>
         </div>
 
         <!-- Scrum Roles Card -->
         <div class="info-card scrum-roles-card">
           <h3 class="card-title">SCRUM ROLES</h3>
-          
-          <div class="bullet-item">
-           <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-            <p class="bullet-text">
-              Product Owner (PO): Represents customer needs
-            </p>
-          </div>
 
-          <div class="bullet-item">
-          <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-            <p class="bullet-text">
-              Scrum Master: Facilitates process, removes blocker
-            </p>
-          </div>
-
-          <div class="bullet-item">
-              <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-            <p class="bullet-text">
-              Development Team: Delivers increments of working software
-            </p>
-          </div>
+          <?php foreach ($scrum_roles as $item): ?>
+            <div class="bullet-item">
+              <div class="bullet-container"><div class="bullet"></div></div>
+              <p class="bullet-text"><?php echo esc_html($item['text']); ?></p>
+            </div>
+          <?php endforeach; ?>
         </div>
+
       </div>
 
-      <!-- Screenshot Image -->
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/screenshot20251205at16122114214-t8er-600h.png'); ?>"
-        alt="Development Process Screenshot"
-        class="process-screenshot"
-      />
+      <img src="<?php echo esc_url($screenshot); ?>" alt="Development Process Screenshot" class="process-screenshot"/>
+    
     </div>
   </div>
 </div>

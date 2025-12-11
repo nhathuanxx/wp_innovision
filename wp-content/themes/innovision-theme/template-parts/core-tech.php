@@ -1,182 +1,84 @@
+<?php
+$fields = get_fields();
+
+if (empty($fields['core_tech_enable'])) {
+    return;
+}
+
+$title  = $fields['core_tech_title'] ?? '';
+$steps  = $fields['core_tech_steps'] ?? [];
+$cards  = $fields['core_tech_cards'] ?? [];
+?>
+
 <div class="core-tech">
+
+  <!-- Title -->
   <h2 class="core-tech-title">
-    <span class="highlight">Core</span>
+       <span class="highlight">Core</span>
     <span class="title-highlight">Technology</span>
   </h2>
 
   <!-- Process Steps -->
   <div class="process-steps">
-    <div class="step-item">
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image311821-lbu-200h.png'); ?>"
-        alt="Data Source"
-        class="step-icon" />
-      <div class="step-content">
-        <h3 class="step-title">Data Source</h3>
-        <p class="step-desc">
-          PDFs, SOPs, Contracts,<br />
-          Property Listings, Policies
-        </p>
-      </div>
-    </div>
+    <?php foreach ($steps as $step): ?>
+      <div class="step-item">
+        
+        <?php if (!empty($step['icon']['url'])): ?>
+          <img src="<?= esc_url($step['icon']['url']); ?>" alt="" class="step-icon" />
+        <?php endif; ?>
 
-    <div class="step-item">
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icon4x11901-6hqw-200h.png'); ?>"
-        alt="OCR &amp; Parsing"
-        class="step-icon" />
-      <div class="step-content">
-        <h3 class="step-title">OCR &amp; Parsing</h3>
-        <p class="step-desc">Extract text, detect layout &amp; tables</p>
-      </div>
-    </div>
+        <div class="step-content">
+          <h3 class="step-title"><?= esc_html($step['title']); ?></h3>
+          <p class="step-desc"><?= nl2br(esc_html($step['desc'])); ?></p>
+        </div>
 
-    <div class="step-item">
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image271831-unsp-200h.png'); ?>"
-        alt="Embedding &amp; Indexing"
-        class="step-icon" />
-      <div class="step-content">
-        <h3 class="step-title">Embedding &amp; Indexing</h3>
-        <p class="step-desc">Store vectors in a secure database (vector DB)</p>
       </div>
-    </div>
-
-    <div class="step-item">
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image281831-g0v-200h.png'); ?>"
-        alt="Retriever + RAG"
-        class="step-icon" />
-      <div class="step-content">
-        <h3 class="step-title">Retriever + RAG</h3>
-        <p class="step-desc">Retrieve relevant chunks for queries</p>
-      </div>
-    </div>
-
-    <div class="step-item">
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icon4x11901-mfq-200h.png'); ?>"
-        alt="LLM (Domain-tuned)"
-        class="step-icon" />
-      <div class="step-content">
-        <h3 class="step-title">LLM (Domain-tuned)</h3>
-        <p class="step-desc">Generate answers grounded in context</p>
-      </div>
-    </div>
-
-    <div class="step-item">
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image301831-jqvs-200h.png'); ?>"
-        alt="Outputs (UI / API)"
-        class="step-icon" />
-      <div class="step-content">
-        <h3 class="step-title">Outputs (UI / API)</h3>
-        <p class="step-desc">
-          PDFs, SOPs, Contracts,<br />
-          Property Listings, Policies
-        </p>
-      </div>
-    </div>
+    <?php endforeach; ?>
   </div>
 
   <!-- Feature Cards -->
   <div class="feature-cards">
-    <!-- LLM + RAG Card -->
-    <div class="feature-card card-blue">
-      <div class="card-header">
-        <h3 class="card-title">LLM + RAG</h3>
-      </div>
-      <div class="card-body">
-        <div class="feature-list">
-          <div class="feature-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/svgmargin1973-1gm.svg'); ?>"
-              alt=""
-              class="check-icon" />
-            <p class="feature-text">Supports Vietnamese, English.</p>
-          </div>
-          <div class="feature-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/svgmargin1973-agvh.svg'); ?>"
-              alt=""
-              class="check-icon" />
-            <p class="feature-text">Retrieval-Augmented Generation ensures answers with sources</p>
-          </div>
-          <div class="feature-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/svgmargin1973-cgq.svg'); ?>"
-              alt=""
-              class="check-icon" />
-            <p class="feature-text">Domain-specific fine-tuning for enterprises &amp; government.</p>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Document AI Card -->
-    <div class="feature-card card-cyan">
-      <div class="card-header">
-        <h3 class="card-title">Document AI</h3>
-      </div>
-      <div class="card-body">
-        <div class="feature-list">
-          <div class="feature-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/svgmargin1973-1sjho.svg'); ?>"
-              alt=""
-              class="check-icon" />
-            <p class="feature-text">Supports Vietnamese, English.</p>
-          </div>
-          <div class="feature-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/svgmargin1973-3zq.svg'); ?>"
-              alt=""
-              class="check-icon" />
-            <p class="feature-text">Retrieval-Augmented Generation ensures answers with sources</p>
-          </div>
-          <div class="feature-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/svgmargin1973-32tu.svg'); ?>"
-              alt=""
-              class="check-icon" />
-            <p class="feature-text">Domain-specific fine-tuning for enterprises &amp; government.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php foreach ($cards as $card): ?>
+      <div class="feature-card <?= esc_attr($card['card_color']); ?>">
 
-    <!-- Conversational AI Card -->
-    <div class="feature-card card-light-blue">
-      <div class="card-header">
-        <h3 class="card-title">Conversational AI</h3>
-      </div>
-      <div class="card-body">
-        <div class="feature-list">
-          <div class="feature-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/svgmargin1973-cyuq.svg'); ?>"
-              alt=""
-              class="check-icon" />
-            <p class="feature-text">Internal AI assistants for staff Q&amp;A.</p>
-          </div>
-          <div class="feature-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/svgmargin1973-rfoh.svg'); ?>"
-              alt=""
-              class="check-icon" />
-            <p class="feature-text">Natural language interfaces for enterprise databases</p>
-          </div>
-          <div class="feature-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/svgmargin1974-fynw.svg'); ?>"
-              alt=""
-              class="check-icon" />
-            <p class="feature-text">Secure deployment: on-prem, hybrid, or cloud</p>
+        <div class="card-header">
+          <h3 class="card-title"><?= esc_html($card['card_title']); ?></h3>
+        </div>
+
+        <div class="card-body">
+          <div class="feature-list">
+
+            <?php foreach ($card['features'] as $feature): ?>
+              <div class="feature-item">
+
+            <?php if (!empty($feature['icon']['url'])): ?>
+  <img
+    src="<?= esc_url($feature['icon']['url']); ?>"
+    alt=""
+    class="check-icon"
+  />
+<?php else: ?>
+  <img
+    src="<?= esc_url(get_template_directory_uri() . '/assets/images/innovision/svgmargin1973-1sjho.svg'); ?>"
+    alt=""
+    class="check-icon"
+  />
+<?php endif; ?>
+
+                <p class="feature-text"><?= esc_html($feature['text']); ?></p>
+
+              </div>
+            <?php endforeach; ?>
+
           </div>
         </div>
+
       </div>
-    </div>
+    <?php endforeach; ?>
+
   </div>
+
 </div>
 
 <style>
@@ -258,6 +160,9 @@
     display: flex;
     gap: 32px;
     width: 100%;
+  }
+  .core-tech .feature-card{
+  box-shadow: 0px 1px 20px 0px rgba(0, 122, 255, 0.05);
   }
 
   .feature-card {

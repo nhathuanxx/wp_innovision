@@ -1306,3 +1306,278 @@ add_action('acf/init', function () {
         ],
     ]);
 });
+
+
+
+// Core Technology Section – ACF
+add_action('acf/init', function () {
+
+    acf_add_local_field_group([
+        'key' => 'group_core_technology',
+        'title' => 'Solutions – Core Technology',
+        'fields' => [
+
+            /*
+            -------------------------------------------------------
+            Enable section
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_core_tech_enable',
+                'label' => 'Show Core Technology Section',
+                'name' => 'core_tech_enable',
+                'type' => 'true_false',
+                'ui' => 1,
+                'default_value' => 1,
+            ],
+
+            /*
+            -------------------------------------------------------
+            Title
+            -------------------------------------------------------
+            */
+            // [
+            //     'key' => 'field_core_tech_title',
+            //     'label' => 'Section Title',
+            //     'name' => 'core_tech_title',
+            //     'type' => 'textarea',
+            //     'instructions' => 'Example: &lt;span class="highlight"&gt;Core&lt;/span&gt; &lt;span class="title-highlight"&gt;Technology&lt;/span&gt;',
+            // ],
+
+            /*
+            -------------------------------------------------------
+            Process Steps Repeater
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_core_tech_steps',
+                'label' => 'Process Steps',
+                'name' => 'core_tech_steps',
+                'type' => 'repeater',
+                'layout' => 'row',
+                'button_label' => 'Add Step',
+                'sub_fields' => [
+
+                    [
+                        'key' => 'field_core_tech_step_icon',
+                        'label' => 'Icon',
+                        'name' => 'icon',
+                        'type' => 'image',
+                        'return_format' => 'array',
+                    ],
+                    [
+                        'key' => 'field_core_tech_step_title',
+                        'label' => 'Title',
+                        'name' => 'title',
+                        'type' => 'text',
+                    ],
+                    [
+                        'key' => 'field_core_tech_step_desc',
+                        'label' => 'Description',
+                        'name' => 'desc',
+                        'type' => 'textarea',
+                        'rows' => 3,
+                    ],
+
+                ],
+            ],
+
+            /*
+            -------------------------------------------------------
+            Feature Cards Repeater
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_core_tech_cards',
+                'label' => 'Feature Cards',
+                'name' => 'core_tech_cards',
+                'type' => 'repeater',
+                'layout' => 'row',
+                'button_label' => 'Add Card',
+                'sub_fields' => [
+
+                    [
+                        'key' => 'field_core_tech_card_title',
+                        'label' => 'Card Title',
+                        'name' => 'card_title',
+                        'type' => 'text',
+                    ],
+
+                    [
+                        'key' => 'field_core_tech_card_color',
+                        'label' => 'Card Color Theme',
+                        'name' => 'card_color',
+                        'type' => 'select',
+                        'choices' => [
+                            'card-blue'       => 'Blue',
+                            'card-cyan'       => 'Cyan',
+                            'card-light-blue' => 'Light Blue',
+                        ],
+                        'default_value' => 'card-blue',
+                        'ui' => 1,
+                    ],
+
+                    [
+                        'key' => 'field_core_tech_card_features',
+                        'label' => 'Feature List',
+                        'name' => 'features',
+                        'type' => 'repeater',
+                        'layout' => 'row',
+                        'button_label' => 'Add Feature',
+                        'sub_fields' => [
+                            [
+                                'key' => 'field_core_tech_feature_icon',
+                                'label' => 'Feature Icon',
+                                'name' => 'icon',
+                                'type' => 'image',
+                                'return_format' => 'array',
+                            ],
+                            [
+                                'key' => 'field_core_tech_feature_text',
+                                'label' => 'Feature Text',
+                                'name' => 'text',
+                                'type' => 'textarea',
+                                'rows' => 2,
+                            ],
+                        ],
+                    ],
+
+                ],
+            ],
+
+        ],
+
+        'location' => [
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'solutions',
+                ],
+            ],
+        ],
+    ]);
+});
+
+
+
+// Development Process Section – ACF
+add_action('acf/init', function () {
+
+    acf_add_local_field_group([
+        'key' => 'group_dev_process',
+        'title' => 'Solutions – Development Process',
+        'fields' => [
+
+            /*
+            -------------------------------------------------------
+            Enable section
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_dev_process_enable',
+                'label' => 'Show Development Process Section',
+                'name' => 'dev_process_enable',
+                'type' => 'true_false',
+                'ui' => 1,
+                'default_value' => 1,
+            ],
+
+            /*
+            -------------------------------------------------------
+            Title + Description
+            -------------------------------------------------------
+            */
+            // [
+            //     'key' => 'field_dev_process_title',
+            //     'label' => 'Section Title',
+            //     'name' => 'dev_process_title',
+            //     'type' => 'text',
+            // ],
+
+            [
+                'key' => 'field_dev_process_desc',
+                'label' => 'Section Description',
+                'name' => 'dev_process_desc',
+                'type' => 'textarea',
+                'rows' => 3,
+            ],
+
+            /*
+            -------------------------------------------------------
+            Key Points (Repeater)
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_dev_process_key_points',
+                'label' => 'Key Points (Bullet Form)',
+                'name' => 'dev_process_key_points',
+                'type' => 'repeater',
+                'layout' => 'row',
+                'button_label' => 'Add Key Point',
+                'sub_fields' => [
+                    [
+                        'key' => 'field_dev_process_kp_text',
+                        'label' => 'Text',
+                        'name' => 'text',
+                        'type' => 'textarea',
+                        'rows' => 2,
+                    ],
+                ],
+            ],
+
+            /*
+            -------------------------------------------------------
+            Scrum Roles (Repeater)
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_dev_process_scrum_roles',
+                'label' => 'Scrum Roles',
+                'name' => 'dev_process_scrum_roles',
+                'type' => 'repeater',
+                'layout' => 'row',
+                'button_label' => 'Add Role',
+                'sub_fields' => [
+                    [
+                        'key' => 'field_dev_process_scrum_text',
+                        'label' => 'Text',
+                        'name' => 'text',
+                        'type' => 'textarea',
+                        'rows' => 2,
+                    ],
+                ],
+            ],
+
+            /*
+            -------------------------------------------------------
+            Screenshot Image
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_dev_process_screenshot',
+                'label' => 'Screenshot Image',
+                'name' => 'dev_process_screenshot',
+                'type' => 'image',
+                'return_format' => 'array',
+            ],
+
+        ],
+
+        /*
+        -------------------------------------------------------
+        Location: post_type == solutions
+        -------------------------------------------------------
+        */
+        'location' => [
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'solutions',
+                ],
+            ],
+        ],
+
+    ]);
+});
