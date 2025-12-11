@@ -1581,3 +1581,227 @@ add_action('acf/init', function () {
 
     ]);
 });
+
+
+
+// SOM Pipeline Section – ACF
+add_action('acf/init', function () {
+
+    acf_add_local_field_group([
+        'key' => 'group_som_pipeline',
+        'title' => 'Solutions – SOM Pipeline',
+        'fields' => [
+
+            /*
+            -------------------------------------------------------
+            Enable section
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_som_pipeline_enable',
+                'label' => 'Show SOM Pipeline Section',
+                'name' => 'som_pipeline_enable',
+                'type' => 'true_false',
+                'ui' => 1,
+                'default_value' => 1,
+            ],
+
+            /*
+            -------------------------------------------------------
+            Section Title
+            -------------------------------------------------------
+            */
+            // [
+            //     'key' => 'field_som_pipeline_title',
+            //     'label' => 'Section Title',
+            //     'name' => 'som_pipeline_title',
+            //     'type' => 'text',
+            // ],
+
+            /*
+            -------------------------------------------------------
+            Diagram Items (Repeater)
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_som_pipeline_diagram',
+                'label' => 'Diagram Items',
+                'name' => 'som_pipeline_diagram',
+                'type' => 'repeater',
+                'layout' => 'row',
+                'button_label' => 'Add Diagram Item',
+                'sub_fields' => [
+                    [
+                        'key' => 'field_som_pipeline_diagram_text',
+                        'label' => 'Text',
+                        'name' => 'text',
+                        'type' => 'textarea',
+                        'rows' => 2,
+                    ],
+                ],
+            ],
+
+            /*
+            -------------------------------------------------------
+            Key Metrics Items (Repeater)
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_som_pipeline_metrics',
+                'label' => 'Key Metrics',
+                'name' => 'som_pipeline_metrics',
+                'type' => 'repeater',
+                'layout' => 'row',
+                'button_label' => 'Add Metric Item',
+                'sub_fields' => [
+                    [
+                        'key' => 'field_som_pipeline_metric_text',
+                        'label' => 'Text',
+                        'name' => 'text',
+                        'type' => 'textarea',
+                        'rows' => 2,
+                    ],
+                ],
+            ],
+
+            /*
+            -------------------------------------------------------
+            Device Mockup Image
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_som_pipeline_image',
+                'label' => 'Device Mockup Image',
+                'name' => 'som_pipeline_image',
+                'type' => 'image',
+                'return_format' => 'array',
+            ],
+
+        ],
+
+        /*
+        -------------------------------------------------------
+        Location: Post Type = solutions
+        -------------------------------------------------------
+        */
+        'location' => [
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'solutions',
+                ],
+            ],
+        ],
+    ]);
+});
+
+
+// Software Development Section – ACF
+add_action('acf/init', function () {
+
+    acf_add_local_field_group([
+        'key' => 'group_software_development',
+        'title' => 'Solutions – Software Development',
+        'fields' => [
+
+            /*
+            -------------------------------------------------------
+            Enable Section
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_sw_dev_enable',
+                'label' => 'Show Software Development Section',
+                'name' => 'sw_dev_enable',
+                'type' => 'true_false',
+                'ui' => 1,
+                'default_value' => 1,
+            ],
+
+            /*
+            -------------------------------------------------------
+            Cards Repeater
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_sw_dev_cards',
+                'label' => 'Feature Cards',
+                'name' => 'sw_dev_cards',
+                'type' => 'repeater',
+                'layout' => 'row',
+                'button_label' => 'Add Card',
+                'sub_fields' => [
+
+                    // Card Title
+                    [
+                        'key' => 'field_sw_dev_card_title',
+                        'label' => 'Card Title',
+                        'name' => 'card_title',
+                        'type' => 'text',
+                    ],
+
+                    // Card Color Theme
+                    [
+                        'key' => 'field_sw_dev_card_color',
+                        'label' => 'Card Color',
+                        'name' => 'card_color',
+                        'type' => 'select',
+                        'choices' => [
+                            'card-bold-blue' => 'Bold Blue',
+                            'card-blue'      => 'Blue',
+                            'card-cyan'      => 'Cyan',
+                            'card-light-blue'=> 'Light Blue',
+                        ],
+                        'default_value' => 'card-blue',
+                        'ui' => 1,
+                    ],
+
+                    // Features Repeater
+                    [
+                        'key' => 'field_sw_dev_card_features',
+                        'label' => 'Feature List',
+                        'name' => 'features',
+                        'type' => 'repeater',
+                        'layout' => 'row',
+                        'button_label' => 'Add Feature',
+                        'sub_fields' => [
+                            [
+                                'key' => 'field_sw_dev_feature_icon',
+                                'label' => 'Feature Icon',
+                                'name' => 'icon',
+                                'type' => 'image',
+                                'return_format' => 'array',
+                            ],
+                            [
+                                'key' => 'field_sw_dev_feature_text',
+                                'label' => 'Feature Text',
+                                'name' => 'text',
+                                'type' => 'textarea',
+                                'rows' => 2,
+                            ],
+                        ],
+                    ],
+
+                ],
+            ],
+
+        ],
+
+        /*
+        -------------------------------------------------------
+        Location: post_type = solutions
+        -------------------------------------------------------
+        */
+        'location' => [
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'solutions',
+                ],
+            ],
+        ],
+    ]);
+
+});

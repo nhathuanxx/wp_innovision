@@ -1,72 +1,59 @@
+
+<?php
+$fields = get_fields();
+if (empty($fields['som_pipeline_enable'])) return;
+
+$title       = $fields['som_pipeline_title'] ?? '';
+$diagram     = $fields['som_pipeline_diagram'] ?? [];
+$metrics     = $fields['som_pipeline_metrics'] ?? [];
+$image       = $fields['som_pipeline_image']['url'] ?? '';
+?>
 <div class="som-pipeline-section">
-  <!-- Header -->
+
   <div class="som-pipeline-header">
     <h2 class="som-pipeline-title">
       <span class="som-title-highlight">Edge AI</span>
-      <span>SOM Pipeline</span>
+      <span class="title-highlight">SOM Pipeline</span>
     </h2>
   </div>
 
   <div class="som-pipeline-content">
-    <!-- Left Content -->
+
     <div class="som-pipeline-info">
+
       <!-- Diagram Section -->
       <div class="som-diagram-section">
         <h3 class="som-section-title">DIAGRAM</h3>
-        
-        <div class="som-bullet-item">
-          <div class="bullet-container">
-            <div class="bullet"></div>
+
+        <?php foreach ($diagram as $item): ?>
+          <div class="som-bullet-item">
+            <div class="bullet-container"><div class="bullet"></div></div>
+            <p class="som-bullet-text"><?php echo esc_html($item['text']); ?></p>
           </div>
-          <p class="som-bullet-text">
-            Data Source &gt; SoM (Qualcomm / NXP / Infineon) &gt; AI
-            inference (Vision / NLP / Sensors) &gt; API/SDK &gt;
-            Application Layer (camera, IoT hub, dashboard)
-          </p>
-        </div>
+        <?php endforeach; ?>
       </div>
 
       <!-- Key Metrics Section -->
       <div class="som-metrics-section">
         <h3 class="som-section-title">KEY METRICS</h3>
-        
-        <div class="som-bullet-item">
-           <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-          <p class="som-bullet-text">
-            Latency: &lt;200 ms on-device.
-          </p>
-        </div>
 
-        <div class="som-bullet-item">
-           <div class="bullet-container">
-            <div class="bullet"></div>
+        <?php foreach ($metrics as $item): ?>
+          <div class="som-bullet-item">
+            <div class="bullet-container"><div class="bullet"></div></div>
+            <p class="som-bullet-text"><?php echo esc_html($item['text']); ?></p>
           </div>
-          <p class="som-bullet-text">
-            Power efficiency: optimized for 1–5W edge devices
-          </p>
-        </div>
-
-        <div class="som-bullet-item">
-            <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-          <p class="som-bullet-text">
-            Scalability: modules ready for OEM integration.
-          </p>
-        </div>
+        <?php endforeach; ?>
       </div>
+
     </div>
 
-    <!-- Right Device Mockup -->
+    <!-- Device Mockup -->
     <div class="som-device-mockup">
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/some-pipe-img.png'); ?>"
-        alt=""
-        class="som-mockup-ellipse"
-      />
+      <?php if ($image): ?>
+        <img src="<?php echo esc_url($image); ?>" alt="" class="som-mockup-ellipse"/>
+      <?php endif; ?>
     </div>
+
   </div>
 </div>
 

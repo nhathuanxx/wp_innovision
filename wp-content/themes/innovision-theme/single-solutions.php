@@ -13,6 +13,9 @@ $fields = get_fields($post->ID);
 <?php get_template_part('template-parts/vision-statement', null,  [
   'fields' => $fields
 ]); ?>
+<?php get_template_part('template-parts/software-dev', null,  [
+  'fields' => $fields
+]); ?>
 <?php get_template_part('template-parts/tech-landscape', null,  [
   'fields' => $fields
 ]); ?>
