@@ -1,57 +1,65 @@
+<?php
+$fields = get_fields();
+
+// Nếu section tắt thì không render
+if (empty($fields['solutions_edge_ai_enable'])) {
+    return;
+}
+
+// Vision content
+$vision_desc  = $fields['solutions_edge_ai_description'] ?? '';
+$vision_image = $fields['solutions_edge_ai_image']['url'] 
+    ?? get_template_directory_uri() . '/assets/images/innovision/statement-side-img.png';
+
+// Why Edge AI Matters
+$why_list = $fields['solutions_edge_ai_matters'] ?? [];
+?>
+
 <div class="edge-ai-vision-section">
+
   <!-- Device Mockup -->
   <div class="edge-ai-device-mockup">
-    <img
-      src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/statement-side-img.png'); ?>"
-      alt=""
-      class="edge-ai-mockup-ellipse" />
+    <?php if ($vision_image): ?>
+      <img src="<?= esc_url($vision_image); ?>" alt="" class="edge-ai-mockup-ellipse" />
+    <?php endif; ?>
   </div>
 
   <!-- Content -->
   <div class="edge-ai-vision-content">
+
     <!-- Vision Header -->
     <div class="edge-ai-vision-header">
       <h2 class="edge-ai-vision-title">
         <span class="edge-ai-title-highlight">Vision</span>
         <span class="title-highlight">Statement</span>
       </h2>
-      <p class="edge-ai-vision-desc">
-        The future of AI is not only in the cloud, but also at the edge
-        — closer to where data is generated.
-      </p>
+
+      <?php if ($vision_desc): ?>
+        <p class="edge-ai-vision-desc">
+          <?= esc_html($vision_desc); ?>
+        </p>
+      <?php endif; ?>
     </div>
 
     <!-- Why Edge AI Matters -->
     <div class="edge-ai-matters-section">
+
       <h3 class="edge-ai-matters-title">WHY EDGE AI MATTERS</h3>
 
-      <div class="edge-ai-bullet-item">
-        <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-        <p class="edge-ai-bullet-text">
-          Cloud-only AI = latency, cost, and privacy concerns.
-        </p>
-      </div>
+      <?php if (!empty($why_list)): ?>
+        <?php foreach ($why_list as $row): ?>
+          <div class="edge-ai-bullet-item">
+            <div class="bullet-container">
+              <div class="bullet"></div>
+            </div>
 
-      <div class="edge-ai-bullet-item">
-       <div class="bullet-container">
-            <div class="bullet"></div>
+            <p class="edge-ai-bullet-text">
+              <?= esc_html($row['text'] ?? ''); ?>
+            </p>
           </div>
-        <p class="edge-ai-bullet-text">
-          Edge AI enables real-time decisions directly on devices
-        </p>
-      </div>
+        <?php endforeach; ?>
+      <?php endif; ?>
 
-      <div class="edge-ai-bullet-item">
-          <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-        <p class="edge-ai-bullet-text">
-          Critical for industries such as manufacturing, security, IoT,
-          and retail.
-        </p>
-      </div>
     </div>
   </div>
 </div>

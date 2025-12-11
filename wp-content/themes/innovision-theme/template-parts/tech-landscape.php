@@ -1,4 +1,19 @@
+<?php
+$fields = get_fields();
+
+if (empty($fields['tech_landscape_enable'])) {
+    return;
+}
+
+$title       = $fields['tech_landscape_title'] ?? '';
+$global      = $fields['global_trends'] ?? [];
+$vietnam     = $fields['vietnam_context'] ?? [];
+$main_img    = $fields['tech_landscape_image']['url']
+                ?? get_template_directory_uri() . '/assets/images/innovision/tech-landscape-img.png';
+?>
+
 <div class="tech-landscape">
+
   <div class="tech-header">
     <h2 class="tech-title">
       <span class="highlight">Technology</span>
@@ -8,81 +23,64 @@
 
   <div class="tech-content">
     <div class="tech-cards">
-      <!-- Global Trends Card -->
+
+      <!-- GLOBAL TRENDS -->
       <div class="tech-card">
         <div class="card-inner">
           <h3 class="card-title">GLOBAL TRENDS</h3>
-          
-          <div class="bullet-item">
+
+          <?php foreach ($global as $row): ?>
+            <div class="bullet-item">
               <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-            <p class="bullet-text">
-              <span class="text-default">Rise of</span>
-              <span class="text-blue"> domain-adapted LLMs</span>
-              <span class="text-default"> (finance, healthcare, legal)</span>
-            </p>
-          </div>
+                <div class="bullet"></div>
+              </div>
 
-          <div class="bullet-item">
-               <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-            <p class="bullet-text">
-              <span class="text-blue">Data privacy &amp; compliance</span>
-              <span class="text-default"> becoming top priority.</span>
-            </p>
-          </div>
+              <p class="bullet-text">
+                <?php foreach ($row['segments'] as $seg): ?>
+                  <span class="text-<?= esc_attr($seg['color']); ?>">
+                    <?= esc_html($seg['text']); ?>
+                  </span>
+                <?php endforeach; ?>
+              </p>
+            </div>
+          <?php endforeach; ?>
 
-          <div class="bullet-item">
-           <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-            <p class="bullet-text">
-              <span class="text-blue">Multilingual NLP</span>
-              <span class="text-default"> critical in global and emerging markets.</span>
-            </p>
-          </div>
         </div>
       </div>
 
-      <!-- Vietnam Context Card -->
+      <!-- VIETNAM CONTEXT -->
       <div class="tech-card">
         <div class="card-inner">
           <h3 class="card-title">VIETNAM CONTEXT</h3>
-          
-          <div class="bullet-item">
-             <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-            <p class="bullet-text">
-              <span class="text-default">Businesses and government still rely heavily on</span>
-              <span class="text-default"> unstructured documents (PDFs, SOPs, contracts)</span>
-            </p>
-          </div>
 
-          <div class="bullet-item">
-           <div class="bullet-container">
-            <div class="bullet"></div>
-          </div>
-            <p class="bullet-text">
-              <span class="text-default">Strong demand for</span>
-              <span class="text-blue"> AI assistants</span>
-              <span class="text-default"> that understand Vietnamese context and terminology.</span>
-            </p>
-          </div>
+          <?php foreach ($vietnam as $row): ?>
+            <div class="bullet-item">
+              <div class="bullet-container">
+                <div class="bullet"></div>
+              </div>
+
+              <p class="bullet-text">
+                <?php foreach ($row['segments'] as $seg): ?>
+                  <span class="text-<?= esc_attr($seg['color']); ?>">
+                    <?= esc_html($seg['text']); ?>
+                  </span>
+                <?php endforeach; ?>
+              </p>
+            </div>
+          <?php endforeach; ?>
+
         </div>
       </div>
+
     </div>
 
-    <!-- Logo Grid -->
+    <!-- IMAGE GRID -->
     <div class="logo-grid">
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/tech-landscape-img.png'); ?>"
-        alt="Main Logo"
-        class="logo-main"
-      />
+      <?php if ($main_img): ?>
+        <img src="<?= esc_url($main_img); ?>" alt="" class="logo-main" />
+      <?php endif; ?>
     </div>
+
   </div>
 </div>
 
@@ -146,7 +144,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 700;
-  color: #474363;
+  color: #474363 ;
   margin: 0;
 }
 

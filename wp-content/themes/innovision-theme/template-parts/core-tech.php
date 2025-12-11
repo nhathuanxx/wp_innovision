@@ -285,11 +285,11 @@
     padding: 32px 32px 25px 24px;
   }
 
-  .card-title {
+  .feature-cards .card-title {
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-weight: 700;
-    color: #fff !important;
+    color: #fff ;
     margin: 0;
   }
 
@@ -318,7 +318,7 @@
   }
 
   .feature-list {
-    padding: 32px 24px;
+    /* padding: 32px 24px; */
     display: flex;
     flex-direction: column;
     gap: 16px;

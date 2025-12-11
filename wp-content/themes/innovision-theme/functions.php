@@ -1069,3 +1069,240 @@ add_action('acf/init', function () {
         ],
     ]);
 });
+
+
+
+// Edge AI Vision Statement – ACF (Simple version, no text segments)
+add_action('acf/init', function () {
+    acf_add_local_field_group([
+        'key' => 'group_solutions_edge_ai_vision_simple',
+        'title' => 'Solutions – Edge AI Vision',
+        'fields' => [
+
+            /*
+            -------------------------------------------------------
+            Enable / Disable Section
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_solutions_edge_ai_enable',
+                'label' => 'Show Edge AI Vision Section',
+                'name' => 'solutions_edge_ai_enable',
+                'type' => 'true_false',
+                'ui' => 1,
+                'default_value' => 1,
+            ],
+
+            /*
+            -------------------------------------------------------
+            Vision Description
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_solutions_edge_ai_description',
+                'label' => 'Vision Description',
+                'name' => 'solutions_edge_ai_description',
+                'type' => 'textarea',
+            ],
+
+            /*
+            -------------------------------------------------------
+            Vision Image (device mockup)
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_solutions_edge_ai_image',
+                'label' => 'Side Image (Device Mockup)',
+                'name' => 'solutions_edge_ai_image',
+                'type' => 'image',
+                'return_format' => 'array',
+            ],
+
+            /*
+            -------------------------------------------------------
+            WHY EDGE AI MATTERS (Simple Repeater)
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_solutions_edge_ai_matters',
+                'label' => 'Why Edge AI Matters – Bullet Items',
+                'name' => 'solutions_edge_ai_matters',
+                'type' => 'repeater',
+                'layout' => 'row',
+                'button_label' => 'Add Bullet',
+                'sub_fields' => [
+
+                    // Single line bullet text
+                    [
+                        'key' => 'field_solutions_edge_ai_matter_text',
+                        'label' => 'Bullet Text',
+                        'name' => 'text',
+                        'type' => 'textarea',
+                        'rows' => 2,
+                    ],
+
+                ],
+            ],
+
+        ],
+
+        /*
+        -------------------------------------------------------
+        Location
+        -------------------------------------------------------
+        */
+        'location' => [
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'solutions',
+                ],
+            ],
+        ],
+    ]);
+});
+
+
+
+// Technology Landscape – ACF
+add_action('acf/init', function () {
+
+    acf_add_local_field_group([
+        'key' => 'group_tech_landscape',
+        'title' => 'Solutions – Technology Landscape',
+        'fields' => [
+
+            /*
+            -------------------------------------------------------
+            Enable / Disable Section
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_tech_landscape_enable',
+                'label' => 'Show Technology Landscape Section',
+                'name' => 'tech_landscape_enable',
+                'type' => 'true_false',
+                'ui' => 1,
+                'default_value' => 1,
+            ],
+
+            /*
+            -------------------------------------------------------
+            GLOBAL TRENDS CARD
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_global_trends',
+                'label' => 'Global Trends – Bullets',
+                'name' => 'global_trends',
+                'type' => 'repeater',
+                'layout' => 'row',
+                'button_label' => 'Add Bullet',
+                'sub_fields' => [
+
+                    // Segments inside bullet
+                    [
+                        'key' => 'field_gt_segments',
+                        'label' => 'Text Segments',
+                        'name' => 'segments',
+                        'type' => 'repeater',
+                        'layout' => 'table',
+                        'button_label' => 'Add Segment',
+                        'sub_fields' => [
+                            [
+                                'key' => 'field_gt_segment_text',
+                                'label' => 'Text',
+                                'name' => 'text',
+                                'type' => 'textarea',
+                            ],
+                            [
+                                'key' => 'field_gt_segment_color',
+                                'label' => 'Color',
+                                'name' => 'color',
+                                'type' => 'select',
+                                'choices' => [
+                                    'default' => 'Default',
+                                    'blue'    => 'Blue',
+                                ],
+                                'default_value' => 'default',
+                                'ui' => 1,
+                            ],
+                        ],
+                    ],
+
+                ],
+            ],
+
+            /*
+            -------------------------------------------------------
+            VIETNAM CONTEXT CARD
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_vn_context',
+                'label' => 'Vietnam Context – Bullets',
+                'name' => 'vietnam_context',
+                'type' => 'repeater',
+                'layout' => 'row',
+                'button_label' => 'Add Bullet',
+                'sub_fields' => [
+
+                    [
+                        'key' => 'field_vn_segments',
+                        'label' => 'Text Segments',
+                        'name' => 'segments',
+                        'type' => 'repeater',
+                        'layout' => 'table',
+                        'button_label' => 'Add Segment',
+                        'sub_fields' => [
+                            [
+                                'key' => 'field_vn_segment_text',
+                                'label' => 'Text',
+                                'name' => 'text',
+                                'type' => 'textarea',
+                            ],
+                            [
+                                'key' => 'field_vn_segment_color',
+                                'label' => 'Color',
+                                'name' => 'color',
+                                'type' => 'select',
+                                'choices' => [
+                                    'default' => 'Default',
+                                    'blue'    => 'Blue',
+                                ],
+                                'default_value' => 'default',
+                                'ui' => 1,
+                            ],
+                        ],
+                    ],
+
+                ],
+            ],
+
+            /*
+            -------------------------------------------------------
+            Logo Grid Image
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_tech_landscape_image',
+                'label' => 'Bottom Image',
+                'name' => 'tech_landscape_image',
+                'type' => 'image',
+                'return_format' => 'array',
+            ],
+
+        ],
+
+        'location' => [
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'solutions',
+                ],
+            ],
+        ],
+    ]);
+});
