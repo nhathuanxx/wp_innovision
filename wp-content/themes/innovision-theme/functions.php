@@ -84,15 +84,65 @@ add_theme_support('post-thumbnails');
 // -----------------------------
 // ACF Options Page
 // -----------------------------
-if (function_exists('acf_add_options_page')) {
-  acf_add_options_page(array(
-    'page_title'   => 'Theme General Settings (' . pll_current_language('slug') . ')',
-    'menu_title'  => 'Theme Settings (' . pll_current_language('slug') . ')',
-    'menu_slug'   => 'theme-general-settings-' . pll_current_language('slug'),
-    'capability'  => 'edit_posts',
-    'redirect'    => false
-  ));
-}
+add_action('acf/init', function() {
+
+    // Lấy slug ngôn ngữ hiện tại (Polylang)
+    $lang_slug = function_exists('pll_current_language') ? pll_current_language('slug') : 'default';
+    $menu_slug = 'theme-general-settings-' . $lang_slug;
+
+    // 1) Tạo options page (nếu chưa tồn tại)
+    if ( function_exists('acf_add_options_page') ) {
+        acf_add_options_page(array(
+            'page_title' => 'Theme General Settings (' . $lang_slug . ')',
+            'menu_title' => 'Theme Settings (' . $lang_slug . ')',
+            'menu_slug'  => $menu_slug,
+            'capability' => 'edit_posts',
+            'redirect'   => false
+        ));
+    }
+
+    if ( function_exists('acf_add_local_field_group') ) {
+
+        acf_add_local_field_group(array(
+            'key' => 'group_office_info_' . $lang_slug,
+            'title' => 'Office Information (' . $lang_slug . ')',
+            'fields' => array(
+                array(
+                    'key' => 'field_office_address_' . $lang_slug,
+                    'label' => 'Office Address',
+                    'name' => 'office_address',
+                    'type' => 'text',
+                ),
+                array(
+                    'key' => 'field_office_phone_' . $lang_slug,
+                    'label' => 'Office Phone',
+                    'name' => 'office_phone',
+                    'type' => 'text',
+                ),
+                array(
+                    'key' => 'field_office_email_' . $lang_slug,
+                    'label' => 'Office Email',
+                    'name' => 'office_email',
+                    'type' => 'email',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'options_page',
+                        'operator' => '==',
+                        'value' => $menu_slug, // phải trùng đúng menu_slug của acf_add_options_page
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'hide_on_screen' => '',
+        ));
+    }
+
+});
 
 // -----------------------------
 // Custom Archive Title
@@ -1805,3 +1855,22 @@ add_action('acf/init', function () {
     ]);
 
 });
+
+
+// functions.php
+function theme_register_footer_menus() {
+    register_nav_menus(array(
+        'footer_company' => __('Footer Company', 'textdomain'),
+        'footer_solutions' => __('Footer Solutions', 'textdomain'),
+        'footer_ai_products' => __('Footer AI Products', 'textdomain'),
+    ));
+}
+add_action('init', 'theme_register_footer_menus');
+
+function add_menu_link_class($atts, $item, $args) {
+    if (isset($args->link_class)) {
+        $atts['class'] = $args->link_class;
+    }
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'add_menu_link_class', 10, 3);

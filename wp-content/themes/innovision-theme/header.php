@@ -161,7 +161,7 @@
 
 <body <?php body_class(); ?>>
 
-  <header class="header-container">
+<header class="header-container">
     <div class="header-content">
       <div class="header-detail">
         <!-- Logo with Home Link -->
@@ -185,7 +185,40 @@
             ));
           }
           ?>
+               <!-- Language Switcher Desktop -->
+        <?php
+        $translations = pll_the_languages(array(
+          'raw' => 1,
+          'hide_if_no_translation' => 0,
+        ));
+
+        if (!empty($translations)) :
+          $current_lang = pll_current_language('slug');
+          $url_flags = get_template_directory_uri() . '/assets/images/innovision/';
+        ?>
+          <div class="header-lang-content desktop-lang">
+            <div class="lang-img-container">
+              <?php
+              if (isset($translations[$current_lang])) {
+                echo '<img class="lang-img" src="' . esc_url($url_flags . 'flag-' . $current_lang . '.png') . '" alt="' . esc_attr($current_lang) . '">';
+              }
+              ?>
+            </div>
+
+            <select class="select-lang" onchange="if(this.value){window.location=this.value;}">
+              <?php foreach ($translations as $lang => $translation) : ?>
+                <option
+                  value="<?php echo esc_url($translation['url']); ?>"
+                  <?php selected($translation['current_lang'], true); ?>>
+                  <?php echo esc_html($translation['name']); ?>
+                </option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+        <?php endif; ?>
         </nav>
+
+   
 
         <!-- Mobile Menu Toggle -->
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
@@ -226,6 +259,26 @@
           }
           ?>
         </nav>
+
+        <!-- Language Switcher Mobile -->
+        <?php if (!empty($translations)) : ?>
+          <div class="header-lang-content mobile-lang">
+            <div class="mobile-lang-title">Language / Ngôn ngữ</div>
+            <div class="mobile-lang-options">
+              <?php foreach ($translations as $lang => $translation) : ?>
+                <a 
+                  href="<?php echo esc_url($translation['url']); ?>" 
+                  class="mobile-lang-item <?php echo $translation['current_lang'] ? 'active' : ''; ?>">
+                  <img 
+                    class="lang-img" 
+                    src="<?php echo esc_url($url_flags . 'flag-' . $lang . '.png'); ?>" 
+                    alt="<?php echo esc_attr($lang); ?>">
+                  <span><?php echo esc_html($translation['name']); ?></span>
+                </a>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
   </header>
@@ -255,6 +308,8 @@
       max-width: 1320px;
       align-items: center;
       justify-content: space-between;
+      gap: 24px;
+      padding: 14px 24px;
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.02);
@@ -273,6 +328,7 @@
       align-items: center;
       text-decoration: none;
       transition: transform 0.3s ease;
+      flex-shrink: 0;
     }
 
     .logo-link:hover {
@@ -288,6 +344,9 @@
     .desktop-nav {
       display: flex;
       align-items: center;
+      gap: 20px;
+      /* flex: 1;
+      justify-content: center; */
     }
 
     .main-menu {
@@ -315,7 +374,6 @@
 
     .main-menu li.menu-item>a:hover {
       color: #3C90FC;
-      /* background: rgba(60, 144, 252, 0.08); */
     }
 
     .main-menu li.menu-item>a::after {
@@ -338,12 +396,138 @@
     .main-menu li.current-menu-item>a,
     .main-menu li.current-menu-ancestor>a {
       color: #3C90FC;
-      /* background: rgba(60, 144, 252, 0.1); */
     }
 
     .main-menu li.current-menu-item>a::after,
     .main-menu li.current-menu-ancestor>a::after {
       width: 80%;
+    }
+
+    /* Language Switcher Desktop */
+    .header-lang-content.desktop-lang {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .header-lang-content.desktop-lang:hover {
+      background: rgba(255, 255, 255, 0.1);
+      /* text-decoration: underline; */
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .lang-img-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      flex-shrink: 0;
+    }
+
+    .lang-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .select-lang {
+      background: transparent;
+      border: none;
+      color: rgba(0, 0, 0, 0.9);
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      outline: none;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .select-lang:hover {
+      background: rgba(60, 144, 252, 0.08);
+      color: #3C90FC;
+    }
+
+    .select-lang option {
+      background: white;
+      color: rgba(0, 0, 0, 0.9);
+      padding: 8px 12px;
+    }
+
+    /* Language Switcher Mobile */
+    .header-lang-content.mobile-lang {
+      display: none;
+      padding: 20px;
+      border-top: 1px solid #E5E7EB;
+      margin-top: auto;
+    }
+
+    .mobile-lang-title {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.5);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .mobile-lang-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mobile-lang-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #F9FAFB;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.7);
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-lang-item:hover {
+      background: rgba(60, 144, 252, 0.05);
+      border-color: rgba(60, 144, 252, 0.2);
+      color: #3C90FC;
+      transform: translateX(4px);
+    }
+
+    .mobile-lang-item.active {
+      background: rgba(60, 144, 252, 0.1);
+      border-color: #3C90FC;
+      color: #3C90FC;
+    }
+
+    .mobile-lang-item .lang-img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+    }
+
+    .mobile-lang-item.active .lang-img {
+      border-color: #3C90FC;
     }
 
     /* Mobile Menu Toggle */
@@ -358,6 +542,7 @@
       border: none;
       cursor: pointer;
       transition: all 0.3s ease;
+      flex-shrink: 0;
     }
 
     .hamburger-line {
@@ -430,6 +615,7 @@
       justify-content: space-between;
       padding: 20px;
       border-bottom: 1px solid #E5E7EB;
+      flex-shrink: 0;
     }
 
     .mobile-logo-link {
@@ -454,6 +640,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
       color: #000;
+      flex-shrink: 0;
     }
 
     .mobile-menu-close:hover {
@@ -465,6 +652,7 @@
     .mobile-nav {
       padding: 20px;
       flex: 1;
+      overflow-y: auto;
     }
 
     .mobile-menu {
@@ -506,6 +694,7 @@
     @media (max-width: 1024px) {
       .header-detail {
         padding: 14px 20px;
+        gap: 16px;
       }
 
       .main-menu {
@@ -516,6 +705,10 @@
         font-size: 13px;
         padding: 6px 10px;
       }
+
+      .select-lang {
+        font-size: 13px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -523,12 +716,17 @@
         padding: 16px;
       }
 
-      .desktop-nav {
+      .desktop-nav,
+      .header-lang-content.desktop-lang {
         display: none;
       }
 
       .mobile-menu-toggle {
         display: flex;
+      }
+
+      .header-lang-content.mobile-lang {
+        display: block;
       }
 
       .header-detail {

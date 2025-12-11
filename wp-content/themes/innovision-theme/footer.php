@@ -1,4 +1,9 @@
-<?php $lang = pll_current_language('slug'); ?>
+<?php $lang = pll_current_language('slug');
+$address = get_field('office_address', 'option');
+$phone = get_field('office_phone', 'option');
+$email = get_field('office_email', 'option');
+?>
+
 <div class="homepage-footer">
   <div class="footer-container">
     <!-- CONTACT INFO -->
@@ -9,32 +14,49 @@
           alt="<?php echo esc_attr(get_bloginfo('name')); ?>" />
       </a>
       <div class="office-info">
-        <div class="text-item">Alley 62, Khuc Thua Du, Dich Vong Ward, Cau Giay District</div>
-        <a href="tel:+84886392913" class="text-item">(+84) 88.639.2913</a>
-                <a href="mailto:support@innovision.com" class="text-item">support@innovision.com</a>
+        <?php if ($address): ?>
+          <div class="text-item"><?php echo esc_html($address); ?></div>
+        <?php endif; ?>
 
+        <?php if ($phone): ?>
+          <a href="tel:<?php echo preg_replace('/[^0-9+]/', '', $phone); ?>" class="text-item">
+            <?php echo esc_html($phone); ?>
+          </a>
+        <?php endif; ?>
+
+        <?php if ($email): ?>
+          <a href="mailto:<?php echo esc_attr($email); ?>" class="text-item">
+            <?php echo esc_html($email); ?>
+          </a>
+        <?php endif; ?>
       </div>
-          <!-- <div class="contact-info">
-        <a href="mailto:support@innovision.com" class="link-text">support@innovision.com</a>
-      </div> -->
     </div>
     <!-- COMPANY & INDUSTRIES -->
     <div class="footer-column">
       <div class="section-title-footer-bold">COMPANY</div>
       <div class="footer-list">
-        <a href="<?php echo esc_url(home_url('/about')); ?>" class="link-text">About Innovision</a>
-        <a href="<?php echo esc_url(home_url('/portfolio')); ?>" class="link-text">Portfolio</a>
-        <a href="<?php echo esc_url(home_url('/careers')); ?>" class="link-text">Careers</a>
-        <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="link-text">Contact Us</a>
+        <?php
+        wp_nav_menu([
+          'theme_location' => 'footer_company',
+          'container' => false,
+          'items_wrap' => '%3$s',
+          'link_class' => 'link-text'
+        ]);
+        ?>
       </div>
     </div>
     <!-- SOLUTIONS & TECHNOLOGIES -->
     <div class="footer-column">
       <div class="section-title-footer-bold">SOLUTIONS</div>
       <div class="footer-list">
-        <a href="<?php echo esc_url(home_url('/ai-products')); ?>" class="link-text">AI Products</a>
-        <a href="<?php echo esc_url(home_url('/industrial-ai-automation')); ?>" class="link-text">Industrial AI &amp; Automation</a>
-        <a href="<?php echo esc_url(home_url('/software-firmware-development')); ?>" class="link-text multi-line">Software &amp; Firmware Development</a>
+        <?php
+        wp_nav_menu([
+          'theme_location' => 'footer_solutions',
+          'container' => false,
+          'items_wrap' => '%3$s',
+          'link_class' => 'link-text'
+        ]);
+        ?>
       </div>
     </div>
 
@@ -42,12 +64,14 @@
     <div class="footer-column">
       <div class="section-title-footer-bold">AI PRODUCTS</div>
       <div class="footer-list">
-        <a href="<?php echo esc_url(home_url('/real-estate-ai-assistant')); ?>" class="link-text">Real Estate AI Assistant</a>
-        <a href="<?php echo esc_url(home_url('/fintech-verification-ai')); ?>" class="link-text">Fintech Verification AI</a>
-        <a href="<?php echo esc_url(home_url('/government-document-ai')); ?>" class="link-text">Government Document AI</a>
-        <a href="<?php echo esc_url(home_url('/marketing-content-assistant')); ?>" class="link-text multi-line">Marketing Content Assistant</a>
-        <a href="<?php echo esc_url(home_url('/document-intelligence')); ?>" class="link-text">Document Intelligence</a>
-        <a href="<?php echo esc_url(home_url('/conversational-ai')); ?>" class="link-text">Conversational AI</a>
+        <?php
+        wp_nav_menu([
+          'theme_location' => 'footer_ai_products',
+          'container' => false,
+          'items_wrap' => '%3$s',
+          'link_class' => 'link-text'
+        ]);
+        ?>
       </div>
     </div>
   </div>
@@ -83,7 +107,7 @@
 
   /* Reset default <a> styles */
   .homepage-footer a {
-    color: inherit;
+    /* color: inherit; */
     text-decoration: none;
     background: none;
     border: none;
@@ -182,6 +206,28 @@
     gap: 12px;
     margin-bottom: 20px;
   }
+/* Bỏ bullet points */
+.footer-list ul {
+  list-style: none !important;
+  list-style-type: none !important;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  list-style: none !important;
+  list-style-type: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-list li::before {
+  content: none !important;
+}
+
+.footer-list li::marker {
+  content: none !important;
+}
 
   .footer-copyright {
     width: 1320px;
@@ -203,7 +249,7 @@
     .homepage-footer {
       padding: 60px 40px 0;
     }
-    
+
     .footer-container,
     .footer-copyright {
       width: 100%;
@@ -238,7 +284,7 @@
       flex-direction: column;
       gap: 32px;
     }
-    
+
     .footer-column {
       width: 100%;
       max-width: 100%;
