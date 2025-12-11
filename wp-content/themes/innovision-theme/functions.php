@@ -919,3 +919,153 @@ add_action('acf/init', function () {
         ],
     ]);
 });
+
+
+
+// Vision Statement ACF
+add_action('acf/init', function () {
+    acf_add_local_field_group([
+        'key' => 'group_solutions_vision_statement',
+        'title' => 'Solutions – Vision Statement',
+        'fields' => [
+
+            // Enable/Disable
+            [
+                'key' => 'field_solutions_vision_enable',
+                'label' => 'Show Vision Statement Section',
+                'name' => 'solutions_vision_enable',
+                'type' => 'true_false',
+                'ui' => 1,
+                'default_value' => 1,
+            ],
+
+            // Description
+            [
+                'key' => 'field_solutions_vision_description',
+                'label' => 'Vision Description',
+                'name' => 'solutions_vision_description',
+                'type' => 'textarea',
+            ],
+
+            // Image
+            [
+                'key' => 'field_solutions_vision_image',
+                'label' => 'Vision Image',
+                'name' => 'solutions_vision_image',
+                'type' => 'image',
+                'return_format' => 'array',
+            ],
+
+            /*
+            -------------------------------------------------------
+            WHY NOW (Repeater)
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_solutions_vision_why_now',
+                'label' => 'Why Now – Bullet Points',
+                'name' => 'solutions_vision_why_now',
+                'type' => 'repeater',
+                'layout' => 'row',
+                'button_label' => 'Add Bullet',
+                'sub_fields' => [
+
+                    // Bullet segments
+                    [
+                        'key' => 'field_solutions_vision_why_now_segments',
+                        'label' => 'Text Segments',
+                        'name' => 'segments',
+                        'type' => 'repeater',
+                        'layout' => 'table',
+                        'button_label' => 'Add Segment',
+                        'sub_fields' => [
+
+                            // Segment text
+                            [
+                                'key' => 'field_solutions_vision_why_now_segment_text',
+                                'label' => 'Text',
+                                'name' => 'text',
+                                'type' => 'textarea',
+                            ],
+
+                            // Segment color
+                            [
+                                'key' => 'field_solutions_vision_why_now_segment_color',
+                                'label' => 'Color',
+                                'name' => 'color',
+                                'type' => 'select',
+                                'choices' => [
+                                    'default' => 'Default',
+                                    'blue'    => 'Blue',
+                                ],
+                                'default_value' => 'default',
+                                'ui' => 1,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+
+            /*
+            -------------------------------------------------------
+            OUR THESIS (Repeater)
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_solutions_vision_thesis',
+                'label' => 'Our Thesis – Bullet Points',
+                'name' => 'solutions_vision_thesis',
+                'type' => 'repeater',
+                'layout' => 'row',
+                'button_label' => 'Add Bullet',
+                'sub_fields' => [
+
+                    // Bullet segments
+                    [
+                        'key' => 'field_solutions_vision_thesis_segments',
+                        'label' => 'Text Segments',
+                        'name' => 'segments',
+                        'type' => 'repeater',
+                        'layout' => 'table',
+                        'button_label' => 'Add Segment',
+                        'sub_fields' => [
+
+                            // Segment text
+                            [
+                                'key' => 'field_solutions_vision_thesis_segment_text',
+                                'label' => 'Text',
+                                'name' => 'text',
+                                'type' => 'textarea',
+                            ],
+
+                            // Segment color
+                            [
+                                'key' => 'field_solutions_vision_thesis_segment_color',
+                                'label' => 'Color',
+                                'name' => 'color',
+                                'type' => 'select',
+                                'choices' => [
+                                    'default' => 'Default',
+                                    'blue'    => 'Blue',
+                                ],
+                                'default_value' => 'default',
+                                'ui' => 1,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+
+        ],
+
+        'location' => [
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'solutions',
+                ],
+            ],
+        ],
+    ]);
+});

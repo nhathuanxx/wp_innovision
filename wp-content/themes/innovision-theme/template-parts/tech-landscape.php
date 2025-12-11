@@ -2,7 +2,7 @@
   <div class="tech-header">
     <h2 class="tech-title">
       <span class="highlight">Technology</span>
-      <span>Landscape</span>
+      <span class="title-highlight">Landscape</span>
     </h2>
   </div>
 
@@ -14,11 +14,9 @@
           <h3 class="card-title">GLOBAL TRENDS</h3>
           
           <div class="bullet-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4381977-sx5o-200h.png'); ?>"
-              alt=""
-              class="bullet-icon"
-            />
+              <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
             <p class="bullet-text">
               <span class="text-default">Rise of</span>
               <span class="text-blue"> domain-adapted LLMs</span>
@@ -27,11 +25,9 @@
           </div>
 
           <div class="bullet-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4381977-tjtp-200h.png'); ?>"
-              alt=""
-              class="bullet-icon"
-            />
+               <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
             <p class="bullet-text">
               <span class="text-blue">Data privacy &amp; compliance</span>
               <span class="text-default"> becoming top priority.</span>
@@ -39,11 +35,9 @@
           </div>
 
           <div class="bullet-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4381977-zilj-200h.png'); ?>"
-              alt=""
-              class="bullet-icon"
-            />
+           <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
             <p class="bullet-text">
               <span class="text-blue">Multilingual NLP</span>
               <span class="text-default"> critical in global and emerging markets.</span>
@@ -58,11 +52,9 @@
           <h3 class="card-title">VIETNAM CONTEXT</h3>
           
           <div class="bullet-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4381978-p4wo-200h.png'); ?>"
-              alt=""
-              class="bullet-icon"
-            />
+             <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
             <p class="bullet-text">
               <span class="text-default">Businesses and government still rely heavily on</span>
               <span class="text-default"> unstructured documents (PDFs, SOPs, contracts)</span>
@@ -70,11 +62,9 @@
           </div>
 
           <div class="bullet-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4381978-0gpb-200h.png'); ?>"
-              alt=""
-              class="bullet-icon"
-            />
+           <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
             <p class="bullet-text">
               <span class="text-default">Strong demand for</span>
               <span class="text-blue"> AI assistants</span>

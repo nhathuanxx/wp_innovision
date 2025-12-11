@@ -123,13 +123,13 @@
     margin: 0;
   }
 
-  .howwework-title-highlight {
+  /* .howwework-title-highlight {
     color: #3C90FC;
-  }
+  } */
 
-  .title-highlight {
+  /* .title-highlight {
     color: #1E1B39;
-  }
+  } */
 
   .howwework-description {
     font-family: 'Inter', sans-serif;

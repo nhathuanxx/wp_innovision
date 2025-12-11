@@ -26,11 +26,9 @@
           <h3 class="card-title">KEY POINTS (BULLET FORM)</h3>
           
           <div class="bullet-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4384011-0j7-200h.png'); ?>"
-              alt=""
-              class="bullet-icon"
-            />
+              <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
             <p class="bullet-text">
               Iterative Development: Work in sprints (2–3 weeks) with
               clear deliverables
@@ -38,11 +36,9 @@
           </div>
 
           <div class="bullet-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4384011-zpt9-200h.png'); ?>"
-              alt=""
-              class="bullet-icon"
-            />
+             <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
             <p class="bullet-text">
               Cross-functional Teams: Firmware engineers,
               backend/frontend developers, and QA work together
@@ -50,11 +46,9 @@
           </div>
 
           <div class="bullet-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4384011-s6v9-200h.png'); ?>"
-              alt=""
-              class="bullet-icon"
-            />
+            <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
             <p class="bullet-text">
               Continuous Feedback: Client reviews after each sprint,
               ensuring alignment
@@ -62,11 +56,9 @@
           </div>
 
           <div class="bullet-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4384011-zmok-200h.png'); ?>"
-              alt=""
-              class="bullet-icon"
-            />
+         <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
             <p class="bullet-text">
               Transparency: Sprint backlog, burn-down charts, and
               progress tracking
@@ -74,11 +66,9 @@
           </div>
 
           <div class="bullet-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4384011-td9-200h.png'); ?>"
-              alt=""
-              class="bullet-icon"
-            />
+            <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
             <p class="bullet-text">
               Adaptability: Scope adjustments based on real-time
               business needs
@@ -91,33 +81,27 @@
           <h3 class="card-title">SCRUM ROLES</h3>
           
           <div class="bullet-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4384011-7k7h-200h.png'); ?>"
-              alt=""
-              class="bullet-icon"
-            />
+           <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
             <p class="bullet-text">
               Product Owner (PO): Represents customer needs
             </p>
           </div>
 
           <div class="bullet-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4384011-i1ea-200h.png'); ?>"
-              alt=""
-              class="bullet-icon"
-            />
+          <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
             <p class="bullet-text">
               Scrum Master: Facilitates process, removes blocker
             </p>
           </div>
 
           <div class="bullet-item">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4384011-lltj-200h.png'); ?>"
-              alt=""
-              class="bullet-icon"
-            />
+              <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
             <p class="bullet-text">
               Development Team: Delivers increments of working software
             </p>

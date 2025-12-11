@@ -15,11 +15,9 @@
         <h3 class="som-section-title">DIAGRAM</h3>
         
         <div class="som-bullet-item">
-          <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4382164-kvo-200h.png'); ?>"
-            alt=""
-            class="som-bullet-icon"
-          />
+          <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
           <p class="som-bullet-text">
             Data Source &gt; SoM (Qualcomm / NXP / Infineon) &gt; AI
             inference (Vision / NLP / Sensors) &gt; API/SDK &gt;
@@ -33,33 +31,27 @@
         <h3 class="som-section-title">KEY METRICS</h3>
         
         <div class="som-bullet-item">
-          <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4382164-exbs-200h.png'); ?>"
-            alt=""
-            class="som-bullet-icon"
-          />
+           <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
           <p class="som-bullet-text">
             Latency: &lt;200 ms on-device.
           </p>
         </div>
 
         <div class="som-bullet-item">
-          <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4382164-2sdh-200h.png'); ?>"
-            alt=""
-            class="som-bullet-icon"
-          />
+           <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
           <p class="som-bullet-text">
             Power efficiency: optimized for 1–5W edge devices
           </p>
         </div>
 
         <div class="som-bullet-item">
-          <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4382164-wmvh-200h.png'); ?>"
-            alt=""
-            class="som-bullet-icon"
-          />
+            <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
           <p class="som-bullet-text">
             Scalability: modules ready for OEM integration.
           </p>

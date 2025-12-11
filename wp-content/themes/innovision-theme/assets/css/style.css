@@ -79,6 +79,7 @@ font-family: 'Roboto', sans-serif;*/
   border: none;
   outline: none;
 }
+
 html {
   margin-top: 0px !important;
 }
@@ -118,11 +119,9 @@ html {
   height: 339px;
   display: flex;
   position: absolute;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%);
   align-items: flex-start;
   flex-shrink: 1;
 }
@@ -435,11 +434,9 @@ html {
   display: flex;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(
-    180deg,
-    rgba(243, 249, 255, 1) 0%,
-    rgba(196, 224, 253, 1) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(243, 249, 255, 1) 0%,
+      rgba(196, 224, 253, 1) 100%);
   align-items: flex-start;
   flex-shrink: 0;
   border-color: rgba(211, 213, 216, 1);
@@ -503,11 +500,9 @@ html {
   padding: 1.0015190839767456px 1.0015190839767456px 1.0115134716033936px;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(
-    180deg,
-    rgba(243, 249, 255, 1) 0%,
-    rgba(196, 224, 253, 1) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(243, 249, 255, 1) 0%,
+      rgba(196, 224, 253, 1) 100%);
   align-items: flex-start;
   flex-shrink: 0;
   border-color: rgba(211, 213, 216, 1);
@@ -571,11 +566,9 @@ html {
   padding: 1.0015190839767456px 1.0015190839767456px 1.001503825187683px;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(
-    180deg,
-    rgba(243, 249, 255, 1) 0%,
-    rgba(196, 224, 253, 1) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(243, 249, 255, 1) 0%,
+      rgba(196, 224, 253, 1) 100%);
   align-items: flex-start;
   flex-shrink: 0;
   border-color: rgba(211, 213, 216, 1);
@@ -639,11 +632,9 @@ html {
   padding: 1.0015190839767456px 1.0015190839767456px 1.001503825187683px;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(
-    180deg,
-    rgba(243, 249, 255, 1) 0%,
-    rgba(196, 224, 253, 1) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(243, 249, 255, 1) 0%,
+      rgba(196, 224, 253, 1) 100%);
   align-items: flex-start;
   flex-shrink: 0;
   border-color: rgba(211, 213, 216, 1);
@@ -707,11 +698,9 @@ html {
   padding: 1.0015190839767456px 1.0015190839767456px 1.001503825187683px;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(
-    180deg,
-    rgba(243, 249, 255, 1) 0%,
-    rgba(196, 224, 253, 1) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(243, 249, 255, 1) 0%,
+      rgba(196, 224, 253, 1) 100%);
   align-items: flex-start;
   flex-shrink: 0;
   border-color: rgba(211, 213, 216, 1);
@@ -802,18 +791,24 @@ html {
   font-weight: 500;
   line-height: 24px;
 }
-   .bullet-container{
-       width: 16px;
-    height: 16px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-background-color: #007AFF26;    }
-    .bullet{
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-     background:  #007AFF;
 
-    }
+.bullet-container {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #007AFF26;
+}
+
+.bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #007AFF;
+
+}
+.title-highlight {
+    color: #3C90FC;
+}

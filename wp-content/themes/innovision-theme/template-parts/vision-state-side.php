@@ -13,7 +13,7 @@
     <div class="edge-ai-vision-header">
       <h2 class="edge-ai-vision-title">
         <span class="edge-ai-title-highlight">Vision</span>
-        <span>Statement</span>
+        <span class="title-highlight">Statement</span>
       </h2>
       <p class="edge-ai-vision-desc">
         The future of AI is not only in the cloud, but also at the edge
@@ -26,30 +26,27 @@
       <h3 class="edge-ai-matters-title">WHY EDGE AI MATTERS</h3>
 
       <div class="edge-ai-bullet-item">
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4381971-lbht-200h.png'); ?>"
-          alt=""
-          class="edge-ai-bullet-icon" />
+        <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
         <p class="edge-ai-bullet-text">
           Cloud-only AI = latency, cost, and privacy concerns.
         </p>
       </div>
 
       <div class="edge-ai-bullet-item">
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4381971-grd-200h.png'); ?>"
-          alt=""
-          class="edge-ai-bullet-icon" />
+       <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
         <p class="edge-ai-bullet-text">
           Edge AI enables real-time decisions directly on devices
         </p>
       </div>
 
       <div class="edge-ai-bullet-item">
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4381971-6jv-200h.png'); ?>"
-          alt=""
-          class="edge-ai-bullet-icon" />
+          <div class="bullet-container">
+            <div class="bullet"></div>
+          </div>
         <p class="edge-ai-bullet-text">
           Critical for industries such as manufacturing, security, IoT,
           and retail.
