@@ -8,17 +8,26 @@
           src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/asset14x12033-ysci-200h.png'); ?>"
           alt="<?php echo esc_attr(get_bloginfo('name')); ?>" />
       </a>
-      <div class="contact-info">
-        <div class="section-title-footer">Email:</div>
-        <a href="mailto:support@innovision.com" class="link-text">support@innovision.com</a>
-      </div>
       <div class="office-info">
-        <div class="section-title-footer-bold">Vietnam • Hanoi Office</div>
         <div class="text-item">Alley 62, Khuc Thua Du, Dich Vong Ward, Cau Giay District</div>
-        <a href="tel:+84886392913" class="text-item link-text">(+84) 88.639.2913</a>
+        <a href="tel:+84886392913" class="text-item">(+84) 88.639.2913</a>
+                <a href="mailto:support@innovision.com" class="text-item">support@innovision.com</a>
+
+      </div>
+          <!-- <div class="contact-info">
+        <a href="mailto:support@innovision.com" class="link-text">support@innovision.com</a>
+      </div> -->
+    </div>
+    <!-- COMPANY & INDUSTRIES -->
+    <div class="footer-column">
+      <div class="section-title-footer-bold">COMPANY</div>
+      <div class="footer-list">
+        <a href="<?php echo esc_url(home_url('/about')); ?>" class="link-text">About Innovision</a>
+        <a href="<?php echo esc_url(home_url('/portfolio')); ?>" class="link-text">Portfolio</a>
+        <a href="<?php echo esc_url(home_url('/careers')); ?>" class="link-text">Careers</a>
+        <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="link-text">Contact Us</a>
       </div>
     </div>
-
     <!-- SOLUTIONS & TECHNOLOGIES -->
     <div class="footer-column">
       <div class="section-title-footer-bold">SOLUTIONS</div>
@@ -26,15 +35,6 @@
         <a href="<?php echo esc_url(home_url('/ai-products')); ?>" class="link-text">AI Products</a>
         <a href="<?php echo esc_url(home_url('/industrial-ai-automation')); ?>" class="link-text">Industrial AI &amp; Automation</a>
         <a href="<?php echo esc_url(home_url('/software-firmware-development')); ?>" class="link-text multi-line">Software &amp; Firmware Development</a>
-      </div>
-
-      <div class="section-title-footer-bold">TECHNOLOGIES</div>
-      <div class="footer-list">
-        <a href="<?php echo esc_url(home_url('/llm-rag')); ?>" class="link-text">LLM &amp; RAG</a>
-        <a href="<?php echo esc_url(home_url('/edge-ai')); ?>" class="link-text">Edge AI (Qualcomm, NXP)</a>
-        <a href="<?php echo esc_url(home_url('/computer-vision')); ?>" class="link-text">Computer Vision</a>
-        <a href="<?php echo esc_url(home_url('/tinyml')); ?>" class="link-text">TinyML</a>
-        <a href="<?php echo esc_url(home_url('/embedded-systems')); ?>" class="link-text">Embedded Systems</a>
       </div>
     </div>
 
@@ -48,48 +48,6 @@
         <a href="<?php echo esc_url(home_url('/marketing-content-assistant')); ?>" class="link-text multi-line">Marketing Content Assistant</a>
         <a href="<?php echo esc_url(home_url('/document-intelligence')); ?>" class="link-text">Document Intelligence</a>
         <a href="<?php echo esc_url(home_url('/conversational-ai')); ?>" class="link-text">Conversational AI</a>
-      </div>
-
-      <div class="section-title-footer-bold">EDGE AI</div>
-      <div class="footer-list">
-        <a href="<?php echo esc_url(home_url('/qualcomm-qcs6490-vision-ai')); ?>" class="link-text">Qualcomm QCS6490 Vision AI</a>
-        <a href="<?php echo esc_url(home_url('/nxp-imx-edge-inference')); ?>" class="link-text">NXP i.MX Edge Inference</a>
-        <a href="<?php echo esc_url(home_url('/predictive-maintenance')); ?>" class="link-text">Predictive Maintenance</a>
-        <a href="<?php echo esc_url(home_url('/custom-som-design')); ?>" class="link-text">Custom SoM Design</a>
-      </div>
-    </div>
-
-    <!-- SOFTWARE & FIRMWARE -->
-    <div class="footer-column">
-      <div class="section-title-footer-bold">SOFTWARE &amp; FIRMWARE</div>
-      <div class="footer-list">
-        <a href="<?php echo esc_url(home_url('/embedded-connectivity')); ?>" class="link-text">Embedded Connectivity</a>
-        <a href="<?php echo esc_url(home_url('/motor-controller-foc')); ?>" class="link-text">Motor Controller (FOC)</a>
-        <a href="<?php echo esc_url(home_url('/high-traffic-web-platform')); ?>" class="link-text">High-Traffic Web Platform</a>
-        <a href="<?php echo esc_url(home_url('/full-stack-iot-platform')); ?>" class="link-text">Full-Stack IoT Platform</a>
-        <a href="<?php echo esc_url(home_url('/ocpp-firmware-ev-charger')); ?>" class="link-text">OCPP Firmware (EV Charger)</a>
-        <a href="<?php echo esc_url(home_url('/ble-cellular')); ?>" class="link-text">BLE &amp; Cellular</a>
-      </div>
-    </div>
-
-    <!-- COMPANY & INDUSTRIES -->
-    <div class="footer-column">
-      <div class="section-title-footer-bold">COMPANY</div>
-      <div class="footer-list">
-        <a href="<?php echo esc_url(home_url('/about')); ?>" class="link-text">About Innovision</a>
-        <a href="<?php echo esc_url(home_url('/portfolio')); ?>" class="link-text">Portfolio</a>
-        <a href="<?php echo esc_url(home_url('/careers')); ?>" class="link-text">Careers</a>
-        <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="link-text">Contact Us</a>
-      </div>
-
-      <div class="section-title-footer-bold">INDUSTRIES</div>
-      <div class="footer-list">
-        <a href="<?php echo esc_url(home_url('/industries/fintech')); ?>" class="link-text">Fintech</a>
-        <a href="<?php echo esc_url(home_url('/industries/real-estate')); ?>" class="link-text">Real Estate</a>
-        <a href="<?php echo esc_url(home_url('/industries/manufacturing')); ?>" class="link-text">Manufacturing</a>
-        <a href="<?php echo esc_url(home_url('/industries/government')); ?>" class="link-text">Government</a>
-        <a href="<?php echo esc_url(home_url('/industries/healthcare')); ?>" class="link-text">Healthcare</a>
-        <a href="<?php echo esc_url(home_url('/industries/iot-smart-devices')); ?>" class="link-text">IoT &amp; Smart Devices</a>
       </div>
     </div>
   </div>
@@ -153,6 +111,7 @@
   .office-info {
     display: flex;
     flex-direction: column;
+    padding-right: 30px;
     gap: 8px;
   }
 

@@ -1,9 +1,9 @@
-<?php 
+<?php
 $fields = get_fields();
 if (empty($fields['sw_dev_enable'])) return;
 
 $cards = $fields['sw_dev_cards'] ?? [];
- ?>
+?>
 <div class="software-dev">
     <h2 class="software-dev-title">
         <span class="highlight">Software</span>
@@ -26,19 +26,17 @@ $cards = $fields['sw_dev_cards'] ?? [];
 
                         <?php foreach ($card['features'] as $feature): ?>
                             <div class="feature-item">
-                                        <?php if (!empty($feature['icon']['url'])): ?>
-  <img
-    src="<?= esc_url($feature['icon']['url']); ?>"
-    alt=""
-    class="check-icon"
-  />
-<?php else: ?>
-  <img
-    src="<?= esc_url(get_template_directory_uri() . '/assets/images/innovision/svgmargin1973-1sjho.svg'); ?>"
-    alt=""
-    class="check-icon"
-  />
-<?php endif; ?>
+                                <?php if (!empty($feature['icon']['url'])): ?>
+                                    <img
+                                        src="<?= esc_url($feature['icon']['url']); ?>"
+                                        alt=""
+                                        class="check-icon" />
+                                <?php else: ?>
+                                    <img
+                                        src="<?= esc_url(get_template_directory_uri() . '/assets/images/innovision/svgmargin1973-1sjho.svg'); ?>"
+                                        alt=""
+                                        class="check-icon" />
+                                <?php endif; ?>
 
                                 <p class="feature-text">
                                     <?php echo esc_html($feature['text']); ?>
