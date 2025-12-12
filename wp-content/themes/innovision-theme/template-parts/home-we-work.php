@@ -1,19 +1,62 @@
-<?php $lang = pll_current_language('slug'); ?>
+<?php 
+$lang = pll_current_language('slug'); 
+
+// ====== DEFAULT (EN) ======
+$title_part1 = "How";
+$title_part2 = " We Work";
+$description = "Our culture is reflected in the way we work with each other and with our partners. We believe that strong culture is not just internal, but also defines how we deliver value externally.";
+
+// Cards EN
+$card1_title = "Lean & Efficient";
+$card1_desc  = "Small teams, high impact, clear priorities.";
+
+$card2_title = "Continuous Learning";
+$card2_desc  = "Every challenge is an opportunity to grow skills and knowledge.";
+
+$card3_title = "Research Meets Practice";
+$card3_desc  = "We transform cutting-edge AI into real-world applications.";
+
+$card4_title = "Partnership Mindset";
+$card4_desc  = "We treat clients and partners as collaborators, not just customers.";
+
+
+// ====== VIETNAMESE ======
+if ($lang === 'vi') {
+    $title_part1 = "Cách";
+    $title_part2 = " Chúng Tôi Làm Việc";
+
+    $description = "Văn hoá của chúng tôi được thể hiện qua cách chúng tôi làm việc với nhau và với các đối tác. Chúng tôi tin rằng văn hoá mạnh không chỉ nằm bên trong, mà còn định hình cách chúng tôi tạo ra giá trị bên ngoài.";
+
+    // Cards VI
+    $card1_title = "Tinh gọn & Hiệu quả";
+    $card1_desc  = "Nhóm nhỏ, tác động lớn, ưu tiên rõ ràng.";
+
+    $card2_title = "Học hỏi liên tục";
+    $card2_desc  = "Mỗi thử thách là một cơ hội để nâng cao kỹ năng và kiến thức.";
+
+    $card3_title = "Nghiên cứu kết hợp thực tiễn";
+    $card3_desc  = "Chúng tôi biến các công nghệ AI tiên tiến thành ứng dụng thực tế.";
+
+    $card4_title = "Tư duy hợp tác";
+    $card4_desc  = "Chúng tôi xem khách hàng và đối tác là những người đồng hành, không chỉ là khách mua dịch vụ.";
+}
+?>
+
 <div class="howwework-frame">
   <div class="howwework-text-block">
     <h2 class="howwework-title">
-      <span class="howwework-title-highlight">How</span>
-      <span class="title-highlight"> We Work</span>
+      <span class="howwework-title-highlight"><?php echo esc_html($title_part1); ?></span>
+      <span class="title-highlight"><?php echo esc_html($title_part2); ?></span>
     </h2>
     <p class="howwework-description">
-      Our culture is reflected in the way we work with each other and with our partners. We believe that strong culture is not just internal, but also defines how we deliver value externally
+      <?php echo esc_html($description); ?>
     </p>
   </div>
 
   <div class="howwework-images-group-container" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image61224-afigh-400h.png'); ?>');">
     <div class="howwework-images-group">
 
-      <!-- Decorative Images - Hidden on Mobile -->
+      <!-- Decorative Images -->
       <img
         src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image31414-wcz-200w.png'); ?>"
         alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
@@ -29,63 +72,56 @@
         alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
         class="howwework-image7 decorative-image" />
 
-      <!-- Card 1: Lean & Efficient -->
+
+      <!-- Card 1 -->
       <div class="howwework-card howwework-card-lean">
         <div class="howwework-card-image">
           <img
             src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4371418-2h9s-200h.png'); ?>"
-            alt="Lean & Efficient" />
+            alt="<?php echo esc_attr($card1_title); ?>" />
         </div>
         <div class="howwework-card-text">
-          <h3 class="howwework-card-title">Lean & Efficient</h3>
-          <p class="howwework-card-description">
-            Small teams, high impact, clear priorities.
-          </p>
+          <h3 class="howwework-card-title"><?php echo esc_html($card1_title); ?></h3>
+          <p class="howwework-card-description"><?php echo esc_html($card1_desc); ?></p>
         </div>
       </div>
 
-      <!-- Card 2: Continuous Learning -->
+      <!-- Card 2 -->
       <div class="howwework-card howwework-card-learning">
         <div class="howwework-card-image">
           <img
             src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4371424-mhcm-200h.png'); ?>"
-            alt="Continuous Learning" />
+            alt="<?php echo esc_attr($card2_title); ?>" />
         </div>
         <div class="howwework-card-text">
-          <h3 class="howwework-card-title">Continuous Learning</h3>
-          <p class="howwework-card-description">
-            Every challenge is an opportunity to grow skills and knowledge.
-          </p>
+          <h3 class="howwework-card-title"><?php echo esc_html($card2_title); ?></h3>
+          <p class="howwework-card-description"><?php echo esc_html($card2_desc); ?></p>
         </div>
       </div>
 
-      <!-- Card 3: Research Meets Practice -->
+      <!-- Card 3 -->
       <div class="howwework-card howwework-card-research">
         <div class="howwework-card-image">
           <img
             src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4371430-p4fc-200h.png'); ?>"
-            alt="Research Meets Practice" />
+            alt="<?php echo esc_attr($card3_title); ?>" />
         </div>
         <div class="howwework-card-text">
-          <h3 class="howwework-card-title">Research Meets Practice</h3>
-          <p class="howwework-card-description">
-            We transform cutting-edge AI into real-world applications.
-          </p>
+          <h3 class="howwework-card-title"><?php echo esc_html($card3_title); ?></h3>
+          <p class="howwework-card-description"><?php echo esc_html($card3_desc); ?></p>
         </div>
       </div>
 
-      <!-- Card 4: Partnership Mindset -->
+      <!-- Card 4 -->
       <div class="howwework-card howwework-card-partnership">
         <div class="howwework-card-image">
           <img
             src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ellipse4371436-vims-200h.png'); ?>"
-            alt="Partnership Mindset" />
+            alt="<?php echo esc_attr($card4_title); ?>" />
         </div>
         <div class="howwework-card-text">
-          <h3 class="howwework-card-title">Partnership Mindset</h3>
-          <p class="howwework-card-description">
-            We treat clients and partners as collaborators, not just customers.
-          </p>
+          <h3 class="howwework-card-title"><?php echo esc_html($card4_title); ?></h3>
+          <p class="howwework-card-description"><?php echo esc_html($card4_desc); ?></p>
         </div>
       </div>
 

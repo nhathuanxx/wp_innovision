@@ -1,91 +1,142 @@
-<?php $lang = pll_current_language('slug'); ?>
+<?php 
+$lang = pll_current_language('slug');
+
+// ===== DEFAULT: EN =====
+$section_title_1 = "Key";
+$section_title_2 = "Achievements";
+
+// Card 1
+$c1_title = "AI Vision for Manufacturing";
+$c1_desc  = "Delivered proof-of-concept systems for automated OK/NG inspection with accuracy rates above 95%";
+
+// Card 2
+$c2_title = "LLM Development for Enterprises & Government";
+$c2_desc  = "Developed a Vietnamese domain-specific LLM with Retrieval-Augmented Generation (RAG) for knowledge management, helping businesses and government agencies digitize documents and provide trustworthy Q&A";
+
+// Card 3
+$c3_title = "Firmware & IoT Services";
+$c3_desc  = "Exported embedded software and firmware solutions to clients in Asia and Europe";
+
+// Card 4
+$c4_title = "Ecosystem Recognition";
+$c4_desc  = "Accepted into global technology ecosystems (AWS, semiconductor partners, research collaborations)";
+
+// Card 5
+$c5_title = "Real Estate Data Pipeline";
+$c5_desc  = "Built an AI-driven workflow that standardized 5,000 property listings within just 10 days";
+
+
+// ===== VIETNAMESE =====
+if ($lang === 'vi') {
+
+    $section_title_1 = "Những";
+    $section_title_2 = "Thành Tựu Nổi Bật";
+
+    // Card 1
+    $c1_title = "AI Thị Giác cho Sản Xuất";
+    $c1_desc  = "Phát triển hệ thống thử nghiệm OK/NG tự động với độ chính xác trên 95%";
+
+    // Card 2
+    $c2_title = "Phát triển LLM cho Doanh nghiệp & Chính phủ";
+    $c2_desc  = "Xây dựng mô hình LLM chuyên ngành tiếng Việt kết hợp RAG giúp số hoá tài liệu và cung cấp khả năng hỏi đáp đáng tin cậy cho doanh nghiệp và cơ quan nhà nước";
+
+    // Card 3
+    $c3_title = "Dịch vụ Firmware & IoT";
+    $c3_desc  = "Xuất khẩu giải pháp phần mềm nhúng và firmware cho khách hàng tại châu Á và châu Âu";
+
+    // Card 4
+    $c4_title = "Công Nhận Hệ Sinh Thái";
+    $c4_desc  = "Được chấp nhận vào các hệ sinh thái công nghệ toàn cầu (AWS, đối tác bán dẫn, hợp tác nghiên cứu)";
+
+    // Card 5
+    $c5_title = "Pipeline Dữ Liệu Bất Động Sản";
+    $c5_desc  = "Xây dựng quy trình AI chuẩn hóa 5.000 tin bất động sản chỉ trong 10 ngày";
+}
+?>
+
+
 <div class="achievements-section">
   <!-- Title -->
   <h2 class="section-title">
-    Key <span class="title-highlight">Achievements</span>
+    <?php echo esc_html($section_title_1); ?> 
+    <span class="title-highlight"><?php echo esc_html($section_title_2); ?></span>
   </h2>
 
   <!-- Achievements Grid -->
   <div class="achievements-grid">
+
     <!-- Row 1: 2 cards -->
     <div class="grid-row row-2">
-      <!-- Card 1: AI Vision -->
+
+      <!-- Card 1 -->
       <div class="achievement-card card-large">
         <div class="card-content">
-          <h3 class="card-title">AI Vision for Manufacturing</h3>
-          <p class="card-description">
-            Delivered proof-of-concept systems for automated OK/NG inspection with accuracy rates above 95%
-          </p>
+          <h3 class="card-title"><?php echo esc_html($c1_title); ?></h3>
+          <p class="card-description"><?php echo esc_html($c1_desc); ?></p>
         </div>
         <div class="card-image">
           <img
             src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/picturehomepageautomationfinpng1388-2pt5-400h.png'); ?>"
-            alt="AI Vision for Manufacturing" />
+            alt="<?php echo esc_attr($c1_title); ?>" />
         </div>
       </div>
 
-      <!-- Card 2: LLM Development -->
+      <!-- Card 2 -->
       <div class="achievement-card card-large">
         <div class="card-content">
-          <h3 class="card-title">LLM Development for Enterprises & Government</h3>
-          <p class="card-description">
-            Developed a Vietnamese domain-specific LLM with Retrieval-Augmented Generation (RAG) for knowledge management, helping businesses and government agencies digitize documents and provide trustworthy Q&A
-          </p>
+          <h3 class="card-title"><?php echo esc_html($c2_title); ?></h3>
+          <p class="card-description"><?php echo esc_html($c2_desc); ?></p>
         </div>
         <div class="card-image">
           <img
             src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/homepageautomationworkflowsdesktoppng1390-iofa-400h.png'); ?>"
-            alt="LLM Development" />
+            alt="<?php echo esc_attr($c2_title); ?>" />
         </div>
       </div>
     </div>
 
     <!-- Row 2: 3 cards -->
     <div class="grid-row row-3">
-      <!-- Card 3: Firmware & IoT -->
+
+      <!-- Card 3 -->
       <div class="achievement-card card-small">
         <div class="card-content">
-          <h3 class="card-title">Firmware & IoT Services</h3>
-          <p class="card-description">
-            Exported embedded software and firmware solutions to clients in Asia and Europe
-          </p>
+          <h3 class="card-title"><?php echo esc_html($c3_title); ?></h3>
+          <p class="card-description"><?php echo esc_html($c3_desc); ?></p>
         </div>
         <div class="card-image">
           <img
             src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/homepageautomationaipoweredinboxpng1395-7bmb-500w.png'); ?>"
-            alt="Firmware & IoT Services" />
+            alt="<?php echo esc_attr($c3_title); ?>" />
         </div>
       </div>
 
-      <!-- Card 4: Ecosystem Recognition -->
+      <!-- Card 4 -->
       <div class="achievement-card card-small">
         <div class="card-content">
-          <h3 class="card-title">Ecosystem Recognition</h3>
-          <p class="card-description">
-            Accepted into global technology ecosystems (AWS, semiconductor partners, research collaborations)
-          </p>
+          <h3 class="card-title"><?php echo esc_html($c4_title); ?></h3>
+          <p class="card-description"><?php echo esc_html($c4_desc); ?></p>
         </div>
         <div class="card-image">
           <img
             src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/homepageautomationarticlesuggestionspng1400-e03-500w.png'); ?>"
-            alt="Ecosystem Recognition" />
+            alt="<?php echo esc_attr($c4_title); ?>" />
         </div>
       </div>
 
-      <!-- Card 5: Real Estate Pipeline -->
+      <!-- Card 5 -->
       <div class="achievement-card card-small">
         <div class="card-content">
-          <h3 class="card-title">Real Estate Data Pipeline</h3>
-          <p class="card-description">
-            Built an AI-driven workflow that standardized 5,000 property listings within just 10 days
-          </p>
+          <h3 class="card-title"><?php echo esc_html($c5_title); ?></h3>
+          <p class="card-description"><?php echo esc_html($c5_desc); ?></p>
         </div>
         <div class="card-image">
           <img
             src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/homepageautomationconversationtopicspng1405-pry-500w.png'); ?>"
-            alt="Real Estate Data Pipeline" />
+            alt="<?php echo esc_attr($c5_title); ?>" />
         </div>
       </div>
+
     </div>
   </div>
 </div>

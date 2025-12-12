@@ -1,13 +1,18 @@
 <?php
-
 /**
  * Template Name: Contact Us
  */
 get_header();
 $lang = pll_current_language('slug'); // vi / en
-?>
-<?php get_template_part('template-parts/page', 'title', [
-  'subtitle' => 'Simply fill in this form and we will get in touch with you to discuss in further details All information will be kept confidential.',
+
+$subtitle = 'Simply fill in this form and we will get in touch with you to discuss in further details. All information will be kept confidential.';
+
+if ($lang === 'vi') {
+    $subtitle = 'Chỉ cần điền vào biểu mẫu này, chúng tôi sẽ liên hệ với bạn để trao đổi chi tiết hơn. Mọi thông tin sẽ được bảo mật tuyệt đối.';
+}
+
+get_template_part('template-parts/page', 'title', [
+  'subtitle' => $subtitle,
 ]); ?>
 
 

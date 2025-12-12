@@ -1856,6 +1856,49 @@ add_action('acf/init', function () {
 
 });
 
+// Thêm field ACF cho Solutions và Portfolio
+add_action('acf/init', function () {
+
+    if( function_exists('acf_add_local_field_group') ) {
+
+        acf_add_local_field_group([
+            'key' => 'group_background_solutions_portfolio',
+            'title' => 'Background Settings',
+            'fields' => [
+
+                // Trường Background (image array)
+                [
+                    'key' => 'field_custom_post_background_image',
+                    'label' => 'Background Image',
+                    'name' => 'custom_post_background_image',
+                    'type' => 'image',
+                    'return_format' => 'array',  // Trả về array
+                    'preview_size' => 'medium',
+                    'library' => 'all',
+                
+                ],
+
+            ],
+            'location' => [
+                [
+                    [
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'solutions',  // CPT 1
+                    ],
+                ],
+                [
+                    [
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'portfolio',  // CPT 2
+                    ],
+                ],
+            ],
+        ]);
+    }
+});
+
 
 // functions.php
 function theme_register_footer_menus() {
