@@ -562,7 +562,7 @@ add_action('acf/init', function () {
                 'name' => 'portfolio_problem_enable',
                 'type' => 'true_false',
                 'ui' => 1,
-                'default_value' => 1, // mặc định: bật
+                'default_value' => 0, // mặc định: bật
                 'message' => 'Enable this section',
             ],
               // Preview Image
@@ -647,7 +647,7 @@ add_action('acf/init', function () {
                 'name' => 'portfolio_usecase2_enable',
                 'type' => 'true_false',
                 'ui' => 1,
-                'default_value' => 1,
+                'default_value' => 0,
                 'message' => 'Enable this section',
             ],
 
@@ -737,7 +737,7 @@ add_action('acf/init', function () {
                 'name' => 'portfolio_stats_enable',
                 'type' => 'true_false',
                 'ui' => 1,
-                'default_value' => 1,
+                'default_value' => 0,
                 'message' => 'Enable this section',
             ],
 
@@ -837,7 +837,7 @@ add_action('acf/init', function () {
                 'name' => 'stats_social_section_enable',
                 'type' => 'true_false',
                 'ui' => 1,
-                'default_value' => 1,
+                'default_value' => 0,
             ],
 
             // Social Media Icons (for first card)
@@ -986,7 +986,7 @@ add_action('acf/init', function () {
                 'name' => 'solutions_vision_enable',
                 'type' => 'true_false',
                 'ui' => 1,
-                'default_value' => 1,
+                'default_value' => 0,
             ],
 
             // Description
@@ -1140,7 +1140,7 @@ add_action('acf/init', function () {
                 'name' => 'solutions_edge_ai_enable',
                 'type' => 'true_false',
                 'ui' => 1,
-                'default_value' => 1,
+                'default_value' => 0,
             ],
 
             /*
@@ -1234,7 +1234,7 @@ add_action('acf/init', function () {
                 'name' => 'tech_landscape_enable',
                 'type' => 'true_false',
                 'ui' => 1,
-                'default_value' => 1,
+                'default_value' => 0,
             ],
 
             /*
@@ -1378,7 +1378,7 @@ add_action('acf/init', function () {
                 'name' => 'core_tech_enable',
                 'type' => 'true_false',
                 'ui' => 1,
-                'default_value' => 1,
+                'default_value' => 0,
             ],
 
             /*
@@ -1530,7 +1530,7 @@ add_action('acf/init', function () {
                 'name' => 'dev_process_enable',
                 'type' => 'true_false',
                 'ui' => 1,
-                'default_value' => 1,
+                'default_value' => 0,
             ],
 
             /*
@@ -1653,7 +1653,7 @@ add_action('acf/init', function () {
                 'name' => 'som_pipeline_enable',
                 'type' => 'true_false',
                 'ui' => 1,
-                'default_value' => 1,
+                'default_value' => 0,
             ],
 
             /*
@@ -1766,7 +1766,7 @@ add_action('acf/init', function () {
                 'name' => 'sw_dev_enable',
                 'type' => 'true_false',
                 'ui' => 1,
-                'default_value' => 1,
+                'default_value' => 0,
             ],
 
             /*
