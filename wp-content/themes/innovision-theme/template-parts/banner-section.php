@@ -31,7 +31,6 @@ if ($lang === 'vi') {
 ?>
 
 <section class="banner-section" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/bg.png'); ?>');">
-    <div class="banner-overlay"></div>
     <div class="banner-content">
         <div class="banner-content-detail">
 
@@ -66,11 +65,22 @@ if ($lang === 'vi') {
 </section>
 
 <style>
-    /* Animations */
+    /* Keyframes cho animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     @keyframes fadeInScale {
         from {
             opacity: 0;
-            transform: scale(0.9);
+            transform: scale(0.95);
         }
         to {
             opacity: 1;
@@ -78,32 +88,10 @@ if ($lang === 'vi') {
         }
     }
 
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
     @keyframes slideInLeft {
         from {
             opacity: 0;
-            transform: translateX(-50px);
+            transform: translateX(-30px);
         }
         to {
             opacity: 1;
@@ -114,7 +102,7 @@ if ($lang === 'vi') {
     @keyframes slideInRight {
         from {
             opacity: 0;
-            transform: translateX(50px);
+            transform: translateX(30px);
         }
         to {
             opacity: 1;
@@ -134,51 +122,6 @@ if ($lang === 'vi') {
         }
     }
 
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-10px);
-        }
-    }
-
-    @keyframes pulse {
-        0%, 100% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.05);
-        }
-    }
-
-    @keyframes shimmer {
-        0% {
-            background-position: -1000px 0;
-        }
-        100% {
-            background-position: 1000px 0;
-        }
-    }
-
-    @keyframes rotate {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes overlayPulse {
-        0%, 100% {
-            opacity: 0;
-        }
-        50% {
-            opacity: 0.1;
-        }
-    }
-
     .banner-section {
         width: 100%;
         min-height: 800px;
@@ -191,33 +134,6 @@ if ($lang === 'vi') {
         background-repeat: no-repeat;
         position: relative;
         padding: 100px 20px;
-        overflow: hidden;
-    }
-
-    .banner-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(circle at 30% 50%, rgba(60, 144, 252, 0.1) 0%, transparent 50%);
-        animation: overlayPulse 6s ease-in-out infinite;
-        pointer-events: none;
-    }
-
-    .banner-overlay {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(49, 107, 255, 0.15) 0%, transparent 70%);
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        animation: pulse 4s ease-in-out infinite;
-        pointer-events: none;
-        z-index: 0;
     }
 
     .banner-content {
@@ -226,9 +142,6 @@ if ($lang === 'vi') {
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
-        z-index: 1;
-        animation: fadeInScale 0.8s ease-out;
     }
 
     .banner-content-detail {
@@ -241,7 +154,7 @@ if ($lang === 'vi') {
         width: 100%;
     }
 
-    /* Title */
+    /* Title với animation */
     .banner-content-title {
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
@@ -249,40 +162,15 @@ if ($lang === 'vi') {
         letter-spacing: -0.02em;
         text-align: center;
         margin: 0;
-        background: linear-gradient(142.89deg, #3C90FC 18.17%, #1E5FD9 85%, rgba(60, 144, 252, 0.5) 152.61%);
-        background-size: 200% auto;
+        background: linear-gradient(142.89deg, #3C90FC 18.17%, rgba(60, 144, 252, 0) 152.61%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         white-space: nowrap;
-        animation: fadeInDown 0.8s ease-out 0.2s both, gradientShift 4s ease infinite 1s;
-        position: relative;
+        animation: fadeInScale 0.8s ease-out;
     }
 
-    .banner-content-title::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, #3C90FC, transparent);
-        animation: fadeInScale 0.6s ease-out 0.8s both;
-        animation-fill-mode: forwards;
-    }
-
-    @keyframes expandWidth {
-        to {
-            width: 60%;
-        }
-    }
-
-    .banner-content-title::after {
-        animation: fadeInScale 0.6s ease-out 0.8s both, expandWidth 1s ease-out 1.2s forwards;
-    }
-
-    /* Subtitle */
+    /* Subtitle với animation */
     .banner-content-sub-title {
         font-family: 'Inter', sans-serif;
         font-weight: 500;
@@ -292,31 +180,8 @@ if ($lang === 'vi') {
         text-align: center;
         color: #3C3C3C;
         margin: 0;
-        animation: fadeInUp 0.8s ease-out 0.4s both;
-        position: relative;
-    }
-
-    .banner-content-sub-title::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: calc(100% + 40px);
-        height: calc(100% + 20px);
-        background: linear-gradient(90deg, 
-            transparent,
-            rgba(60, 144, 252, 0.03),
-            transparent
-        );
-        border-radius: 8px;
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-
-    .banner-content-sub-title:hover::before {
-        opacity: 1;
+        animation: fadeInUp 0.8s ease-out 0.2s;
+        animation-fill-mode: both;
     }
 
     /* Actions Container */
@@ -325,7 +190,8 @@ if ($lang === 'vi') {
         justify-content: center;
         width: 100%;
         margin-top: 16px;
-        animation: fadeInUp 0.8s ease-out 0.6s both;
+        animation: fadeInUp 0.8s ease-out 0.4s;
+        animation-fill-mode: both;
     }
 
     .banner-content-actions {
@@ -336,7 +202,7 @@ if ($lang === 'vi') {
         flex-wrap: wrap;
     }
 
-    /* Contact Us Button */
+    /* Contact Us Button với animation */
     .contact-us-button {
         width: 181px;
         height: 64px;
@@ -352,10 +218,11 @@ if ($lang === 'vi') {
         box-shadow: 0px 10px 19px 0px rgba(49, 107, 255, 0.28);
         cursor: pointer;
         text-decoration: none !important;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
-        animation: slideInLeft 0.6s ease-out 0.7s both;
+        animation: slideInLeft 0.6s ease-out 0.6s;
+        animation-fill-mode: both;
     }
 
     .contact-us-button::before {
@@ -366,27 +233,10 @@ if ($lang === 'vi') {
         width: 0;
         height: 0;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.2);
         transform: translate(-50%, -50%);
         transition: width 0.6s ease, height 0.6s ease;
     }
-
-    /* .contact-us-button::after {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(
-            45deg,
-            transparent 30%,
-            rgba(255, 255, 255, 0.2) 50%,
-            transparent 70%
-        );
-        transform: rotate(45deg);
-        animation: shimmer 3s infinite;
-    } */
 
     .contact-us-button:hover::before {
         width: 300px;
@@ -394,8 +244,8 @@ if ($lang === 'vi') {
     }
 
     .contact-us-button:hover {
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0px 15px 30px 0px rgba(49, 107, 255, 0.4);
+        transform: translateY(-2px);
+        box-shadow: 0px 15px 25px 0px rgba(49, 107, 255, 0.35);
         background: radial-gradient(
             163.33% 163.33% at 50% 100%, 
             rgba(255, 255, 255, 0.55) 0%, 
@@ -404,7 +254,7 @@ if ($lang === 'vi') {
     }
 
     .contact-us-button:active {
-        transform: translateY(-1px) scale(1);
+        transform: translateY(0);
         box-shadow: 0px 8px 15px 0px rgba(49, 107, 255, 0.25);
     }
 
@@ -418,14 +268,9 @@ if ($lang === 'vi') {
         white-space: nowrap;
         position: relative;
         z-index: 1;
-        transition: transform 0.3s ease;
     }
 
-    .contact-us-button:hover .banner-contact-us-text {
-        transform: scale(1.05);
-    }
-
-    /* View Solutions Button */
+    /* View Solutions Button với animation */
     .view-solutions-button {
         width: 222px;
         height: 64px;
@@ -443,10 +288,11 @@ if ($lang === 'vi') {
             inset 0px -0.3px 0.24px -1.17px rgba(71, 136, 255, 0.67);
         cursor: pointer;
         text-decoration: none !important;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
-        animation: slideInRight 0.6s ease-out 0.7s both;
+        animation: slideInRight 0.6s ease-out 0.6s;
+        animation-fill-mode: both;
     }
 
     .view-solutions-button::before {
@@ -456,46 +302,28 @@ if ($lang === 'vi') {
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(71, 136, 255, 0.15), transparent);
-        transition: left 0.6s ease;
-    }
-
-    .view-solutions-button::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        border-radius: 50%;
-        background: rgba(71, 136, 255, 0.1);
-        transform: translate(-50%, -50%);
-        transition: width 0.5s ease, height 0.5s ease;
+        background: linear-gradient(90deg, transparent, rgba(71, 136, 255, 0.1), transparent);
+        transition: left 0.5s ease;
     }
 
     .view-solutions-button:hover::before {
         left: 100%;
     }
 
-    .view-solutions-button:hover::after {
-        width: 300px;
-        height: 300px;
-    }
-
     .view-solutions-button:hover {
-        transform: translateY(-3px) scale(1.02);
+        transform: translateY(-2px);
         background: #FFFFFF;
         box-shadow:
-            0px 15px 20px -3.75px rgba(0, 0, 0, 0.1),
+            0px 15px 15px -3.75px rgba(0, 0, 0, 0.08),
             0px 3px 3px -2.5px rgba(0, 0, 0, 0.18),
             0px 1px 1px -1.25px rgba(0, 0, 0, 0.2),
-            inset 0px -6px 5px -3.5px rgba(71, 136, 255, 0.4),
-            inset 0px -1.5px 1px -2.33px rgba(71, 136, 255, 0.7),
-            inset 0px -0.4px 0.3px -1.17px rgba(71, 136, 255, 0.75);
+            inset 0px -6px 5px -3.5px rgba(71, 136, 255, 0.35),
+            inset 0px -1.5px 1px -2.33px rgba(71, 136, 255, 0.65),
+            inset 0px -0.4px 0.3px -1.17px rgba(71, 136, 255, 0.72);
     }
 
     .view-solutions-button:active {
-        transform: translateY(-1px) scale(1);
+        transform: translateY(0);
         box-shadow:
             0px 8px 8px -3.75px rgba(0, 0, 0, 0.05),
             0px 2px 2px -2.5px rgba(0, 0, 0, 0.14),
@@ -512,12 +340,11 @@ if ($lang === 'vi') {
         color: #0A4DBB;
         position: relative;
         z-index: 1;
-        transition: color 0.3s ease, transform 0.3s ease;
+        transition: color 0.3s ease;
     }
 
     .view-solutions-button:hover .banner-solutions-text {
         color: #0842A8;
-        transform: scale(1.05);
     }
 
     /* Responsive Design - Mobile Only */
@@ -525,11 +352,6 @@ if ($lang === 'vi') {
         .banner-section {
             min-height: 500px;
             padding: 60px 20px;
-        }
-
-        .banner-overlay {
-            width: 400px;
-            height: 400px;
         }
 
         .banner-content-detail {
@@ -540,11 +362,6 @@ if ($lang === 'vi') {
             font-size: 32px;
             white-space: normal;
             line-height: 1.2;
-        }
-
-        .banner-content-title::after {
-            bottom: -8px;
-            height: 2px;
         }
 
         .banner-content-sub-title {
@@ -566,14 +383,14 @@ if ($lang === 'vi') {
             width: 100%;
             max-width: 240px;
             height: 48px;
-            animation: fadeInUp 0.6s ease-out 0.5s both;
+            animation: fadeInUp 0.6s ease-out 0.6s;
         }
 
         .view-solutions-button {
             width: 100%;
             max-width: 240px;
             height: 48px;
-            animation: fadeInUp 0.6s ease-out 0.6s both;
+            animation: fadeInUp 0.6s ease-out 0.7s;
         }
 
         .banner-contact-us-text {
@@ -590,11 +407,6 @@ if ($lang === 'vi') {
         .banner-section {
             min-height: 450px;
             padding: 50px 16px;
-        }
-
-        .banner-overlay {
-            width: 300px;
-            height: 300px;
         }
 
         .banner-content-detail {
@@ -628,11 +440,6 @@ if ($lang === 'vi') {
             padding: 40px 12px;
         }
 
-        .banner-overlay {
-            width: 250px;
-            height: 250px;
-        }
-
         .banner-content-title {
             font-size: 24px;
         }
@@ -654,14 +461,14 @@ if ($lang === 'vi') {
         }
     }
 
-    /* Reduce motion for users who prefer it */
+    /* Tắt animation khi người dùng đã bật reduce motion */
     @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
+        .banner-content-title,
+        .banner-content-sub-title,
+        .banner-content-actions-container,
+        .contact-us-button,
+        .view-solutions-button {
+            animation: none;
         }
     }
 </style>
