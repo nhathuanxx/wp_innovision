@@ -33,7 +33,7 @@ $screenshot  = $fields['dev_process_screenshot']['url'] ?? '';
         
         <!-- Key Points Card -->
         <div class="info-card key-points-card">
-          <h3 class="card-title">KEY POINTS (BULLET FORM)</h3>
+          <h3 class="card-title">KEY POINTS</h3>
 
           <?php foreach ($key_points as $item): ?>
             <div class="bullet-item">
