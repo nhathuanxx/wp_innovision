@@ -45,11 +45,11 @@ if ($lang === 'vi') {
             <div class="banner-content-actions-container">
                 <div class="banner-content-actions">
 
-                    <a href="<?php echo esc_url($contact_link); ?>" class="contact-us-button">
+                    <!-- <a href="<?php echo esc_url($contact_link); ?>" class="contact-us-button">
                         <span class="banner-contact-us-text">
                             <?php echo esc_html($contact_text); ?>
                         </span>
-                    </a>
+                    </a> -->
 
                     <a href="<?php echo esc_url($solutions_link); ?>" class="view-solutions-button">
                         <span class="banner-solutions-text">
@@ -337,10 +337,15 @@ if ($lang === 'vi') {
         line-height: 28px;
         letter-spacing: -0.2px;
         text-align: center;
-        color: #0A4DBB;
+        /* color: #0A4DBB; */
         position: relative;
         z-index: 1;
         transition: color 0.3s ease;
+         background: linear-gradient(161.19deg, #145AFF 0%, #023F78 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
     }
 
     .view-solutions-button:hover .banner-solutions-text {

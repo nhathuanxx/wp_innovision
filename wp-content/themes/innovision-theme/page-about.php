@@ -129,9 +129,9 @@ if ($lang === 'vi') {
                         <span><?php echo esc_html($projects_text); ?></span>
                     </a>
 
-                    <a href="<?php echo esc_url($contact_link); ?>" class="btn-primary">
+                    <!-- <a href="<?php echo esc_url($contact_link); ?>" class="btn-primary">
                         <span><?php echo esc_html($contact_text); ?></span>
-                    </a>
+                    </a> -->
                 </div>
 
             </div>
