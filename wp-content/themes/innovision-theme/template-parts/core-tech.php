@@ -162,7 +162,9 @@ $cards  = $fields['core_tech_cards'] ?? [];
     width: 100%;
   }
   .core-tech .feature-card{
-  box-shadow: 0px 1px 20px 0px rgba(0, 122, 255, 0.05);
+box-shadow: 
+  0 4px 6px rgba(0, 0, 0, 0.07),
+  0 10px 20px rgba(0, 0, 0, 0.1);
   }
 
   .feature-card {

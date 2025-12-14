@@ -125,8 +125,8 @@ if ($lang === 'vi') {
                 </p>
 
                 <div class="about-cta-buttons">
-                    <a href="<?php echo esc_url($projects_link); ?>" class="btn-secondary">
-                        <span><?php echo esc_html($projects_text); ?></span>
+                    <a href="<?php echo esc_url($projects_link); ?>" class="view-solutions-button">
+                        <span class="banner-solutions-text"><?php echo esc_html($projects_text); ?></span>
                     </a>
 
                     <!-- <a href="<?php echo esc_url($contact_link); ?>" class="btn-primary">
@@ -231,7 +231,7 @@ if ($lang === 'vi') {
     /* Base Styles */
     .about-us-section {
         width: 100%;
-        padding: 58px 20px 68px;
+        padding: 58px 20px 63px;
         max-width: 100%;
         overflow-x: hidden;
     }
@@ -391,7 +391,7 @@ if ($lang === 'vi') {
 
     /* About Intro */
     .about-intro-wrapper {
-        margin-bottom: 80px;
+        margin-bottom: 32px;
     }
 
     .about-title-container {
@@ -474,10 +474,10 @@ if ($lang === 'vi') {
 
     .about-divider {
         width: 200px;
-        height: 1px;
-        background: linear-gradient(90deg, #474363 0%, rgba(71, 67, 99, 0) 100%);
+        height: 2px;
+        background:  #474464;
         margin: 16px 0;
-        animation: fadeInLeft 0.6s ease-out 0.6s both;
+       
         position: relative;
         overflow: hidden;
     }
@@ -696,8 +696,8 @@ if ($lang === 'vi') {
     /* Vision & Mission */
     .vision-mission-wrapper {
         max-width: 1320px;
-        margin: 0 auto 80px;
-        padding: 0 20px;
+        margin: 0 auto;
+        /* padding: 0 20px; */
         display: flex;
         gap: 32px;
     }
@@ -705,10 +705,10 @@ if ($lang === 'vi') {
     .vision-card,
     .mission-card {
         flex: 1;
-        padding: 32px;
+        padding: 24px;
         border-radius: 20px;
         background-size: cover;
-        background-position: center;
+        background-position: right;
         min-height: 300px;
         display: flex;
         flex-direction: column;
@@ -741,21 +741,25 @@ if ($lang === 'vi') {
         background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/tq_y9obmf5xdu-futh-1400w.png'); ?>');
         animation: fadeInLeft 0.8s ease-out 0.2s both;
     }
+       .mission-card {
+        background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/mission-card.png'); ?>');
+        animation: fadeInLeft 0.8s ease-out 0.2s both;
+    }
 
     .vision-card:hover {
         transform: translateY(-8px) scale(1.02);
         box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
     }
 
-    .mission-card {
+    /* .mission-card {
         background: #F4F7FC;
         animation: fadeInRight 0.8s ease-out 0.2s both;
-    }
+    } */
 
     .mission-card:hover {
         transform: translateY(-8px) scale(1.02);
         box-shadow: 0px 20px 40px rgba(60, 144, 252, 0.15);
-        background: linear-gradient(135deg, #F4F7FC 0%, #E8F0FE 100%);
+        /* background: linear-gradient(135deg, #F4F7FC 0%, #E8F0FE 100%); */
     }
 
     .card-title {
@@ -1064,6 +1068,86 @@ if ($lang === 'vi') {
         height: 100%;
         background: linear-gradient(90deg, transparent, rgba(60, 144, 252, 0.5), transparent);
         animation: shimmer 4s infinite;
+    }
+     .view-solutions-button {
+        width: 222px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #FCFCFC;
+        border-radius: 10px;
+        box-shadow:
+            0px 10px 10px -3.75px rgba(0, 0, 0, 0.06),
+            0px 2.29px 2.29px -2.5px rgba(0, 0, 0, 0.16),
+            0px 0.6px 0.6px -1.25px rgba(0, 0, 0, 0.18),
+            inset 0px -5px 4px -3.5px rgba(71, 136, 255, 0.3),
+            inset 0px -1.14px 0.92px -2.33px rgba(71, 136, 255, 0.6),
+            inset 0px -0.3px 0.24px -1.17px rgba(71, 136, 255, 0.67);
+        cursor: pointer;
+        text-decoration: none !important;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        animation: slideInRight 0.6s ease-out 0.6s;
+        animation-fill-mode: both;
+    }
+
+    .view-solutions-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(71, 136, 255, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .view-solutions-button:hover::before {
+        left: 100%;
+    }
+
+    .view-solutions-button:hover {
+        transform: translateY(-2px);
+        background: #FFFFFF;
+        box-shadow:
+            0px 15px 15px -3.75px rgba(0, 0, 0, 0.08),
+            0px 3px 3px -2.5px rgba(0, 0, 0, 0.18),
+            0px 1px 1px -1.25px rgba(0, 0, 0, 0.2),
+            inset 0px -6px 5px -3.5px rgba(71, 136, 255, 0.35),
+            inset 0px -1.5px 1px -2.33px rgba(71, 136, 255, 0.65),
+            inset 0px -0.4px 0.3px -1.17px rgba(71, 136, 255, 0.72);
+    }
+
+    .view-solutions-button:active {
+        transform: translateY(0);
+        box-shadow:
+            0px 8px 8px -3.75px rgba(0, 0, 0, 0.05),
+            0px 2px 2px -2.5px rgba(0, 0, 0, 0.14),
+            inset 0px -4px 3px -3.5px rgba(71, 136, 255, 0.28);
+    }
+
+    .banner-solutions-text {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: -0.2px;
+        text-align: center;
+        /* color: #0A4DBB; */
+        position: relative;
+        z-index: 1;
+        transition: color 0.3s ease;
+         background: linear-gradient(161.19deg, #145AFF 0%, #023F78 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+    }
+
+    .view-solutions-button:hover .banner-solutions-text {
+        color: #0842A8;
     }
 
     .homepage-footer {

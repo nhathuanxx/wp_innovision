@@ -76,7 +76,7 @@ if ($lang === 'vi') {
         </div>
         <div class="card-image">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/picturehomepageautomationfinpng1388-2pt5-400h.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka1.png'); ?>"
             alt="<?php echo esc_attr($c1_title); ?>" />
         </div>
       </div>
@@ -89,7 +89,7 @@ if ($lang === 'vi') {
         </div>
         <div class="card-image">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/homepageautomationworkflowsdesktoppng1390-iofa-400h.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka2.png'); ?>"
             alt="<?php echo esc_attr($c2_title); ?>" />
         </div>
       </div>
@@ -106,7 +106,7 @@ if ($lang === 'vi') {
         </div>
         <div class="card-image">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/homepageautomationaipoweredinboxpng1395-7bmb-500w.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka3.png'); ?>"
             alt="<?php echo esc_attr($c3_title); ?>" />
         </div>
       </div>
@@ -119,7 +119,7 @@ if ($lang === 'vi') {
         </div>
         <div class="card-image">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/homepageautomationarticlesuggestionspng1400-e03-500w.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka4.png'); ?>"
             alt="<?php echo esc_attr($c4_title); ?>" />
         </div>
       </div>
@@ -132,7 +132,7 @@ if ($lang === 'vi') {
         </div>
         <div class="card-image">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/homepageautomationconversationtopicspng1405-pry-500w.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka5.png'); ?>"
             alt="<?php echo esc_attr($c5_title); ?>" />
         </div>
       </div>

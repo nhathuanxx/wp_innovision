@@ -139,6 +139,7 @@ $cards = $fields['sw_dev_cards'] ?? [];
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 10px 20px rgba(0, 0, 0, 0.1);
     }
 
     .software-dev .card-bold-blue {

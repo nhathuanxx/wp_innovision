@@ -5,10 +5,26 @@
  */
 get_header();
 $lang = pll_current_language('slug');
+
+// Translations
+$translations = array(
+    'vi' => array(
+        'title' => 'GIẢI PHÁP',
+        'subtitle' => 'Các giải pháp AI và công nghệ toàn diện cho doanh nghiệp hiện đại.',
+    ),
+    'en' => array(
+        'title' => 'SOLUTIONS',
+        'subtitle' => 'Comprehensive AI and technology solutions for modern enterprises.',
+    )
+);
+
+// Get current language translations
+$t = $translations[$lang] ?? $translations['en'];
 ?>
 
 <?php get_template_part('template-parts/page', 'title', [
-  'subtitle' => 'Comprehensive AI and technology solutions for modern enterprises.',
+  'title' => $t['title'],
+  'subtitle' => $t['subtitle'],
 ]); ?>
 
 <div class="solutions-section">

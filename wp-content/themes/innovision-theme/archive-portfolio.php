@@ -5,21 +5,15 @@
 get_header();
 $lang = pll_current_language('slug');
 
-// DEBUG: Kiểm tra taxonomy có tồn tại không
-// echo '<pre>'; var_dump(taxonomy_exists('portfolio_category')); echo '</pre>';
-
-// Lấy tất cả categories của Portfolio - KHÔNG lọc theo hide_empty trước
+// Lấy tất cả categories của Portfolio
 $categories_args = array(
     'taxonomy'   => 'portfolio_category',
-    'hide_empty' => false, // Tạm thời bỏ hide_empty để xem tất cả categories
+    'hide_empty' => false,
     'orderby'    => 'name',
     'order'      => 'ASC'
 );
 
 $categories = get_terms($categories_args);
-
-// DEBUG: Xem categories lấy được
-// echo '<pre>Categories found: '; var_dump($categories); echo '</pre>';
 
 // Nếu dùng Polylang, lọc categories theo ngôn ngữ hiện tại
 if (function_exists('pll_current_language') && !empty($categories) && !is_wp_error($categories)) {
@@ -27,10 +21,7 @@ if (function_exists('pll_current_language') && !empty($categories) && !is_wp_err
     $filtered_categories = array();
     
     foreach ($categories as $category) {
-        // Lấy ngôn ngữ của term
         $term_lang = pll_get_term_language($category->term_id);
-        
-        // Chỉ giữ lại categories thuộc ngôn ngữ hiện tại
         if ($term_lang === $current_lang) {
             $filtered_categories[] = $category;
         }
@@ -39,15 +30,67 @@ if (function_exists('pll_current_language') && !empty($categories) && !is_wp_err
     $categories = $filtered_categories;
 }
 
-// DEBUG: Xem categories sau khi lọc theo lang
-// echo '<pre>Filtered categories: '; var_dump($categories); echo '</pre>';
+// ===== LOGIC MỚI: Tạo mảng đếm số bài viết cho mỗi category =====
+$category_post_counts = array();
+
+if (!empty($categories) && !is_wp_error($categories)) {
+    foreach ($categories as $category) {
+        $count_args = array(
+            'post_type'      => 'portfolio',
+            'post_status'    => 'publish',
+            'posts_per_page' => 1, // Chỉ cần check có hay không
+            'tax_query'      => array(
+                array(
+                    'taxonomy' => 'portfolio_category',
+                    'field'    => 'term_id',
+                    'terms'    => $category->term_id,
+                ),
+            ),
+        );
+        
+        // Nếu dùng Polylang
+        if (function_exists('pll_current_language')) {
+            $count_args['lang'] = pll_current_language();
+        }
+        
+        $count_query = new WP_Query($count_args);
+        $category_post_counts[$category->term_id] = $count_query->found_posts;
+        wp_reset_postdata();
+    }
+}
+// ===== KẾT THÚC LOGIC MỚI =====
 
 // Ảnh mặc định
 $default_image = get_template_directory_uri() . '/assets/images/innovision/rectangle22931604-p8p-300h.png';
+
+// Translations
+$translations = array(
+    'vi' => array(
+        'title' => 'DỰ ÁN CỦA CHÚNG TÔI',
+        'subtitle1' => 'Xem cách INNOVISION cung cấp các giải pháp AI tùy chỉnh cho từng ngành',
+        'subtitle' => 'Chúng tôi xây dựng các giải pháp AI nhanh chóng, có khả năng mở rộng, từ nền tảng LLM đến hệ thống Edge và nhúng, giúp các đội nhóm triển khai thông minh hơn và đổi mới nhanh hơn. Các dự án của chúng tôi trải dài qua nhiều trường hợp sử dụng thực tế trong các ngành công nghiệp, chứng minh cách AI hiện đại và kỹ thuật có thể tạo ra tác động tức thì và hữu hình.',
+        'all_project' => 'Tất cả dự án',
+        'no_projects' => 'Không có dự án nào được tìm thấy.',
+        'load_more' => 'Xem thêm'
+    ),
+    'en' => array(
+        'title' => 'OUR PROJECTS',
+        'subtitle1' => 'See how INNOVISION delivers AI-driven solutions across industries',
+        'subtitle' => 'We build fast, scalable AI solutions, from LLM platforms to Edge and embedded systems, that help teams ship smarter and innovate faster. Our projects span real-world use cases across industries, proving how modern AI and engineering can create immediate, tangible impact.',
+        'all_project' => 'All Project',
+        'no_projects' => 'No projects found.',
+        'load_more' => 'Load more'
+    )
+);
+
+// Get current language translations
+$t = $translations[$lang] ?? $translations['en'];
 ?>
 
-<?php get_template_part('template-parts/page', 'title', [
-  'subtitle' => 'We build fast, scalable AI solutions, from LLM platforms to Edge and embedded systems, that help teams ship smarter and innovate faster. Our projects span real-world use cases across industries, proving how modern AI and engineering can create immediate, tangible impact.',
+<?php get_template_part('template-parts/page','title-new',[
+  'title' => $t['title'],
+  'subtitle1' => $t['subtitle1'],
+  'subtitle' => $t['subtitle'],
 ]); ?>
 
 <div class="portfolio-container">
@@ -55,13 +98,15 @@ $default_image = get_template_directory_uri() . '/assets/images/innovision/recta
   <div class="tabs-container">
     <!-- Tab All -->
     <div class="tab-item active" data-tab="all">
-      All Project
+      <?php echo esc_html($t['all_project']); ?>
     </div>
     
     <!-- Dynamic Tabs từ Categories -->
     <?php if (!empty($categories) && !is_wp_error($categories)) : ?>
       <?php foreach ($categories as $category) : ?>
-        <div class="tab-item" data-tab="<?php echo esc_attr($category->term_id); ?>">
+        <div class="tab-item" 
+             data-tab="<?php echo esc_attr($category->term_id); ?>"
+             data-has-posts="<?php echo esc_attr($category_post_counts[$category->term_id] > 0 ? '1' : '0'); ?>">
           <?php echo esc_html($category->name); ?>
         </div>
       <?php endforeach; ?>
@@ -77,7 +122,7 @@ $default_image = get_template_directory_uri() . '/assets/images/innovision/recta
     // Query tất cả Portfolio posts
     $portfolio_args = array(
         'post_type'      => 'portfolio',
-        'posts_per_page' => -1, // Lấy tất cả để xử lý phía client
+        'posts_per_page' => -1,
         'orderby'        => 'date',
         'order'          => 'DESC',
         'post_status'    => 'publish'
@@ -101,7 +146,7 @@ $default_image = get_template_directory_uri() . '/assets/images/innovision/recta
             $post_categories = wp_get_post_terms(get_the_ID(), 'portfolio_category', array('fields' => 'ids'));
             $category_ids = !empty($post_categories) && !is_wp_error($post_categories) ? implode(',', $post_categories) : '';
             
-            // Ẩn các bài viết sau 6 bài đầu
+            // Ẩn các bài viết sau 9 bài đầu
             $hidden_class = ($post_index >= $posts_per_page) ? 'portfolio-hidden' : '';
     ?>
       
@@ -118,12 +163,12 @@ $default_image = get_template_directory_uri() . '/assets/images/innovision/recta
         endwhile;
         wp_reset_postdata();
         
-        // Chỉ hiện nút Load More nếu có nhiều hơn 6 bài
+        // Chỉ hiện nút Load More nếu có nhiều hơn 9 bài
         $show_load_more = ($post_index > $posts_per_page);
     else :
     ?>
       <div class="no-projects">
-        <p>Không có dự án nào được tìm thấy.</p>
+        <p><?php echo esc_html($t['no_projects']); ?></p>
       </div>
     <?php 
         $show_load_more = false;
@@ -135,7 +180,7 @@ $default_image = get_template_directory_uri() . '/assets/images/innovision/recta
   <?php if ($show_load_more) : ?>
   <div class="load-more-container">
     <button class="load-more-button" id="loadMoreBtn">
-      <span>Load more</span>
+      <span><?php echo esc_html($t['load_more']); ?></span>
     </button>
   </div>
   <?php endif; ?>
@@ -445,11 +490,39 @@ $default_image = get_template_directory_uri() . '/assets/images/innovision/recta
     const tabs = document.querySelectorAll('.tab-item');
     const projects = document.querySelectorAll('.project-item');
     const loadMoreBtn = document.getElementById('loadMoreBtn');
-    const itemsPerLoad = 9; // Số items hiển thị mỗi lần
+    const itemsPerLoad = 9;
+    const comingSoonUrl = '<?php echo $lang == 'vi' ? esc_url(home_url('/vi/sap-ra-mat')) : esc_url(home_url('/coming-soon')); ?>';
+
+    // ===== LOGIC MỚI: Kiểm tra và redirect đến coming-soon =====
+    function checkAndRedirectIfEmpty(selectedTab) {
+      // Bỏ qua nếu là tab "All"
+      if (selectedTab === 'all') {
+        return false;
+      }
+
+      // Kiểm tra xem tab này có bài viết không
+      const activeTab = document.querySelector('.tab-item[data-tab="' + selectedTab + '"]');
+      if (activeTab && activeTab.dataset.hasPosts === '0') {
+        // Redirect đến trang coming-soon
+        window.location.href = comingSoonUrl;
+        return true;
+      }
+
+      return false;
+    }
+    // ===== KẾT THÚC LOGIC MỚI =====
 
     // Tab filtering
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
+        const selectedTab = tab.dataset.tab;
+
+        // ===== KIỂM TRA TRƯỚC KHI LỌC =====
+        if (checkAndRedirectIfEmpty(selectedTab)) {
+          return; // Dừng xử lý nếu đang redirect
+        }
+        // ===== KẾT THÚC KIỂM TRA =====
+
         // Remove active class from all tabs
         tabs.forEach(t => t.classList.remove('active'));
         
@@ -457,14 +530,13 @@ $default_image = get_template_directory_uri() . '/assets/images/innovision/recta
         tab.classList.add('active');
 
         // Filter projects
-        const selectedTab = tab.dataset.tab;
         let visibleCount = 0;
         
         projects.forEach(project => {
           const projectCategories = project.dataset.category.split(',');
           
           if (selectedTab === 'all') {
-            // Show first 6 items, hide the rest
+            // Show first 9 items, hide the rest
             if (visibleCount < itemsPerLoad) {
               project.classList.remove('portfolio-hidden');
               project.style.display = 'flex';

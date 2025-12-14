@@ -91,8 +91,8 @@ $partners_logos = [
   <div class="cp-slider-wrapper">
     <div class="cp-slider-btn cp-btn-prev" id="cpPrevBtn">
       <svg width="33" height="33" viewBox="0 0 33 33">
-        <circle cx="16.5" cy="16.5" r="16.5" fill="white" stroke="#E5E7EB" stroke-width="1" />
-        <path d="M18.5 11L13.5 16.5L18.5 22" stroke="#474363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        <!-- <circle cx="16.5" cy="16.5" r="16.5" fill="white" stroke="#E5E7EB" stroke-width="1" /> -->
+        <path d="M18.5 11L13.5 16.5L18.5 22" stroke="#3C90FC" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       </svg>
     </div>
 
@@ -150,8 +150,8 @@ $partners_logos = [
 
     <div class="cp-slider-btn cp-btn-next" id="cpNextBtn">
       <svg width="33" height="33" viewBox="0 0 33 33">
-        <circle cx="16.5" cy="16.5" r="16.5" fill="white" stroke="#E5E7EB" stroke-width="1" />
-        <path d="M14.5 11L19.5 16.5L14.5 22" stroke="#474363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        <!-- <circle cx="16.5" cy="16.5" r="16.5" fill="white" stroke="#E5E7EB" stroke-width="1" /> -->
+        <path d="M14.5 11L19.5 16.5L14.5 22" stroke="#3C90FC" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       </svg>
     </div>
   </div>
@@ -256,18 +256,19 @@ $partners_logos = [
   }
 
   .cp-slider-btn {
-    width: 40px;
-    height: 40px;
-    border: none;
+    width: 33.33px;
+    height: 33.33px;
+    border:  1px solid #3C90FC;
     background: transparent;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .cp-slider-btn:hover {
+  /* .cp-slider-btn:hover {
     transform: scale(1.1);
-  }
+  } */
 
   .cp-slider-container {
     flex: 1;
