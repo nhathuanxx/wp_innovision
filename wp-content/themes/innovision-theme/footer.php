@@ -10,7 +10,7 @@ $email = get_field('office_email', 'option');
     <div class="footer-column">
       <a href="https://innovision.amintek.com.vn/home/" class="footer-logo">
         <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/asset14x12033-ysci-200h.png'); ?>"
+          src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/logo.svg'); ?>"
           alt="<?php echo esc_attr(get_bloginfo('name')); ?>" />
       </a>
       <div class="office-info">
