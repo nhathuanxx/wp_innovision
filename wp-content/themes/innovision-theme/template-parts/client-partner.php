@@ -1,20 +1,94 @@
-<?php $lang = pll_current_language('slug'); ?>
-<div class="clients-partners-section" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/client-partner-bg.png'); ?>');">
+<?php 
+$lang = pll_current_language('slug'); 
+$template_uri = get_template_directory_uri();
+
+/* ============================
+   TEXT & LOGO DATA BY LANGUAGE
+   ============================ */
+
+$data = [
+    'en' => [
+        'title' => 'Clients & Partners',
+        'description' => 'Trusted by enterprises, government, and technology partners',
+
+        'clients_title' => 'Our Clients',
+        'clients_text' => [
+            "Enterprises in manufacturing, real estate, and technology.",
+            "Government agencies adopting AI and data-driven solutions to enhance efficiency and public services.",
+            "Startups & SMEs outsourcing AI, software, and firmware development.",
+        ],
+
+        'partners_title' => 'Our Partners',
+        'partners_text' => [
+            "Semiconductor companies – supporting hardware and embedded ecosystems.",
+            "AWS/GCP – cloud & AI infrastructure.",
+            "Electronics factories – enabling real-world deployment of Edge AI devices.",
+            "Universities & Research Institutes – co-developing AI innovation.",
+        ],
+    ],
+
+    'vi' => [
+        'title' => 'Khách hàng & Đối tác',
+        'description' => 'Được tin tưởng bởi doanh nghiệp, chính phủ và các đối tác công nghệ',
+
+        'clients_title' => 'Khách hàng của chúng tôi',
+        'clients_text' => [
+            "Các doanh nghiệp trong lĩnh vực sản xuất, bất động sản và công nghệ.",
+            "Cơ quan chính phủ ứng dụng AI và dữ liệu để nâng cao hiệu quả dịch vụ công.",
+            "Startup & SME thuê ngoài giải pháp AI, phần mềm và firmware.",
+        ],
+
+        'partners_title' => 'Đối tác của chúng tôi',
+        'partners_text' => [
+            "Các hãng bán dẫn – hỗ trợ hệ sinh thái phần cứng và nhúng.",
+            "AWS/GCP – hạ tầng AI & Cloud.",
+            "Nhà máy điện tử – triển khai thiết bị Edge AI thực tế.",
+            "Trường đại học & viện nghiên cứu – đồng phát triển công nghệ AI.",
+        ],
+    ],
+];
+
+/* Fallback nếu ngôn ngữ không tồn tại */
+$D = $data[$lang] ?? $data['en'];
+
+/* LOGOS (dùng chung không cần dịch) */
+$clients_logos = [
+    "rotek4x19848-4g7i-200h.png",
+    "ais4x19847-b9pf-200h.png",
+    "image99850-s96-200h.png",
+    "image109853-whwh-200w.png",
+    "itmon4x19855-nv68-200h.png",
+    "tz4x19846-9iws-200h.png",
+];
+
+$partners_logos = [
+    "image201061-fhvi-200h.png",
+    "image191061-gitn-200h.png",
+    "image181061-s4u8-200h.png",
+    "image141061-1a09-200h.png",
+    "image171061-wavk-200h.png",
+    "image151061-pszb-200h.png",
+    "image121061-px5m-200h.png",
+    "image131061-n76d-200h.png",
+    "image161061-eju4-200h.png",
+];
+?>
+
+<div class="clients-partners-section" style="background-image: url('<?php echo esc_url($template_uri . '/assets/images/innovision/client-partner-bg.png'); ?>');">
 
   <!-- Header -->
   <div class="cp-section-header">
     <h2 class="cp-section-title">
-      Clients & <span class="cp-title-highlight">Partners</span>
+      <?php echo esc_html($D['title']); ?>
+      <span class="cp-title-highlight">Partners</span>
     </h2>
     <p class="cp-section-description">
-      Trusted by enterprises, government, and technology partners
+      <?php echo esc_html($D['description']); ?>
     </p>
   </div>
 
-  <!-- Slider Container - Desktop Only -->
+  <!-- DESKTOP SLIDER -->
   <div class="cp-slider-wrapper">
-
-    <!-- Previous Button -->
     <div class="cp-slider-btn cp-btn-prev" id="cpPrevBtn">
       <svg width="33" height="33" viewBox="0 0 33 33">
         <circle cx="16.5" cy="16.5" r="16.5" fill="white" stroke="#E5E7EB" stroke-width="1" />
@@ -22,201 +96,109 @@
       </svg>
     </div>
 
-    <!-- Slider Content -->
     <div class="cp-slider-container">
       <div class="cp-slider-track" id="cpSliderTrack">
 
-        <!-- Slide 1: Our Clients -->
+        <!-- CLIENTS SLIDE -->
         <div class="cp-slide active">
           <div class="cp-slide-content">
-            <h3 class="cp-slide-title">Our Clients</h3>
+            <h3 class="cp-slide-title"><?php echo esc_html($D['clients_title']); ?></h3>
 
             <div class="cp-client-list">
-              <div class="cp-client-item">
-                <div class="bullet-container">
-                        <div class="bullet">
-                        </div>
-                    </div>
-                <p>Enterprises in manufacturing, real estate, and technology.</p>
-              </div>
-
-              <div class="cp-client-item">
-                <div class="bullet-container">
-                        <div class="bullet">
-                        </div>
-                    </div>
-                <p>Government agencies adopting AI and data-driven solutions to enhance efficiency and public services.</p>
-              </div>
-
-              <div class="cp-client-item">
-              <div class="bullet-container">
-                        <div class="bullet">
-                        </div>
-                    </div>
-                <p>Startups & SMEs outsourcing AI, software, and firmware development.</p>
-              </div>
+              <?php foreach ($D['clients_text'] as $text): ?>
+                <div class="cp-client-item">
+                  <div class="bullet-container"><div class="bullet"></div></div>
+                  <p><?php echo esc_html($text); ?></p>
+                </div>
+              <?php endforeach; ?>
             </div>
           </div>
 
           <div class="cp-clients-logos-grid">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rotek4x19848-4g7i-200h.png'); ?>" alt="Rostek" class="cp-client-logo cp-client-logo-1">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ais4x19847-b9pf-200h.png'); ?>" alt="AIS" class="cp-client-logo cp-client-logo-2">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image99850-s96-200h.png'); ?>" alt="Vinfast" class="cp-client-logo cp-client-logo-3">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image109853-whwh-200w.png'); ?>" alt="Devzone" class="cp-client-logo cp-client-logo-4">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/itmon4x19855-nv68-200h.png'); ?>" alt="ITmon" class="cp-client-logo cp-client-logo-5">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/tz4x19846-9iws-200h.png'); ?>" alt="TZ Hitec" class="cp-client-logo cp-client-logo-6">
+            <?php foreach ($clients_logos as $i => $logo): ?>
+              <img src="<?php echo esc_url($template_uri . '/assets/images/innovision/' . $logo); ?>" 
+                   class="cp-client-logo cp-client-logo-<?php echo $i + 1; ?>">
+            <?php endforeach; ?>
           </div>
         </div>
 
-        <!-- Slide 2: Our Partners -->
+        <!-- PARTNERS SLIDE -->
         <div class="cp-slide">
           <div class="cp-slide-content">
-            <h3 class="cp-slide-title">Our Partners</h3>
+            <h3 class="cp-slide-title"><?php echo esc_html($D['partners_title']); ?></h3>
 
             <div class="cp-client-list">
-              <div class="cp-client-item">
-             <div class="bullet-container">
-                        <div class="bullet">
-                        </div>
-                    </div>
-                <p>Semiconductor companies – supporting hardware and embedded ecosystems.</p>
-              </div>
-
-              <div class="cp-client-item">
-              <div class="bullet-container">
-                        <div class="bullet">
-                        </div>
-                    </div>
-                <p>AWS/GCP – cloud &amp; AI infrastructure.</p>
-              </div>
-
-              <div class="cp-client-item">
-                  <div class="bullet-container">
-                        <div class="bullet">
-                        </div>
-                    </div>
-                <p>Electronics factories – enabling real-world deployment of Edge AI devices.</p>
-              </div>
-
-              <div class="cp-client-item">
-             <div class="bullet-container">
-                        <div class="bullet">
-                        </div>
-                    </div>
-                <p>Universities &amp; Research Institutes – co-developing AI innovation.</p>
-              </div>
+              <?php foreach ($D['partners_text'] as $text): ?>
+                <div class="cp-client-item">
+                  <div class="bullet-container"><div class="bullet"></div></div>
+                  <p><?php echo esc_html($text); ?></p>
+                </div>
+              <?php endforeach; ?>
             </div>
           </div>
 
           <div class="cp-partners-logos-grid">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image201061-fhvi-200h.png'); ?>" alt="Partner 1" class="cp-partner-logo cp-partner-logo-1">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image191061-gitn-200h.png'); ?>" alt="Partner 2" class="cp-partner-logo cp-partner-logo-2">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image181061-s4u8-200h.png'); ?>" alt="Partner 3" class="cp-partner-logo cp-partner-logo-3">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image141061-1a09-200h.png'); ?>" alt="Partner 4" class="cp-partner-logo cp-partner-logo-4">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image171061-wavk-200h.png'); ?>" alt="Partner 5" class="cp-partner-logo cp-partner-logo-5">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image151061-pszb-200h.png'); ?>" alt="Partner 6" class="cp-partner-logo cp-partner-logo-6">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image121061-px5m-200h.png'); ?>" alt="Partner 7" class="cp-partner-logo cp-partner-logo-7">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image131061-n76d-200h.png'); ?>" alt="Partner 8" class="cp-partner-logo cp-partner-logo-8">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image161061-eju4-200h.png'); ?>" alt="Partner 9" class="cp-partner-logo cp-partner-logo-9">
+            <?php foreach ($partners_logos as $i => $logo): ?>
+              <img src="<?php echo esc_url($template_uri . '/assets/images/innovision/' . $logo); ?>" 
+                   class="cp-partner-logo cp-partner-logo-<?php echo $i + 1; ?>">
+            <?php endforeach; ?>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- Next Button -->
     <div class="cp-slider-btn cp-btn-next" id="cpNextBtn">
       <svg width="33" height="33" viewBox="0 0 33 33">
         <circle cx="16.5" cy="16.5" r="16.5" fill="white" stroke="#E5E7EB" stroke-width="1" />
         <path d="M14.5 11L19.5 16.5L14.5 22" stroke="#474363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       </svg>
     </div>
-
   </div>
 
-  <!-- Mobile/Tablet Static Content -->
+  <!-- MOBILE VERSION -->
   <div class="cp-mobile-content">
-    <!-- Clients Section -->
+
+    <!-- CLIENTS MOBILE -->
     <div class="cp-mobile-section">
-      <h3 class="cp-mobile-title">Our Clients</h3>
+      <h3 class="cp-mobile-title"><?php echo esc_html($D['clients_title']); ?></h3>
+
       <div class="cp-mobile-text-list">
-        <div class="cp-mobile-item">
-      <div class="bullet-container">
-                        <div class="bullet">
-                        </div>
-                    </div>
-          <p>Enterprises in manufacturing, real estate, and technology.</p>
-        </div>
-        <div class="cp-mobile-item">
-       <div class="bullet-container">
-                        <div class="bullet">
-                        </div>
-                    </div>
-          <p>Government agencies adopting AI and data-driven solutions.</p>
-        </div>
-        <div class="cp-mobile-item">
-       <div class="bullet-container">
-                        <div class="bullet">
-                        </div>
-                    </div>
-          <p>Startups & SMEs outsourcing AI, software, and firmware development.</p>
-        </div>
+        <?php foreach ($D['clients_text'] as $text): ?>
+          <div class="cp-mobile-item">
+            <div class="bullet-container"><div class="bullet"></div></div>
+            <p><?php echo esc_html($text); ?></p>
+          </div>
+        <?php endforeach; ?>
       </div>
+
       <div class="cp-mobile-logos">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/rotek4x19848-4g7i-200h.png'); ?>" alt="Rostek">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ais4x19847-b9pf-200h.png'); ?>" alt="AIS">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image99850-s96-200h.png'); ?>" alt="Vinfast">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image109853-whwh-200w.png'); ?>" alt="Devzone">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/itmon4x19855-nv68-200h.png'); ?>" alt="ITmon">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/tz4x19846-9iws-200h.png'); ?>" alt="TZ Hitec">
+        <?php foreach ($clients_logos as $logo): ?>
+          <img src="<?php echo esc_url($template_uri . '/assets/images/innovision/' . $logo); ?>">
+        <?php endforeach; ?>
       </div>
     </div>
 
-    <!-- Partners Section -->
+    <!-- PARTNERS MOBILE -->
     <div class="cp-mobile-section">
-      <h3 class="cp-mobile-title">Our Partners</h3>
+      <h3 class="cp-mobile-title"><?php echo esc_html($D['partners_title']); ?></h3>
+
       <div class="cp-mobile-text-list">
-        <div class="cp-mobile-item">
-        <div class="bullet-container">
-                        <div class="bullet">
-                        </div>
-                    </div>
-          <p>Semiconductor companies – supporting hardware and embedded ecosystems.</p>
-        </div>
-        <div class="cp-mobile-item">
-          <div class="bullet-container">
-                        <div class="bullet">
-                        </div>
-                    </div>
-          <p>AWS/GCP – cloud & AI infrastructure.</p>
-        </div>
-        <div class="cp-mobile-item">
-          <div class="bullet-container">
-                        <div class="bullet">
-                        </div>
-                    </div>
-          <p>Electronics factories – enabling real-world deployment of Edge AI devices.</p>
-        </div>
-        <div class="cp-mobile-item">
-           <div class="bullet-container">
-                        <div class="bullet">
-                        </div>
-                    </div>
-          <p>Universities & Research Institutes – co-developing AI innovation.</p>
-        </div>
+        <?php foreach ($D['partners_text'] as $text): ?>
+          <div class="cp-mobile-item">
+            <div class="bullet-container"><div class="bullet"></div></div>
+            <p><?php echo esc_html($text); ?></p>
+          </div>
+        <?php endforeach; ?>
       </div>
+
       <div class="cp-mobile-logos">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image201061-fhvi-200h.png'); ?>" alt="Partner 1">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image191061-gitn-200h.png'); ?>" alt="Partner 2">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image181061-s4u8-200h.png'); ?>" alt="Partner 3">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image141061-1a09-200h.png'); ?>" alt="Partner 4">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image171061-wavk-200h.png'); ?>" alt="Partner 5">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image151061-pszb-200h.png'); ?>" alt="Partner 6">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image121061-px5m-200h.png'); ?>" alt="Partner 7">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image131061-n76d-200h.png'); ?>" alt="Partner 8">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image161061-eju4-200h.png'); ?>" alt="Partner 9">
+        <?php foreach ($partners_logos as $logo): ?>
+          <img src="<?php echo esc_url($template_uri . '/assets/images/innovision/' . $logo); ?>">
+        <?php endforeach; ?>
       </div>
     </div>
+
   </div>
 
 </div>

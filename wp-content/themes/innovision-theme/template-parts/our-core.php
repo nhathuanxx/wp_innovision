@@ -1,56 +1,126 @@
- <div class="competencies-section">
-        <div class="competencies-container">
-            <div class="competencies-header">
-                <h2 class="competencies-title">
-                    <span class="competencies-highlight">Our</span> <span class="title-highlight">Core Competencies</span>
-                </h2>
-                <p class="competencies-subtitle">
-                    We operate across three complementary pillars to deliver innovation and value.
-                </p>
+<?php 
+$lang = pll_current_language('slug'); 
+
+// ===== DEFAULT: EN =====
+$title_part1 = "Our";
+$title_part2 = "Core Competencies";
+$subtitle = "We operate across three complementary pillars to deliver innovation and value.";
+
+// Card 1
+$card1_title = "AI Products";
+$card1_sub   = "LLM & Edge AI";
+$card1_desc  = "Enterprise LLM and edge AI for intelligent automation.";
+
+// Card 2
+$card2_title = "Industrial AI & Automation";
+$card2_sub   = "Smart Manufacturing";
+$card2_desc  = "Smart vision, predictive maintenance, and seamless factory integration.";
+
+// Card 3
+$card3_title = "Software & Firmware";
+$card3_sub   = "Embedded & Cloud";
+$card3_desc  = "End-to-end software from devices to cloud platforms.";
+
+
+// ===== VIETNAMESE =====
+if ($lang === 'vi') {
+
+    $title_part1 = "Năng lực";
+    $title_part2 = "Cốt lõi";
+
+    $subtitle = "Chúng tôi vận hành trên ba trụ cột bổ trợ nhau để tạo ra đổi mới và giá trị thực tiễn.";
+
+    // Card 1
+    $card1_title = "Sản phẩm AI";
+    $card1_sub   = "LLM & Edge AI";
+    $card1_desc  = "LLM doanh nghiệp và AI biên cho tự động hóa thông minh.";
+
+    // Card 2
+    $card2_title = "AI Công nghiệp & Tự động hóa";
+    $card2_sub   = "Sản xuất thông minh";
+    $card2_desc  = "Thị giác máy, bảo trì dự đoán, và tích hợp nhà máy liền mạch.";
+
+    // Card 3
+    $card3_title = "Phần mềm & Firmware";
+    $card3_sub   = "Embedded & Cloud";
+    $card3_desc  = "Giải pháp phần mềm từ thiết bị đến nền tảng đám mây.";
+}
+?>
+
+
+<div class="competencies-section">
+    <div class="competencies-container">
+        <div class="competencies-header">
+
+            <h2 class="competencies-title">
+                <span class="competencies-highlight"><?php echo esc_html($title_part1); ?></span>
+                <span class="title-highlight"><?php echo esc_html($title_part2); ?></span>
+            </h2>
+
+            <p class="competencies-subtitle">
+                <?php echo esc_html($subtitle); ?>
+            </p>
+        </div>
+
+        <div class="competencies-cards">
+
+            <!-- AI Products Card -->
+            <div class="competency-card" data-aos="fade-up" data-aos-delay="0">
+                <img 
+                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/chatbot1298-rnvc.svg'); ?>"
+                    alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+                    class="competency-image" 
+                />
+                <div class="competency-content">
+                    <h3 class="competency-title">
+                        <?php echo esc_html($card1_title); ?><br>
+                        <span><?php echo esc_html($card1_sub); ?></span>
+                    </h3>
+                    <p class="competency-description">
+                        <?php echo esc_html($card1_desc); ?>
+                    </p>
+                </div>
             </div>
 
-            <div class="competencies-cards">
-                <!-- AI Products Card -->
-                <div class="competency-card" data-aos="fade-up" data-aos-delay="0">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/chatbot1298-rnvc.svg'); ?>"
-                        alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-                        class="competency-image" />
-                    <div class="competency-content">
-                        <h3 class="competency-title">AI Products<br><span>LLM & Edge AI</span></h3>
-                        <p class="competency-description">
-                            Enterprise LLM and edge AI for intelligent automation.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Industrial AI & Automation Card -->
-                <div class="competency-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/cyborg31304-ywda.svg'); ?>"
-                        alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-                        class="competency-image" />
-                    <div class="competency-content">
-                        <h3 class="competency-title">Industrial AI & Automation<br><span>Smart Manufacturing</span></h3>
-                        <p class="competency-description">
-                            Smart vision, predictive maintenance, and seamless factory integration.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Software & Firmware Card -->
-                <div class="competency-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/computer.png'); ?>"
-                        alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-                        class="competency-image" />
-                    <div class="competency-content">
-                        <h3 class="competency-title">Software & Firmware<br><span>Embedded & Cloud</span></h3>
-                        <p class="competency-description">
-                            End-to-end software from devices to cloud platforms.
-                        </p>
-                    </div>
+            <!-- Industrial AI & Automation Card -->
+            <div class="competency-card" data-aos="fade-up" data-aos-delay="100">
+                <img 
+                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/cyborg31304-ywda.svg'); ?>"
+                    alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+                    class="competency-image" 
+                />
+                <div class="competency-content">
+                    <h3 class="competency-title">
+                        <?php echo esc_html($card2_title); ?><br>
+                        <span><?php echo esc_html($card2_sub); ?></span>
+                    </h3>
+                    <p class="competency-description">
+                        <?php echo esc_html($card2_desc); ?>
+                    </p>
                 </div>
             </div>
+
+            <!-- Software & Firmware Card -->
+            <div class="competency-card" data-aos="fade-up" data-aos-delay="200">
+                <img 
+                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/computer.png'); ?>"
+                    alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+                    class="competency-image" 
+                />
+                <div class="competency-content">
+                    <h3 class="competency-title">
+                        <?php echo esc_html($card3_title); ?><br>
+                        <span><?php echo esc_html($card3_sub); ?></span>
+                    </h3>
+                    <p class="competency-description">
+                        <?php echo esc_html($card3_desc); ?>
+                    </p>
+                </div>
+            </div>
+
         </div>
     </div>
+</div>
 
 <style>
      .competencies-section {

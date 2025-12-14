@@ -2,11 +2,18 @@
 <?php
 global $post;
 $fields = get_fields($post->ID);
-
+$description = '';
+if (has_excerpt($post->ID)) {
+    $description = get_the_excerpt($post->ID);
+} elseif (!empty($post->post_content)) {
+    $description = wp_trim_words($post->post_content, 30, '...');
+}
+$bg = $fields['custom_post_background_image']['url'];
 ?>
 <?php get_template_part('template-parts/page-portfolio-single', 'title', [
-  'subtitle' => 'We build fast, scalable AI solutions, from LLM platforms to Edge and embedded systems, that help teams ship smarter and innovate faster. Our projects span real-world use cases across industries, proving how modern AI and engineering can create immediate, tangible impact.',
-]); ?>
+  'subtitle' => $description,
+  'bg' => $bg
+  ]); ?>
 <?php get_template_part('template-parts/problem-solutions', null, [
   'fields' => $fields
 ]); ?>

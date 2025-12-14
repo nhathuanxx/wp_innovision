@@ -4,12 +4,12 @@
  * Usage: get_template_part('template-parts/page', 'title', array('bg' => $bg_image, 'subtitle' => 'Your subtitle'));
  */
 
-$bg_image = isset($args['bg']) ? $args['bg'] : get_template_directory_uri() . '/assets/images/background/2.jpg';
+$bg_image = isset($args['bg']) ? $args['bg'] : get_template_directory_uri() . '/assets/images/innovision/image241395-m00k-3400w.png';
 $subtitle = isset($args['subtitle']) ? $args['subtitle'] : '';
 $lang = pll_current_language('slug');
 ?>
 
-<section class="page-title-section" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/image241395-m00k-3400w.png'); ?>');">
+<section class="page-title-section" style="background-image: url('<?php echo esc_url($bg_image); ?>');">
     <div class="page-title-content">
         <div class="page-title-content-detail">
             <h1 class="page-title-content-title">
@@ -34,6 +34,29 @@ $lang = pll_current_language('slug');
 </section>
 
 <style>
+    /* Simple Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     .page-title-section {
         width: 100%;
         min-height: 500px;
@@ -79,6 +102,7 @@ $lang = pll_current_language('slug');
         -webkit-text-fill-color: transparent;
         background-clip: text;
         word-break: break-word;
+        animation: fadeInDown 0.8s ease-out;
     }
 
     /* Subtitle */
@@ -93,6 +117,7 @@ $lang = pll_current_language('slug');
         margin: 0;
         max-width: 1320px;
         width: 100%;
+        animation: fadeInUp 0.8s ease-out 0.2s both;
     }
 
     /* Responsive Design */

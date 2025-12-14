@@ -5,34 +5,123 @@
  */
 
 $bg_image = isset($args['bg']) ? $args['bg'] : get_template_directory_uri() . '/assets/images/background/2.jpg';
-$lang = pll_current_language('slug');
+$lang = pll_current_language('slug'); // vi hoặc en hoặc ngôn ngữ khác
+
+// --- TEXT ---
+$title = 'Beyond Intelligent';
+$subtitle = 'AI | LLM | Edge Computing – Transforming Data into Real-World Impact';
+$contact_text = 'Contact Us';
+$solutions_text = 'View Solutions';
+
+// --- LINKS ---
+$contact_link = home_url('/contact-us');
+$solutions_link = home_url('/solutions');
+
+if ($lang === 'vi') {
+    $title = 'Vượt Qua Mọi Giới Hạn Trí Tuệ';
+    $subtitle = 'AI | LLM | Điện toán biên – Biến dữ liệu thành giá trị thực tế';
+    $contact_text = 'Liên hệ';
+    $solutions_text = 'Xem giải pháp';
+
+    // Link thủ công thêm /vi/
+    $contact_link = home_url('/vi/contact-us');
+    $solutions_link = home_url('/vi/solutions');
+}
+
 ?>
 
 <section class="banner-section" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/bg.png'); ?>');">
     <div class="banner-content">
         <div class="banner-content-detail">
-            <h1 class="banner-content-title">Beyond Intelligent</h1>
-            
+
+            <h1 class="banner-content-title">
+                <?php echo esc_html($title); ?>
+            </h1>
+
             <p class="banner-content-sub-title">
-                AI | LLM | Edge Computing – Transforming Data into Real-World Impact
+                <?php echo esc_html($subtitle); ?>
             </p>
-            
+
             <div class="banner-content-actions-container">
                 <div class="banner-content-actions">
-                    <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="contact-us-button">
-                        <span class="banner-contact-us-text">Contact Us</span>
+
+                    <a href="<?php echo esc_url($contact_link); ?>" class="contact-us-button">
+                        <span class="banner-contact-us-text">
+                            <?php echo esc_html($contact_text); ?>
+                        </span>
                     </a>
 
-                    <a href="<?php echo esc_url(home_url('/solutions')); ?>" class="view-solutions-button">
-                        <span class="banner-solutions-text">View Solutions</span>
+                    <a href="<?php echo esc_url($solutions_link); ?>" class="view-solutions-button">
+                        <span class="banner-solutions-text">
+                            <?php echo esc_html($solutions_text); ?>
+                        </span>
                     </a>
+
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 
 <style>
+    /* Keyframes cho animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInScale {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes gradientShift {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
     .banner-section {
         width: 100%;
         min-height: 800px;
@@ -65,12 +154,11 @@ $lang = pll_current_language('slug');
         width: 100%;
     }
 
-    /* Title */
+    /* Title với animation */
     .banner-content-title {
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 64px;
-        /* line-height: 100%; */
         letter-spacing: -0.02em;
         text-align: center;
         margin: 0;
@@ -78,9 +166,11 @@ $lang = pll_current_language('slug');
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+        white-space: nowrap;
+        animation: fadeInScale 0.8s ease-out;
     }
 
-    /* Subtitle */
+    /* Subtitle với animation */
     .banner-content-sub-title {
         font-family: 'Inter', sans-serif;
         font-weight: 500;
@@ -90,6 +180,8 @@ $lang = pll_current_language('slug');
         text-align: center;
         color: #3C3C3C;
         margin: 0;
+        animation: fadeInUp 0.8s ease-out 0.2s;
+        animation-fill-mode: both;
     }
 
     /* Actions Container */
@@ -98,6 +190,8 @@ $lang = pll_current_language('slug');
         justify-content: center;
         width: 100%;
         margin-top: 16px;
+        animation: fadeInUp 0.8s ease-out 0.4s;
+        animation-fill-mode: both;
     }
 
     .banner-content-actions {
@@ -108,7 +202,7 @@ $lang = pll_current_language('slug');
         flex-wrap: wrap;
     }
 
-    /* Contact Us Button */
+    /* Contact Us Button với animation */
     .contact-us-button {
         width: 181px;
         height: 64px;
@@ -120,7 +214,6 @@ $lang = pll_current_language('slug');
             rgba(255, 255, 255, 0.45) 0%, 
             rgba(0, 0, 0, 0) 100%
         ), #316BFF;
-        /* border: 1px solid #0E51FF; */
         border-radius: 10px;
         box-shadow: 0px 10px 19px 0px rgba(49, 107, 255, 0.28);
         cursor: pointer;
@@ -128,6 +221,8 @@ $lang = pll_current_language('slug');
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
+        animation: slideInLeft 0.6s ease-out 0.6s;
+        animation-fill-mode: both;
     }
 
     .contact-us-button::before {
@@ -175,7 +270,7 @@ $lang = pll_current_language('slug');
         z-index: 1;
     }
 
-    /* View Solutions Button */
+    /* View Solutions Button với animation */
     .view-solutions-button {
         width: 222px;
         height: 64px;
@@ -196,6 +291,8 @@ $lang = pll_current_language('slug');
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
+        animation: slideInRight 0.6s ease-out 0.6s;
+        animation-fill-mode: both;
     }
 
     .view-solutions-button::before {
@@ -250,76 +347,26 @@ $lang = pll_current_language('slug');
         color: #0842A8;
     }
 
-    /* Responsive Design */
-    @media (max-width: 1024px) {
-        .banner-section {
-            min-height: 700px;
-            padding: 80px 40px;
-        }
-
-        .banner-content-title {
-            font-size: 56px;
-        }
-
-        .banner-content-sub-title {
-            font-size: 15px;
-            line-height: 26px;
-        }
-    }
-
+    /* Responsive Design - Mobile Only */
     @media (max-width: 768px) {
         .banner-section {
-            min-height: 600px;
-            padding: 60px 30px;
-        }
-
-        .banner-content-title {
-            font-size: 42px;
-        }
-
-        .banner-content-sub-title {
-            font-size: 14px;
-            line-height: 24px;
-        }
-
-        .banner-content-actions {
-            gap: 16px;
-        }
-
-        .contact-us-button {
-            width: 160px;
-            height: 56px;
-        }
-
-        .view-solutions-button {
-            width: 190px;
-            height: 56px;
-        }
-
-        .banner-contact-us-text,
-        .banner-solutions-text {
-            font-size: 18px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .banner-section {
             min-height: 500px;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         .banner-content-detail {
-            gap: 20px;
+            gap: 16px;
         }
 
         .banner-content-title {
             font-size: 32px;
-            /* line-height: 110%; */
+            white-space: normal;
+            line-height: 1.2;
         }
 
         .banner-content-sub-title {
             font-size: 13px;
-            line-height: 22px;
+            line-height: 20px;
         }
 
         .banner-content-actions-container {
@@ -332,27 +379,96 @@ $lang = pll_current_language('slug');
             width: 100%;
         }
 
-        .contact-us-button,
-        .view-solutions-button {
+        .contact-us-button {
             width: 100%;
-            max-width: 280px;
-            height: 52px;
+            max-width: 240px;
+            height: 48px;
+            animation: fadeInUp 0.6s ease-out 0.6s;
         }
 
-        .banner-contact-us-text,
+        .view-solutions-button {
+            width: 100%;
+            max-width: 240px;
+            height: 48px;
+            animation: fadeInUp 0.6s ease-out 0.7s;
+        }
+
+        .banner-contact-us-text {
+            font-size: 16px;
+        }
+
         .banner-solutions-text {
             font-size: 16px;
+            line-height: 100%;
         }
     }
 
-    @media (max-width: 360px) {
+    @media (max-width: 480px) {
+        .banner-section {
+            min-height: 450px;
+            padding: 50px 16px;
+        }
+
+        .banner-content-detail {
+            gap: 14px;
+        }
+
         .banner-content-title {
             font-size: 28px;
         }
 
         .banner-content-sub-title {
             font-size: 12px;
-            line-height: 20px;
+            line-height: 18px;
+        }
+
+        .contact-us-button,
+        .view-solutions-button {
+            max-width: 220px;
+            height: 46px;
+        }
+
+        .banner-contact-us-text,
+        .banner-solutions-text {
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .banner-section {
+            min-height: 400px;
+            padding: 40px 12px;
+        }
+
+        .banner-content-title {
+            font-size: 24px;
+        }
+
+        .banner-content-sub-title {
+            font-size: 11px;
+            line-height: 17px;
+        }
+
+        .contact-us-button,
+        .view-solutions-button {
+            max-width: 200px;
+            height: 44px;
+        }
+
+        .banner-contact-us-text,
+        .banner-solutions-text {
+            font-size: 14px;
+        }
+    }
+
+    /* Tắt animation khi người dùng đã bật reduce motion */
+    @media (prefers-reduced-motion: reduce) {
+        .banner-content-title,
+        .banner-content-sub-title,
+        .banner-content-actions-container,
+        .contact-us-button,
+        .view-solutions-button {
+            animation: none;
         }
     }
 </style>
