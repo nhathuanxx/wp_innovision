@@ -12,17 +12,17 @@ $lang = pll_current_language('slug');
 <section class="page-title-section" style="background-image: url('<?php echo esc_url($bg_image); ?>');">
     <div class="page-title-content">
         <div class="page-title-content-detail">
-            <h1 class="page-title-content-title">
-                <?php
-                if (is_archive()) {
-                    the_archive_title(); // Tên danh mục / tag / archive
-                } elseif (is_singular()) {
-                    the_title(); // Tiêu đề bài viết hoặc sản phẩm
-                } else {
-                    bloginfo('name'); // Tiêu đề mặc định site
-                }
-                ?>
-            </h1>
+         <h1 class="page-title-content-title">
+<?php
+if (is_archive()) {
+    echo mb_strtoupper(wp_strip_all_tags(get_the_archive_title()), 'UTF-8');
+} elseif (is_singular()) {
+    echo mb_strtoupper(get_the_title(), 'UTF-8');
+} else {
+    echo mb_strtoupper(get_bloginfo('name'), 'UTF-8');
+}
+?>
+</h1>
             
             <?php if (!empty($subtitle)): ?>
             <p class="page-title-content-sub-title">
