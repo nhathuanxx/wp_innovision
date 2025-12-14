@@ -61,7 +61,7 @@ $lang = pll_current_language('slug');
         </p>
 
         <a href="<?php the_permalink(); ?>" class="solution-btn">
-          <span>Learn more</span>
+          <span>Read more</span>
         </a>
       </div>
 
