@@ -186,36 +186,46 @@
           }
           ?>
                <!-- Language Switcher Desktop -->
-        <?php
-        $translations = pll_the_languages(array(
-          'raw' => 1,
-          'hide_if_no_translation' => 0,
-        ));
+   
+<?php
+$translations = pll_the_languages(array(
+  'raw' => 1,
+  'hide_if_no_translation' => 0,
+));
 
-        if (!empty($translations)) :
-          $current_lang = pll_current_language('slug');
-          $url_flags = get_template_directory_uri() . '/assets/images/innovision/';
-        ?>
-          <div class="header-lang-content desktop-lang">
-            <div class="lang-img-container">
-              <?php
-              if (isset($translations[$current_lang])) {
-                echo '<img class="lang-img" src="' . esc_url($url_flags . 'flag-' . $current_lang . '.png') . '" alt="' . esc_attr($current_lang) . '">';
-              }
-              ?>
-            </div>
+if (!empty($translations)) :
+  $current_lang = pll_current_language('slug');
+  $url_flags = get_template_directory_uri() . '/assets/images/innovision/';
+  
+  // THÊM PHẦN NÀY - Định nghĩa base URLs
+  $base_urls = array(
+    'en' => 'https://innovision.amintek.com.vn/',
+    'vi' => 'https://innovision.amintek.com.vn/vi/'
+  );
+?>
+  <div class="header-lang-content desktop-lang">
+    <div class="lang-img-container">
+      <?php
+      if (isset($translations[$current_lang])) {
+        echo '<img class="lang-img" src="' . esc_url($url_flags . 'flag-' . $current_lang . '.png') . '" alt="' . esc_attr($current_lang) . '">';
+      }
+      ?>
+    </div>
 
-            <select class="select-lang" onchange="if(this.value){window.location=this.value;}">
-              <?php foreach ($translations as $lang => $translation) : ?>
-                <option
-                  value="<?php echo esc_url($translation['url']); ?>"
-                  <?php selected($translation['current_lang'], true); ?>>
-                  <?php echo esc_html($translation['name']); ?>
-                </option>
-              <?php endforeach; ?>
-            </select>
-          </div>
-        <?php endif; ?>
+    <select class="select-lang" onchange="if(this.value){window.location=this.value;}">
+      <?php foreach ($translations as $lang => $translation) : 
+        // SỬA PHẦN NÀY - Force URL đúng
+        $correct_url = isset($base_urls[$lang]) ? $base_urls[$lang] : $translation['url'];
+      ?>
+        <option
+          value="<?php echo esc_url($correct_url); ?>"
+          <?php selected($translation['current_lang'], true); ?>>
+          <?php echo esc_html($translation['name']); ?>
+        </option>
+      <?php endforeach; ?>
+    </select>
+  </div>
+<?php endif; ?>
         </nav>
 
    
@@ -261,24 +271,31 @@
         </nav>
 
         <!-- Language Switcher Mobile -->
-        <?php if (!empty($translations)) : ?>
-          <div class="header-lang-content mobile-lang">
-            <div class="mobile-lang-title">Language / Ngôn ngữ</div>
-            <div class="mobile-lang-options">
-              <?php foreach ($translations as $lang => $translation) : ?>
-                <a 
-                  href="<?php echo esc_url($translation['url']); ?>" 
-                  class="mobile-lang-item <?php echo $translation['current_lang'] ? 'active' : ''; ?>">
-                  <img 
-                    class="lang-img" 
-                    src="<?php echo esc_url($url_flags . 'flag-' . $lang . '.png'); ?>" 
-                    alt="<?php echo esc_attr($lang); ?>">
-                  <span><?php echo esc_html($translation['name']); ?></span>
-                </a>
-              <?php endforeach; ?>
-            </div>
-          </div>
-        <?php endif; ?>
+ <?php if (!empty($translations)) : ?>
+  <div class="header-lang-content mobile-lang">
+    <div class="mobile-lang-title">Language / Ngôn ngữ</div>
+    <div class="mobile-lang-options">
+      <?php foreach ($translations as $lang => $translation) : 
+        $base_urls = array(
+    'en' => 'https://innovision.amintek.com.vn/',
+    'vi' => 'https://innovision.amintek.com.vn/vi/'
+  );
+        // THÊM PHẦN NÀY - Force URL đúng (dùng lại $base_urls đã khai báo ở trên)
+        $correct_url = isset($base_urls[$lang]) ? $base_urls[$lang] : $translation['url'];
+      ?>
+        <a 
+          href="<?php echo esc_url($correct_url); ?>" 
+          class="mobile-lang-item <?php echo $translation['current_lang'] ? 'active' : ''; ?>">
+          <img 
+            class="lang-img" 
+            src="<?php echo esc_url($url_flags . 'flag-' . $lang . '.png'); ?>" 
+            alt="<?php echo esc_attr($lang); ?>">
+          <span><?php echo esc_html($translation['name']); ?></span>
+        </a>
+      <?php endforeach; ?>
+    </div>
+  </div>
+<?php endif; ?>
       </div>
     </div>
   </header>
