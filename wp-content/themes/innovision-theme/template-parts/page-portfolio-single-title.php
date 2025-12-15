@@ -143,7 +143,7 @@ $lang = pll_current_language('slug');
         font-weight: 700;
         font-style: Bold;
         font-size: 56px;
-        line-height: 100%;
+        line-height: normal;
         letter-spacing: -2%;
 
         color: #3C90FC;
