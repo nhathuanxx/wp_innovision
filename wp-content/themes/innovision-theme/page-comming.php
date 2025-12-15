@@ -8,13 +8,13 @@ $bg_image = isset($args['bg']) ? $args['bg'] : get_template_directory_uri() . '/
 $subtitle = isset($args['subtitle']) ? $args['subtitle'] : '';
 get_header();
 $lang = pll_current_language('slug'); // vi hoặc en
-$home_link = home_url('/');
+$home_link = 'https://innovision.amintek.com.vn/';
 $back_home_text = 'Back to Homepage';
 if ($lang === 'vi') {
 
 $back_home_text = 'Về trang chủ';
     // Link thủ công thêm /vi/
-    $home_link = home_url('/vi/');
+    $home_link = 'https://innovision.amintek.com.vn/vi/';
 }
 ?>
 <section class="page-title-section" style="background-image: url('<?php echo esc_url($bg_image); ?>');">
