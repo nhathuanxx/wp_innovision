@@ -477,7 +477,7 @@ if ($lang === 'vi') {
         height: 2px;
         background:  #474464;
         margin: 16px 0;
-       
+        border-radius: 12px;
         position: relative;
         overflow: hidden;
     }

@@ -8,7 +8,7 @@ $template_uri = get_template_directory_uri();
 
 $data = [
     'en' => [
-        'title' => 'Clients & Partners',
+        'title' => 'Clients &',
         'description' => 'Trusted by enterprises, government, and technology partners',
 
         'clients_title' => 'Our Clients',
@@ -28,7 +28,7 @@ $data = [
     ],
 
     'vi' => [
-        'title' => 'Khách hàng & Đối tác',
+        'title' => 'Khách hàng &',
         'description' => 'Được tin tưởng bởi doanh nghiệp, chính phủ và các đối tác công nghệ',
 
         'clients_title' => 'Khách hàng của chúng tôi',
@@ -80,7 +80,7 @@ $partners_logos = [
   <div class="cp-section-header">
     <h2 class="cp-section-title">
       <?php echo esc_html($D['title']); ?>
-      <span class="cp-title-highlight">Partners</span>
+      <span class="cp-title-highlight"><?php echo ($lang === 'vi') ? 'Đối tác' : 'Partners'; ?></span>
     </h2>
     <p class="cp-section-description">
       <?php echo esc_html($D['description']); ?>
