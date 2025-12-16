@@ -2001,3 +2001,81 @@ function redirect_iscoming_posts_polylang() {
         }
     }
 }
+
+
+
+add_action('acf/init', function () {
+
+    acf_add_local_field_group([
+        'key' => 'group_portfolio_fintech_diagram',
+        'title' => 'Portfolio – Fintech Transaction Diagram',
+        'fields' => [
+            /*
+            -------------------------------------------------------
+            Enable Section
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_fintech_diagram_enable',
+                'label' => 'Show Fintech Diagram Section',
+                'name' => 'fintech_diagram_enable',
+                'type' => 'true_false',
+                'ui' => 1,
+                'default_value' => 0,
+            ],
+
+            /*
+            -------------------------------------------------------
+            Section Title
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_fintech_diagram_title',
+                'label' => 'Section Title',
+                'name' => 'fintech_diagram_title',
+                'type' => 'text',
+                'default_value' => 'Fintech Transaction Verification Assistant',
+                'conditional_logic' => [
+                    [
+                        [
+                            'field' => 'field_fintech_diagram_enable',
+                            'operator' => '==',
+                            'value' => '1',
+                        ],
+                    ],
+                ],
+            ],
+
+            /*
+            -------------------------------------------------------
+            Diagram Image
+            -------------------------------------------------------
+            */
+            [
+                'key' => 'field_fintech_diagram_image',
+                'label' => 'Diagram Image',
+                'name' => 'fintech_diagram_image',
+                'type' => 'image',
+                'return_format' => 'array',
+                'preview_size' => 'large',
+                'library' => 'all',
+                'instructions' => 'Upload system architecture diagram (recommended size: 1920x540px)',
+            ],
+        ],
+        'location' => [
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'portfolio',
+                ],
+            ],
+        ],
+        'menu_order' => 10,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+    ]);
+
+});

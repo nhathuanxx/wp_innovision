@@ -27,5 +27,9 @@ $bg = $fields['custom_post_background_image']['url'];
   'fields' => $fields
 ]); ?>
 
+<?php get_template_part('template-parts/fintech-tran', null,  [
+  'fields' => $fields
+]); ?>
+
 
 <?php get_footer(); ?>
