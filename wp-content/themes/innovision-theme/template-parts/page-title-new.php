@@ -96,7 +96,7 @@ $lang = pll_current_language('slug');
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 64px;
-        line-height: 100%;
+        line-height: 1.6;
         letter-spacing: -0.02em;
         text-align: center;
         margin: 0;
