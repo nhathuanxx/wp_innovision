@@ -131,12 +131,13 @@ if ($lang === 'vi') {
 
 <style>
   .howwework-frame {
+  background: linear-gradient(to bottom, #ffffff 26%, #D7EBFE 100%);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 48px;
-    padding: 80px 20px;
+    gap: 60px;
+    padding: 80px 0px 0px 0px;
   }
 
   /* Header */
@@ -343,7 +344,7 @@ if ($lang === 'vi') {
 
   @media (max-width: 1024px) {
     .howwework-frame {
-      padding: 60px 20px;
+      padding: 60px 0px 0px 0px;
       gap: 40px;
     }
 
@@ -385,7 +386,7 @@ if ($lang === 'vi') {
 
   @media (max-width: 768px) {
     .howwework-frame {
-      padding: 50px 15px;
+      padding: 50px 0px 0px 0px;
       gap: 32px;
     }
 
@@ -428,7 +429,7 @@ if ($lang === 'vi') {
 
   @media (max-width: 480px) {
     .howwework-frame {
-      padding: 40px 15px;
+      padding: 40px 0px 0px 0px;
       gap: 28px;
     }
 
