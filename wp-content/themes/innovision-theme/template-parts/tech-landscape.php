@@ -158,8 +158,7 @@ $main_img    = $fields['tech_landscape_image']['url']
   gap: 16px;
 }
 
-.bullet-container {
-  /* padding-top: 6px; */
+/* .bullet-container {
   flex-shrink: 0;
 }
 
@@ -169,7 +168,7 @@ $main_img    = $fields['tech_landscape_image']['url']
   background: #3C90FC;
   border-radius: 50%;
   opacity: 0.6;
-}
+} */
 
 .bullet-text {
   font-family: 'Inter', sans-serif;

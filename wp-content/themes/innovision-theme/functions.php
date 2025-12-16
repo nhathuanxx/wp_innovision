@@ -1917,3 +1917,87 @@ function add_menu_link_class($atts, $item, $args) {
     return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_menu_link_class', 10, 3);
+
+
+
+
+add_action('acf/init', 'add_iscoming_field_to_custom_posts');
+function add_iscoming_field_to_custom_posts() {
+    if( function_exists('acf_add_local_field_group') ):
+        
+        acf_add_local_field_group(array(
+            'key' => 'group_iscoming_settings',
+            'title' => 'Coming Soon Settings',
+            'fields' => array(
+                array(
+                    'key' => 'field_iscoming',
+                    'label' => 'Coming Soon',
+                    'name' => 'iscoming',
+                    'type' => 'true_false',
+                    'instructions' => 'Bật để redirect sang trang Coming Soon',
+                    'required' => 0,
+                    'default_value' => 0,
+                    'ui' => 1,
+                    'ui_on_text' => 'Yes',
+                    'ui_off_text' => 'No',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'solutions', // Custom post type Solutions
+                    ),
+                ),
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'portfolio', // Custom post type Portfolio
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'side',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+        ));
+        
+    endif;
+}
+
+// Tương thích với Polylang - Redirect theo ngôn ngữ
+add_action('template_redirect', 'redirect_iscoming_posts_polylang', 5);
+function redirect_iscoming_posts_polylang() {
+    if (is_singular(array('solutions', 'portfolio'))) {
+        $post_id = get_the_ID();
+        $iscoming = get_field('iscoming', $post_id);
+        
+        if ($iscoming) {
+            // Nếu dùng Polylang, redirect về coming-soon của ngôn ngữ tương ứng
+            if (function_exists('pll_current_language')) {
+                $current_lang = pll_current_language();
+                
+                // Tùy chỉnh URL coming-soon theo ngôn ngữ
+                $coming_soon_urls = array(
+                    'en' => '/coming-soon',
+                    'vi' => '/vi/sap-ra-mat',
+                    // Thêm các ngôn ngữ khác nếu cần
+                );
+                
+                $redirect_url = isset($coming_soon_urls[$current_lang]) 
+                    ? home_url($coming_soon_urls[$current_lang]) 
+                    : home_url('/coming-soon');
+                
+                wp_redirect($redirect_url, 301);
+                exit;
+            } else {
+                // Không dùng Polylang thì redirect bình thường
+                wp_redirect(home_url('/coming-soon'), 301);
+                exit;
+            }
+        }
+    }
+}

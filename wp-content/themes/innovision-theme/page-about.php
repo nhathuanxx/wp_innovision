@@ -196,16 +196,16 @@ if ($lang === 'vi') {
                             <!-- giữ nguyên icon theo từng card -->
                             <?php if ($index === 0): ?>
                                 <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/background1336-vow7-1700h.png'); ?>" class="icon-bg" alt="">
-                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icon1337-345c-200h.png'); ?>" class="icon-img" alt="">
+                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ov1.svg'); ?>" class="icon-img" alt="">
                             <?php elseif ($index === 1): ?>
                                 <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/backgroundi134-rdca-1700h.png'); ?>" class="icon-bg" alt="">
-                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/iconi134-y2ij-200h.png'); ?>" class="icon-img" alt="">
+                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ov2.svg'); ?>" class="icon-img" alt="">
                             <?php elseif ($index === 2): ?>
                                 <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/background1352-143c-1700h.png'); ?>" class="icon-bg" alt="">
-                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icon1353-b42t-200h.png'); ?>" class="icon-img" alt="">
+                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ov3.svg'); ?>" class="icon-img" alt="">
                             <?php else: ?>
                                 <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/background1362-n2wl-1700h.png'); ?>" class="icon-bg" alt="">
-                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/icon1363-5rjr-200h.png'); ?>" class="icon-img" alt="">
+                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ov4.svg'); ?>" class="icon-img" alt="">
                             <?php endif; ?>
                         </div>
 
