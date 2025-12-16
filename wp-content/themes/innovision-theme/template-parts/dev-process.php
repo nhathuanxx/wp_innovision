@@ -196,7 +196,7 @@ $screenshot  = $fields['dev_process_screenshot']['url'] ?? '';
 .process-screenshot {
   width: 100%;
   height: auto;
-  max-height: 501px;
+  /* max-height: 501px; */
   object-fit: cover;
   border-radius: 12px;
 }
