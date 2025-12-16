@@ -64,7 +64,7 @@ $lang = pll_current_language('slug');
         display: flex;
         align-items: center;
         justify-content: center;
-        background-size: cover;
+        background-size: 100% 100%;
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
