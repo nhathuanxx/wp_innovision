@@ -131,7 +131,7 @@ if ($lang === 'vi') {
 
 <style>
   .howwework-frame {
-  background: linear-gradient(to bottom, #ffffff 26%, #D7EBFE 100%);
+  background: linear-gradient(to bottom, #ffffff 26%, #D7EBFE 60%);
     width: 100%;
     display: flex;
     flex-direction: column;
