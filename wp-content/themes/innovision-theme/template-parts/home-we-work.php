@@ -179,7 +179,7 @@ if ($lang === 'vi') {
   /* Images Container */
   .howwework-images-group-container {
     width: 100%;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     padding: 90px 20px 0;

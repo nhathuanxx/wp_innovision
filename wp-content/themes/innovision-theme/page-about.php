@@ -863,7 +863,7 @@ if ($lang === 'vi') {
     .values-wrapper {
         max-width: 1320px;
         margin: 0 auto;
-        padding: 38px 20px 0;
+        padding: 38px 0px 0;
         display: flex;
         gap: 32px;
         align-items: flex-start;
