@@ -67,7 +67,7 @@ if ($lang === 'vi') {
             <!-- AI Products Card -->
             <div class="competency-card" data-aos="fade-up" data-aos-delay="0">
                 <img 
-                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/chat-bot.png'); ?>"
+                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/chat-bot.svg'); ?>"
                     alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
                     class="competency-image" 
                 />
@@ -85,7 +85,7 @@ if ($lang === 'vi') {
             <!-- Industrial AI & Automation Card -->
             <div class="competency-card" data-aos="fade-up" data-aos-delay="100">
                 <img 
-                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/cyborg-3.png'); ?>"
+                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/cyborg-3.svg'); ?>"
                     alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
                     class="competency-image" 
                 />
@@ -103,7 +103,7 @@ if ($lang === 'vi') {
             <!-- Software & Firmware Card -->
             <div class="competency-card" data-aos="fade-up" data-aos-delay="200">
                 <img 
-                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/screen-share.png'); ?>"
+                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/screen-share.svg'); ?>"
                     alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
                     class="competency-image" 
                 />
