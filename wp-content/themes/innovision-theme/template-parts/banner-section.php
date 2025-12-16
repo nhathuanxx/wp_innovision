@@ -129,7 +129,8 @@ if ($lang === 'vi') {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-size: cover;
+        /* Kéo giãn ảnh để vừa khít với container, không bị cắt và không có khoảng trống */
+        background-size: 100% 100%;
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
