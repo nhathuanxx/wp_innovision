@@ -77,7 +77,7 @@ if ($lang === 'vi') {
       <div class="howwework-card howwework-card-lean">
         <div class="howwework-card-image">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/hww1.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/hww1-v2.png'); ?>"
             alt="<?php echo esc_attr($card1_title); ?>" />
         </div>
         <div class="howwework-card-text">
@@ -90,7 +90,7 @@ if ($lang === 'vi') {
       <div class="howwework-card howwework-card-learning">
         <div class="howwework-card-image">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/hww2.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/hww2-v2.png'); ?>"
             alt="<?php echo esc_attr($card2_title); ?>" />
         </div>
         <div class="howwework-card-text">
@@ -103,7 +103,7 @@ if ($lang === 'vi') {
       <div class="howwework-card howwework-card-research">
         <div class="howwework-card-image">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/hww3.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/hww3-v2.png'); ?>"
             alt="<?php echo esc_attr($card3_title); ?>" />
         </div>
         <div class="howwework-card-text">
@@ -116,7 +116,7 @@ if ($lang === 'vi') {
       <div class="howwework-card howwework-card-partnership">
         <div class="howwework-card-image">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/hww4.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/hww4-v2.png'); ?>"
             alt="<?php echo esc_attr($card4_title); ?>" />
         </div>
         <div class="howwework-card-text">
