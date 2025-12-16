@@ -161,7 +161,8 @@
 
 <body <?php body_class(); ?>>
 
-<header class="header-container">
+  <!-- Original Header (giữ nguyên 100%) -->
+  <header class="header-container">
     <div class="header-content">
       <div class="header-detail">
         <!-- Logo with Home Link -->
@@ -185,50 +186,50 @@
             ));
           }
           ?>
-               <!-- Language Switcher Desktop -->
-   
-<?php
-$translations = pll_the_languages(array(
-  'raw' => 1,
-  'hide_if_no_translation' => 0,
-));
+          <!-- Language Switcher Desktop -->
 
-if (!empty($translations)) :
-  $current_lang = pll_current_language('slug');
-  $url_flags = get_template_directory_uri() . '/assets/images/innovision/';
-  
-  // THÊM PHẦN NÀY - Định nghĩa base URLs
-  $base_urls = array(
-    'en' => 'https://innovision.amintek.com.vn/',
-    'vi' => 'https://innovision.amintek.com.vn/vi/'
-  );
-?>
-  <div class="header-lang-content desktop-lang">
-    <div class="lang-img-container">
-      <?php
-      if (isset($translations[$current_lang])) {
-        echo '<img class="lang-img" src="' . esc_url($url_flags . 'flag-' . $current_lang . '.png') . '" alt="' . esc_attr($current_lang) . '">';
-      }
-      ?>
-    </div>
+          <?php
+          $translations = pll_the_languages(array(
+            'raw' => 1,
+            'hide_if_no_translation' => 0,
+          ));
 
-    <select class="select-lang" onchange="if(this.value){window.location=this.value;}">
-      <?php foreach ($translations as $lang => $translation) : 
-        // SỬA PHẦN NÀY - Force URL đúng
-        $correct_url = isset($base_urls[$lang]) ? $base_urls[$lang] : $translation['url'];
-      ?>
-        <option
-          value="<?php echo esc_url($correct_url); ?>"
-          <?php selected($translation['current_lang'], true); ?>>
-          <?php echo esc_html($translation['name']); ?>
-        </option>
-      <?php endforeach; ?>
-    </select>
-  </div>
-<?php endif; ?>
+          if (!empty($translations)) :
+            $current_lang = pll_current_language('slug');
+            $url_flags = get_template_directory_uri() . '/assets/images/innovision/';
+
+            // THÊM PHẦN NÀY - Định nghĩa base URLs
+            $base_urls = array(
+              'en' => 'https://innovision.amintek.com.vn/',
+              'vi' => 'https://innovision.amintek.com.vn/vi/'
+            );
+          ?>
+            <div class="header-lang-content desktop-lang">
+              <div class="lang-img-container">
+                <?php
+                if (isset($translations[$current_lang])) {
+                  echo '<img class="lang-img" src="' . esc_url($url_flags . 'flag-' . $current_lang . '.png') . '" alt="' . esc_attr($current_lang) . '">';
+                }
+                ?>
+              </div>
+
+              <select class="select-lang" onchange="if(this.value){window.location=this.value;}">
+                <?php foreach ($translations as $lang => $translation) :
+                  // SỬA PHẦN NÀY - Force URL đúng
+                  $correct_url = isset($base_urls[$lang]) ? $base_urls[$lang] : $translation['url'];
+                ?>
+                  <option
+                    value="<?php echo esc_url($correct_url); ?>"
+                    <?php selected($translation['current_lang'], true); ?>>
+                    <?php echo esc_html($translation['name']); ?>
+                  </option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+          <?php endif; ?>
         </nav>
 
-   
+
 
         <!-- Mobile Menu Toggle -->
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
@@ -271,37 +272,158 @@ if (!empty($translations)) :
         </nav>
 
         <!-- Language Switcher Mobile -->
- <?php if (!empty($translations)) : ?>
-  <div class="header-lang-content mobile-lang">
-    <div class="mobile-lang-title">Language / Ngôn ngữ</div>
-    <div class="mobile-lang-options">
-      <?php foreach ($translations as $lang => $translation) : 
-        $base_urls = array(
-    'en' => 'https://innovision.amintek.com.vn/',
-    'vi' => 'https://innovision.amintek.com.vn/vi/'
-  );
-        // THÊM PHẦN NÀY - Force URL đúng (dùng lại $base_urls đã khai báo ở trên)
-        $correct_url = isset($base_urls[$lang]) ? $base_urls[$lang] : $translation['url'];
-      ?>
-        <a 
-          href="<?php echo esc_url($correct_url); ?>" 
-          class="mobile-lang-item <?php echo $translation['current_lang'] ? 'active' : ''; ?>">
-          <img 
-            class="lang-img" 
-            src="<?php echo esc_url($url_flags . 'flag-' . $lang . '.png'); ?>" 
-            alt="<?php echo esc_attr($lang); ?>">
-          <span><?php echo esc_html($translation['name']); ?></span>
-        </a>
-      <?php endforeach; ?>
+        <?php if (!empty($translations)) : ?>
+          <div class="header-lang-content mobile-lang">
+            <div class="mobile-lang-title">Language / Ngôn ngữ</div>
+            <div class="mobile-lang-options">
+              <?php foreach ($translations as $lang => $translation) :
+                $base_urls = array(
+                  'en' => 'https://innovision.amintek.com.vn/',
+                  'vi' => 'https://innovision.amintek.com.vn/vi/'
+                );
+                // THÊM PHẦN NÀY - Force URL đúng (dùng lại $base_urls đã khai báo ở trên)
+                $correct_url = isset($base_urls[$lang]) ? $base_urls[$lang] : $translation['url'];
+              ?>
+                <a
+                  href="<?php echo esc_url($correct_url); ?>"
+                  class="mobile-lang-item <?php echo $translation['current_lang'] ? 'active' : ''; ?>">
+                  <img
+                    class="lang-img"
+                    src="<?php echo esc_url($url_flags . 'flag-' . $lang . '.png'); ?>"
+                    alt="<?php echo esc_attr($lang); ?>">
+                  <span><?php echo esc_html($translation['name']); ?></span>
+                </a>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
     </div>
-  </div>
-<?php endif; ?>
+  </header>
+
+  <!-- NEW: Sticky Header khi scroll down -->
+  <header class="header-sticky" id="stickyHeader">
+    <div class="header-content">
+      <div class="header-detail-sticky">
+        <!-- Logo with Home Link -->
+        <a href="https://innovision.amintek.com.vn/home/" class="logo-link">
+          <img
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/logo.svg'); ?>"
+            alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+            class="header-logo" />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav">
+          <?php
+          if (has_nav_menu('main-menu')) {
+            wp_nav_menu(array(
+              'theme_location' => 'main-menu',
+              'container'      => false,
+              'menu_class'     => 'main-menu',
+              'depth'          => 3,
+              'fallback_cb'    => false,
+            ));
+          }
+          ?>
+          <!-- Language Switcher Desktop -->
+
+          <?php if (!empty($translations)) : ?>
+            <div class="header-lang-content desktop-lang">
+              <div class="lang-img-container">
+                <?php
+                if (isset($translations[$current_lang])) {
+                  echo '<img class="lang-img" src="' . esc_url($url_flags . 'flag-' . $current_lang . '.png') . '" alt="' . esc_attr($current_lang) . '">';
+                }
+                ?>
+              </div>
+
+              <select class="select-lang" onchange="if(this.value){window.location=this.value;}">
+                <?php foreach ($translations as $lang => $translation) :
+                  $correct_url = isset($base_urls[$lang]) ? $base_urls[$lang] : $translation['url'];
+                ?>
+                  <option
+                    value="<?php echo esc_url($correct_url); ?>"
+                    <?php selected($translation['current_lang'], true); ?>>
+                    <?php echo esc_html($translation['name']); ?>
+                  </option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+          <?php endif; ?>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle-sticky" id="mobileMenuToggleSticky" aria-label="Toggle Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Overlay for Sticky -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlaySticky">
+      <div class="mobile-nav-container">
+        <div class="mobile-nav-header">
+          <a href="https://innovision.amintek.com.vn/home/" class="mobile-logo-link">
+            <img
+              src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/logo.svg'); ?>"
+              alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+              class="mobile-logo" />
+          </a>
+          <button class="mobile-menu-close" id="mobileMenuCloseSticky" aria-label="Close Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+
+        <nav class="mobile-nav">
+          <?php
+          if (has_nav_menu('main-menu')) {
+            wp_nav_menu(array(
+              'theme_location' => 'main-menu',
+              'container'      => false,
+              'menu_class'     => 'mobile-menu',
+              'depth'          => 3,
+              'fallback_cb'    => false,
+            ));
+          }
+          ?>
+        </nav>
+
+        <!-- Language Switcher Mobile -->
+        <?php if (!empty($translations)) : ?>
+          <div class="header-lang-content mobile-lang">
+            <div class="mobile-lang-title">Language / Ngôn ngữ</div>
+            <div class="mobile-lang-options">
+              <?php foreach ($translations as $lang => $translation) :
+                $base_urls = array(
+                  'en' => 'https://innovision.amintek.com.vn/',
+                  'vi' => 'https://innovision.amintek.com.vn/vi/'
+                );
+                $correct_url = isset($base_urls[$lang]) ? $base_urls[$lang] : $translation['url'];
+              ?>
+                <a
+                  href="<?php echo esc_url($correct_url); ?>"
+                  class="mobile-lang-item <?php echo $translation['current_lang'] ? 'active' : ''; ?>">
+                  <img
+                    class="lang-img"
+                    src="<?php echo esc_url($url_flags . 'flag-' . $lang . '.png'); ?>"
+                    alt="<?php echo esc_attr($lang); ?>">
+                  <span><?php echo esc_html($translation['name']); ?></span>
+                </a>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
   </header>
 
   <style>
-    /* Header Container */
+    /* Header Container - GIỮ NGUYÊN 100% */
     .header-container {
       position: absolute;
       top: 0;
@@ -362,8 +484,6 @@ if (!empty($translations)) :
       display: flex;
       align-items: center;
       gap: 20px;
-      /* flex: 1;
-      justify-content: center; */
     }
 
     .main-menu {
@@ -435,7 +555,6 @@ if (!empty($translations)) :
 
     .header-lang-content.desktop-lang:hover {
       background: rgba(255, 255, 255, 0.1);
-      /* text-decoration: underline; */
       border-color: rgba(255, 255, 255, 0.2);
       transform: translateY(-1px);
     }
@@ -707,10 +826,116 @@ if (!empty($translations)) :
       font-weight: 700;
     }
 
+    /* ============================================
+       NEW: STICKY HEADER STYLES
+       ============================================ */
+    
+    .header-sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1001;
+      background: white;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .header-sticky.show {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .header-detail-sticky {
+      display: flex;
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 12px 24px;
+      transition: all 0.3s ease;
+    }
+
+    /* Sticky header - Desktop nav colors */
+    .header-sticky .main-menu li.current-menu-item>a,
+    .header-sticky .main-menu li.current-menu-ancestor>a {
+      color: #3C90FC;
+    }
+
+    /* Sticky header - Language switcher */
+    .header-sticky .header-lang-content.desktop-lang {
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .header-sticky .header-lang-content.desktop-lang:hover {
+      background: rgba(60, 144, 252, 0.08);
+      border-color: rgba(60, 144, 252, 0.2);
+    }
+
+    .header-sticky .lang-img-container {
+      border: 2px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .header-sticky .select-lang {
+      color: rgba(0, 0, 0, 0.9);
+    }
+
+    /* Mobile Menu Toggle for Sticky */
+    .mobile-menu-toggle-sticky {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      padding: 4px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .mobile-menu-toggle-sticky .hamburger-line {
+      width: 100%;
+      height: 2px;
+      background: #000;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu-toggle-sticky:hover .hamburger-line {
+      background: #3C90FC;
+    }
+
+    .mobile-menu-toggle-sticky.active .hamburger-line:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle-sticky.active .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-toggle-sticky.active .hamburger-line:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
     /* Responsive */
     @media (max-width: 1024px) {
       .header-detail {
         padding: 14px 20px;
+        gap: 16px;
+      }
+
+      .header-detail-sticky {
+        padding: 10px 20px;
         gap: 16px;
       }
 
@@ -738,7 +963,8 @@ if (!empty($translations)) :
         display: none;
       }
 
-      .mobile-menu-toggle {
+      .mobile-menu-toggle,
+      .mobile-menu-toggle-sticky {
         display: flex;
       }
 
@@ -748,6 +974,10 @@ if (!empty($translations)) :
 
       .header-detail {
         padding: 12px 20px;
+      }
+
+      .header-detail-sticky {
+        padding: 10px 20px;
       }
 
       .header-logo {
@@ -764,6 +994,10 @@ if (!empty($translations)) :
         padding: 10px 16px;
       }
 
+      .header-detail-sticky {
+        padding: 10px 16px;
+      }
+
       .mobile-nav-container {
         max-width: 100%;
       }
@@ -772,6 +1006,7 @@ if (!empty($translations)) :
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // ===== ORIGINAL MENU FUNCTIONALITY (giữ nguyên 100%) =====
       const mobileMenuToggle = document.getElementById('mobileMenuToggle');
       const mobileMenuClose = document.getElementById('mobileMenuClose');
       const mobileNavOverlay = document.getElementById('mobileNavOverlay');
@@ -818,6 +1053,78 @@ if (!empty($translations)) :
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && mobileNavOverlay.classList.contains('active')) {
           closeMobileMenu();
+        }
+      });
+
+      // ===== NEW: STICKY HEADER FUNCTIONALITY =====
+      const stickyHeader = document.getElementById('stickyHeader');
+      const mobileMenuToggleSticky = document.getElementById('mobileMenuToggleSticky');
+      const mobileMenuCloseSticky = document.getElementById('mobileMenuCloseSticky');
+      const mobileNavOverlaySticky = document.getElementById('mobileNavOverlaySticky');
+      
+      let lastScrollTop = 0;
+      let scrollThreshold = 100; // Hiện sticky menu sau khi scroll 100px
+
+      // Sticky menu scroll handler
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > scrollThreshold) {
+          stickyHeader.classList.add('show');
+        } else {
+          stickyHeader.classList.remove('show');
+        }
+        
+        lastScrollTop = scrollTop;
+      });
+
+      // Sticky mobile menu functions
+      function openStickyMobileMenu() {
+        mobileNavOverlaySticky.classList.add('active');
+        mobileMenuToggleSticky.classList.add('active');
+        body.style.overflow = 'hidden';
+      }
+
+      function closeStickyMobileMenu() {
+        mobileNavOverlaySticky.classList.remove('active');
+        mobileMenuToggleSticky.classList.remove('active');
+        body.style.overflow = '';
+      }
+
+      // Toggle sticky mobile menu
+      mobileMenuToggleSticky.addEventListener('click', function() {
+        if (mobileNavOverlaySticky.classList.contains('active')) {
+          closeStickyMobileMenu();
+        } else {
+          openStickyMobileMenu();
+        }
+      });
+
+      // Close sticky mobile menu
+      mobileMenuCloseSticky.addEventListener('click', closeStickyMobileMenu);
+
+      // Close when clicking overlay
+      mobileNavOverlaySticky.addEventListener('click', function(e) {
+        if (e.target === mobileNavOverlaySticky) {
+          closeStickyMobileMenu();
+        }
+      });
+
+      // Close when clicking menu links
+      const stickyMobileMenuLinks = mobileNavOverlaySticky.querySelectorAll('.mobile-menu a');
+      stickyMobileMenuLinks.forEach(link => {
+        link.addEventListener('click', closeStickyMobileMenu);
+      });
+
+      // Close on escape key (cả 2 menu)
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          if (mobileNavOverlay.classList.contains('active')) {
+            closeMobileMenu();
+          }
+          if (mobileNavOverlaySticky.classList.contains('active')) {
+            closeStickyMobileMenu();
+          }
         }
       });
     });
