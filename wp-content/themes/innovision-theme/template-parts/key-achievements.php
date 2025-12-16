@@ -76,7 +76,7 @@ if ($lang === 'vi') {
         </div>
         <div class="card-image">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka1.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka1-v2.png'); ?>"
             alt="<?php echo esc_attr($c1_title); ?>" />
         </div>
       </div>
@@ -89,7 +89,7 @@ if ($lang === 'vi') {
         </div>
         <div class="card-image">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka2.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka2-v2.png'); ?>"
             alt="<?php echo esc_attr($c2_title); ?>" />
         </div>
       </div>
@@ -106,7 +106,7 @@ if ($lang === 'vi') {
         </div>
         <div class="card-image">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka3.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka3-v2.png'); ?>"
             alt="<?php echo esc_attr($c3_title); ?>" />
         </div>
       </div>
@@ -119,7 +119,7 @@ if ($lang === 'vi') {
         </div>
         <div class="card-image">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka4.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka4-v2.png'); ?>"
             alt="<?php echo esc_attr($c4_title); ?>" />
         </div>
       </div>
@@ -132,7 +132,7 @@ if ($lang === 'vi') {
         </div>
         <div class="card-image">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka5.png'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/innovision/ka5-v2.png'); ?>"
             alt="<?php echo esc_attr($c5_title); ?>" />
         </div>
       </div>
