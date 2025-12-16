@@ -494,22 +494,22 @@ $t = $translations[$lang] ?? $translations['en'];
     const comingSoonUrl = '<?php echo $lang == 'vi' ? esc_url(home_url('/vi/sap-ra-mat')) : esc_url(home_url('/coming-soon')); ?>';
 
     // ===== LOGIC MỚI: Kiểm tra và redirect đến coming-soon =====
-    function checkAndRedirectIfEmpty(selectedTab) {
-      // Bỏ qua nếu là tab "All"
-      if (selectedTab === 'all') {
-        return false;
-      }
+    // function checkAndRedirectIfEmpty(selectedTab) {
+    //   // Bỏ qua nếu là tab "All"
+    //   if (selectedTab === 'all') {
+    //     return false;
+    //   }
 
-      // Kiểm tra xem tab này có bài viết không
-      const activeTab = document.querySelector('.tab-item[data-tab="' + selectedTab + '"]');
-      if (activeTab && activeTab.dataset.hasPosts === '0') {
-        // Redirect đến trang coming-soon
-        window.location.href = comingSoonUrl;
-        return true;
-      }
+    //   // Kiểm tra xem tab này có bài viết không
+    //   const activeTab = document.querySelector('.tab-item[data-tab="' + selectedTab + '"]');
+    //   if (activeTab && activeTab.dataset.hasPosts === '0') {
+    //     // Redirect đến trang coming-soon
+    //     window.location.href = comingSoonUrl;
+    //     return true;
+    //   }
 
-      return false;
-    }
+    //   return false;
+    // }
     // ===== KẾT THÚC LOGIC MỚI =====
 
     // Tab filtering
@@ -518,9 +518,9 @@ $t = $translations[$lang] ?? $translations['en'];
         const selectedTab = tab.dataset.tab;
 
         // ===== KIỂM TRA TRƯỚC KHI LỌC =====
-        if (checkAndRedirectIfEmpty(selectedTab)) {
-          return; // Dừng xử lý nếu đang redirect
-        }
+        // if (checkAndRedirectIfEmpty(selectedTab)) {
+        //   return; // Dừng xử lý nếu đang redirect
+        // }
         // ===== KẾT THÚC KIỂM TRA =====
 
         // Remove active class from all tabs
