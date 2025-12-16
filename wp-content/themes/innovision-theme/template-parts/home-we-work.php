@@ -268,12 +268,15 @@ if ($lang === 'vi') {
     flex-shrink: 0;
     border-radius: 50%;
     overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 9px 75px 0px #00000014;
+
   }
 
   .howwework-card-image img {
     width: 100%;
-    height: 100%;
-    object-fit: none;
+    height: auto;
+    /* object-fit: none; */
   }
 
   /* Card Text */
